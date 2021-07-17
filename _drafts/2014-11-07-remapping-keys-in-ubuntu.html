@@ -1,0 +1,12 @@
+---
+layout: post
+title: Remapping keys in Ubuntu
+date: '2014-11-07T22:34:00.000-08:00'
+author: garymm
+tags: 
+modified_time: '2014-11-07T22:34:58.117-08:00'
+blogger_id: tag:blogger.com,1999:blog-1383463705740489547.post-9143686198944057871
+blogger_orig_url: https://blog.garymm.org/2014/11/remapping-keys-in-ubuntu.html
+---
+
+There's almost certainly a better way to do this, but after many many hours this is the best I came up with. If you know a better way, please let me know.<br /><br /><h3>Create XKB symbols file with your remapping</h3> <br /><script type="syntaxhighlighter">xkb_symbols "page_home_end" {   replace key <PGUP> { [ End ] };         replace key <PGDN> { [ Prior ] };         replace key <END> { [ Next ] }; }; </script>
