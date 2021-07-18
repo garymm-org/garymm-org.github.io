@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://gregorygundersen.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://gregorygundersen.com/" rel="alternate" type="text/html" /><updated>2021-07-18T15:16:13-07:00</updated><id>http://gregorygundersen.com/feed.xml</id><entry><title type="html">Welcome to Jekyll!</title><link href="http://gregorygundersen.com/blog/2021/07/17/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-07-17T15:28:24-07:00</published><updated>2021-07-17T15:28:24-07:00</updated><id>http://gregorygundersen.com/blog/2021/07/17/welcome-to-jekyll</id><content type="html" xml:base="http://gregorygundersen.com/blog/2021/07/17/welcome-to-jekyll/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering</title><link href="http://gregorygundersen.com/blog/2020/10/02/machine-learning-diary-001-swift-detour/" rel="alternate" type="text/html" title="Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering" /><published>2020-10-02T14:04:00-07:00</published><updated>2020-10-02T14:04:00-07:00</updated><id>http://gregorygundersen.com/blog/2020/10/02/machine-learning-diary-001-swift-detour</id><content type="html" xml:base="http://gregorygundersen.com/blog/2020/10/02/machine-learning-diary-001-swift-detour/">&lt;p&gt;I&apos;ve been spending quite a bit of my free time studying machine learning over the past 3 months. After spending quite
+  a bit of time deciding what learning materials to start with, I decided on fast.ai&apos;s Practical Deep Learning for
+  Coders (I saw the&amp;nbsp;&lt;a href=&quot;https://course19.fast.ai/&quot;&gt;2019 version&lt;/a&gt;). Overall I highly recommend the course,
+  and I&apos;m planning to go back and do the 2020 version of it.&lt;/p&gt;
+&lt;p&gt;One reason I was excited about fast.ai&apos;s course is that they had some content on &lt;a
+    href=&quot;https://www.tensorflow.org/swift&quot;&gt;Swift for TensorFlow&lt;/a&gt;&amp;nbsp;(S4TF). I have written a lot of Python and
+  while it has its place, I was excited to try something new and hopefully better. I watched the two fast.ai videos on
+  S4TF and then decided to try it out. This ended up being a fairly costly mistake for me. Basically S4TF is just not
+  nearly as mature as PyTorch, and I wasted a bunch of time struggling with environment setup (no equivalent
+  to&amp;nbsp;&lt;span style=&quot;font-family: courier;&quot;&gt;conda install&lt;/span&gt;), bugs, very incomplete documentation, and cryptic
+  error messages. At this point (I tried in 2020-09), I suggest you steer clear of S4TF if your primary goal is just to
+  learn ML. Though it was fun to learn some Swift and I&apos;d definitely consider using Swift in future projects, ML or
+  otherwise.&lt;/p&gt;
+&lt;p&gt;With that multi-week detour out of the way, I decided to focus on PyTorch. For my first task I decided to try to
+  recreate the simplest model presented in the fast.ai course, but without using the fastai library at all, just pure
+  PyTorch. I found that almost all of the special stuff in fastai is included in PyTorch as of 1.6, so this was a lot
+  easier than I expected. Here&apos;s my final &lt;a
+    href=&quot;https://github.com/garymm/mlnbs/blob/master/collaborative-filtering.ipynb&quot;&gt;notebook for this collaborative
+    filtering task&lt;/a&gt;. Some of the issues I ran into and how I resolved them:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul style=&quot;text-align: left;&quot;&gt;
+  &lt;li&gt;For this task, using the GPU was much slower than just using the CPU. I suppose this is because the model is so
+    simple that the overhead of copying data to/from the GPU dominates any speedup in actual calculations. In retrospect
+    this was also probably why training my Swift version of the model was so slow, and &lt;a
+      href=&quot;https://github.com/tensorflow/swift/issues/524#issuecomment-680919423&quot;&gt;S4TF doesn&apos;t allow eager tensors to
+      use the CPU&lt;/a&gt;&amp;nbsp;if a GPU is present, so this would have been much harder to discover and work around in
+    Swift.&lt;/li&gt;
+  &lt;li&gt;Fastai wraps the &lt;span style=&quot;font-family: courier;&quot;&gt;torch.nn.Embedding&lt;/span&gt; type with a function that changes
+    the initial values. PyTorch initializes using random values drawn from a normal distribution with&amp;nbsp;𝜎^2 = 1.
+    Fastai changes this to a normal distribution with&amp;nbsp;𝜎^2 = .01, truncated so no value is farther than 2 standard
+    deviations from the mean. They reference &lt;a href=&quot;https://arxiv.org/abs/1711.09160&quot;&gt;An Exploration of Word Embedding
+      Initialization in Deep-Learning Tasks&lt;/a&gt;&amp;nbsp;as justification. I found this provided a small boost in
+    performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I forgot calls to &lt;span style=&quot;font-family: courier;&quot;&gt;squeeze()&lt;/span&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt; in a
+      few places. I was quite surprised that &lt;/span&gt;&lt;span style=&quot;font-family: courier;&quot;&gt;torch.nn.MSELoss&lt;/span&gt;&lt;span
+      style=&quot;font-family: inherit;&quot;&gt;&amp;nbsp;didn&apos;t throw an error when I provided it two tensors of different shapes.
+      Instead it did some averaging over all the values, which led to poor training performance.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>garymm</name></author><category term="machine learning" /><category term="programming" /><summary type="html">I&apos;ve been spending quite a bit of my free time studying machine learning over the past 3 months. After spending quite a bit of time deciding what learning materials to start with, I decided on fast.ai&apos;s Practical Deep Learning for Coders (I saw the&amp;nbsp;2019 version). Overall I highly recommend the course, and I&apos;m planning to go back and do the 2020 version of it. One reason I was excited about fast.ai&apos;s course is that they had some content on Swift for TensorFlow&amp;nbsp;(S4TF). I have written a lot of Python and while it has its place, I was excited to try something new and hopefully better. I watched the two fast.ai videos on S4TF and then decided to try it out. This ended up being a fairly costly mistake for me. Basically S4TF is just not nearly as mature as PyTorch, and I wasted a bunch of time struggling with environment setup (no equivalent to&amp;nbsp;conda install), bugs, very incomplete documentation, and cryptic error messages. At this point (I tried in 2020-09), I suggest you steer clear of S4TF if your primary goal is just to learn ML. Though it was fun to learn some Swift and I&apos;d definitely consider using Swift in future projects, ML or otherwise. With that multi-week detour out of the way, I decided to focus on PyTorch. For my first task I decided to try to recreate the simplest model presented in the fast.ai course, but without using the fastai library at all, just pure PyTorch. I found that almost all of the special stuff in fastai is included in PyTorch as of 1.6, so this was a lot easier than I expected. Here&apos;s my final notebook for this collaborative filtering task. Some of the issues I ran into and how I resolved them: For this task, using the GPU was much slower than just using the CPU. I suppose this is because the model is so simple that the overhead of copying data to/from the GPU dominates any speedup in actual calculations. In retrospect this was also probably why training my Swift version of the model was so slow, and S4TF doesn&apos;t allow eager tensors to use the CPU&amp;nbsp;if a GPU is present, so this would have been much harder to discover and work around in Swift. Fastai wraps the torch.nn.Embedding type with a function that changes the initial values. PyTorch initializes using random values drawn from a normal distribution with&amp;nbsp;𝜎^2 = 1. Fastai changes this to a normal distribution with&amp;nbsp;𝜎^2 = .01, truncated so no value is farther than 2 standard deviations from the mean. They reference An Exploration of Word Embedding Initialization in Deep-Learning Tasks&amp;nbsp;as justification. I found this provided a small boost in performance. I forgot calls to squeeze() in a few places. I was quite surprised that torch.nn.MSELoss&amp;nbsp;didn&apos;t throw an error when I provided it two tensors of different shapes. Instead it did some averaging over all the values, which led to poor training performance.</summary></entry><entry><title type="html">An Example Post</title><link href="http://gregorygundersen.com/blog/2020/06/21/example/" rel="alternate" type="text/html" title="An Example Post" /><published>2020-06-21T00:00:00-07:00</published><updated>2020-06-21T00:00:00-07:00</updated><id>http://gregorygundersen.com/blog/2020/06/21/example</id><content type="html" xml:base="http://gregorygundersen.com/blog/2020/06/21/example/">&lt;p&gt;Here are some words. And this is some math:&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mtable width=&quot;100%&quot;&gt;&lt;mtr&gt;&lt;mtd width=&quot;50%&quot;&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;.&lt;/mi&gt;&lt;/mrow&gt;&lt;/mtd&gt;&lt;mtd width=&quot;50%&quot;&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mtext&gt;(1)&lt;/mtext&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;
+e = mc^2. \tag{1}
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.8641079999999999em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.8641079999999999em;&quot;&gt;&lt;span style=&quot;top:-3.113em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1.1141079999999999em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord text&quot;&gt;&lt;span class=&quot;mord&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Cool!&lt;/p&gt;</content><author><name></name></author><summary type="html">Here are some words. And this is some math:</summary></entry><entry><title type="html">Grading on a curve and The Case Against Education</title><link href="http://gregorygundersen.com/blog/2018/06/03/grading-on-curve-and-case-against/" rel="alternate" type="text/html" title="Grading on a curve and The Case Against Education" /><published>2018-06-03T08:05:00-07:00</published><updated>2018-06-03T08:05:00-07:00</updated><id>http://gregorygundersen.com/blog/2018/06/03/grading-on-curve-and-case-against</id><content type="html" xml:base="http://gregorygundersen.com/blog/2018/06/03/grading-on-curve-and-case-against/">&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;span face=&quot;arial, sans-serif&quot; style=&quot;color: #222222;&quot;&gt;I recently read &lt;a
+                        href=&quot;https://books.google.com/books?isbn=1400889324&quot;&gt;The Case Against Education&lt;/a&gt;, which
+                argues that
+                education pays off for individuals mostly because it sends signals about intelligence and
+                conscientiousness,
+                &lt;i&gt;not&lt;/i&gt;&amp;nbsp;because it equips students with useful skills.&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span
+                face=&quot;arial, sans-serif&quot; style=&quot;color: #222222;&quot;&gt;Here&apos;s a puzzle which was not addressed in the book,
+                but may be solved by that
+                model.&lt;/span&gt;&lt;br /&gt;&lt;/span&gt;
+&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;My university courses were mostly graded on curves. I
+                think Advanced Placement exams are also graded on curves, but I&apos;m less sure of this. At the time this
+                didn&apos;t
+                make sense to me. If the point of taking the courses was to gain skills, shouldn&apos;t there be an objective
+                scale
+                of how much skill a student gained? And shouldn&apos;t students be graded against this objective scale,
+                rather than
+                on how they place in the distribution of students who happen to take the exam on the same day as them?
+                Objective
+                grading seems especially feasible for technical courses like math, but I could imagine it being
+                plausible for
+                humanities courses like history as well.&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;But if the point of a school transcript is not so much
+                to say &quot;Look at all these skills I acquired!&quot;, but rather to say &quot;Here&apos;s where I am in the distribution
+                of
+                students who got this degree at this university&quot;, then the mystery is dissolved. The latter is obviously
+                more in
+                accordance with the signaling model.&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Of course there are other reasonable explanations for
+                grading on a curve, even in technical courses. If imposed by the department or university, it can be
+                used as a
+                defense against grade inflation. I believe it had that effect at my undergraduate university, where some
+                departments had distributions that all professors were supposed to adhere to, and those departments had
+                generally lower grades. But again, wanting to maintain the same grade distribution over many years is
+                inconsistent with that grade being an objective measure of skill gained, unless we assume zero change in
+                pedagogical methods, how much knowledge students have coming in, or just random variation in class
+                achievement.&lt;/span&gt;&lt;/div&gt;</content><author><name>garymm</name></author><category term="education" /><summary type="html">I recently read The Case Against Education, which argues that education pays off for individuals mostly because it sends signals about intelligence and conscientiousness, not&amp;nbsp;because it equips students with useful skills.&amp;nbsp;&amp;nbsp;Here&apos;s a puzzle which was not addressed in the book, but may be solved by that model. My university courses were mostly graded on curves. I think Advanced Placement exams are also graded on curves, but I&apos;m less sure of this. At the time this didn&apos;t make sense to me. If the point of taking the courses was to gain skills, shouldn&apos;t there be an objective scale of how much skill a student gained? And shouldn&apos;t students be graded against this objective scale, rather than on how they place in the distribution of students who happen to take the exam on the same day as them? Objective grading seems especially feasible for technical courses like math, but I could imagine it being plausible for humanities courses like history as well. But if the point of a school transcript is not so much to say &quot;Look at all these skills I acquired!&quot;, but rather to say &quot;Here&apos;s where I am in the distribution of students who got this degree at this university&quot;, then the mystery is dissolved. The latter is obviously more in accordance with the signaling model. Of course there are other reasonable explanations for grading on a curve, even in technical courses. If imposed by the department or university, it can be used as a defense against grade inflation. I believe it had that effect at my undergraduate university, where some departments had distributions that all professors were supposed to adhere to, and those departments had generally lower grades. But again, wanting to maintain the same grade distribution over many years is inconsistent with that grade being an objective measure of skill gained, unless we assume zero change in pedagogical methods, how much knowledge students have coming in, or just random variation in class achievement.</summary></entry><entry><title type="html">4K, HDR, and MVC 3D in plex for Kodi on Windows</title><link href="http://gregorygundersen.com/blog/2017/12/31/4k-hdr-and-mvc-3d-in-plex-for-kodi-on/" rel="alternate" type="text/html" title="4K, HDR, and MVC 3D in plex for Kodi on Windows" /><published>2017-12-31T09:31:00-08:00</published><updated>2017-12-31T09:31:00-08:00</updated><id>http://gregorygundersen.com/blog/2017/12/31/4k-hdr-and-mvc-3d-in-plex-for-kodi-on</id><content type="html" xml:base="http://gregorygundersen.com/blog/2017/12/31/4k-hdr-and-mvc-3d-in-plex-for-kodi-on/">This took me forever to set up properly, so I figured I&apos;d share it.&lt;br /&gt;For now just the basic outline. If have
+questions on a detail ask and I can answer.&lt;br /&gt;First my set-up:&lt;br /&gt;&lt;br /&gt;
+&lt;ul&gt;
+    &lt;li&gt;Windows 10 64 bit with Fall Creators Update&lt;/li&gt;
+    &lt;li&gt;GeForce GTX 960&lt;/li&gt;
+    &lt;li&gt;2016 LG OLED TV&lt;/li&gt;
+&lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;The basic ingredients are these. Note I always used 64 bit versions of everything.&lt;br /&gt;&lt;br /&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://forum.kodi.tv/showthread.php?tid=223175&quot;&gt;Kodi DSPlayer&lt;/a&gt;, I used 17.6, 64 bit&lt;/li&gt;
+    &lt;li&gt;Plex for Kodi add-on, I used 0.1.3. Install it from within Kodi.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/Nevcairiel/LAVFilters/releases&quot;&gt;LAV Filters&lt;/a&gt;, I used 0.70.2&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://madvr.com/&quot;&gt;MadVR&lt;/a&gt;, I used v0.92.10&lt;/li&gt;
+&lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;Basic steps:&lt;br /&gt;&lt;br /&gt;
+&lt;ol&gt;
+    &lt;li&gt;Install everything listed above.&lt;/li&gt;
+    &lt;li&gt;Replace Kodi DSPlayer&apos;s internal filters with the external ones: copy all the files files from &lt;span
+            style=&quot;font-family: Courier New, Courier, monospace;&quot;&gt;C:\Program Files (x86)\LAV Filters\x64&lt;/span&gt; to &lt;span
+            style=&quot;font-family: Courier New, Courier, monospace;&quot;&gt;C:\Program
+            Files\Kodi\system\players\dsplayer\LAVFilters&lt;/span&gt;, replacing files at the destination.&lt;/li&gt;
+    &lt;li&gt;In the nVidia control panel, disable stereoscopic 3D. With the current drivers, enabling it causes crashes in
+        madVR when Direct3D 11 is enabled and it goes full screen.&lt;/li&gt;
+    &lt;li&gt;I have HDR and Advanced Color disabled in the Windows 10 display settings. MadVR enables it during playback as
+        needed, and it makes the desktop look bad when it&apos;s on.&lt;/li&gt;
+    &lt;li&gt;In Plex for Kodi Settings, enable HEVC streaming.&lt;/li&gt;
+    &lt;li&gt;On the LG OLED TV settings, disable Screen Shift. This setting shifts the image around by 1 pixel every few
+        minutes, which will result in the line-interlaced image output by madVR not being aligned with the FPR (3D
+        filter), which results in the left and right eyes being swapped. Note this will increase the risk of image
+        retention.&lt;/li&gt;
+    &lt;li&gt;MadVR settings (just the required stuff, other settings you should probably mess with, lots of other guides on
+        that):&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;ul&gt;
+    &lt;ul&gt;
+        &lt;li&gt;rendering -&amp;gt; general settings: Use Direct3D 11 for presentation (required for 10-bit color output)&lt;/li&gt;
+        &lt;li&gt;rendering -&amp;gt; stereo 3D: enable stereo 3D playback. Leave everything else unchecked.&lt;/li&gt;
+        &lt;li&gt;Devices -&amp;gt; &lt;your avr=&quot;&quot; or=&quot;&quot; tv=&quot;&quot;&gt; -&amp;gt; properties: the native display bitdepth is 10 bit or higher
+                (required for 10-bit color output).&lt;/your&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Devices -&amp;gt; &lt;your avr=&quot;&quot; or=&quot;&quot; tv=&quot;&quot;&gt; -&amp;gt; properties: 3D format is Line Alternative (this works for
+                passive displays like LG OLEDs, *not* for any other kind of display)&lt;/your&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Devices -&amp;gt; &lt;your avr=&quot;&quot; or=&quot;&quot; tv=&quot;&quot;&gt; -&amp;gt; hdr: passthrough HDR content to the display, and send HDR
+                metadata to the display&lt;/your&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;blockquote style=&quot;border: none; margin: 0 0 0 40px; padding: 0px;&quot;&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;br /&gt;Hope this is helpful to
+someone else.</content><author><name>garymm</name></author><summary type="html">This took me forever to set up properly, so I figured I&apos;d share it.For now just the basic outline. If have questions on a detail ask and I can answer.First my set-up: Windows 10 64 bit with Fall Creators Update GeForce GTX 960 2016 LG OLED TV The basic ingredients are these. Note I always used 64 bit versions of everything. Kodi DSPlayer, I used 17.6, 64 bit Plex for Kodi add-on, I used 0.1.3. Install it from within Kodi. LAV Filters, I used 0.70.2 MadVR, I used v0.92.10 Basic steps: Install everything listed above. Replace Kodi DSPlayer&apos;s internal filters with the external ones: copy all the files files from C:\Program Files (x86)\LAV Filters\x64 to C:\Program Files\Kodi\system\players\dsplayer\LAVFilters, replacing files at the destination. In the nVidia control panel, disable stereoscopic 3D. With the current drivers, enabling it causes crashes in madVR when Direct3D 11 is enabled and it goes full screen. I have HDR and Advanced Color disabled in the Windows 10 display settings. MadVR enables it during playback as needed, and it makes the desktop look bad when it&apos;s on. In Plex for Kodi Settings, enable HEVC streaming. On the LG OLED TV settings, disable Screen Shift. This setting shifts the image around by 1 pixel every few minutes, which will result in the line-interlaced image output by madVR not being aligned with the FPR (3D filter), which results in the left and right eyes being swapped. Note this will increase the risk of image retention. MadVR settings (just the required stuff, other settings you should probably mess with, lots of other guides on that): rendering -&amp;gt; general settings: Use Direct3D 11 for presentation (required for 10-bit color output) rendering -&amp;gt; stereo 3D: enable stereo 3D playback. Leave everything else unchecked. Devices -&amp;gt; -&amp;gt; properties: the native display bitdepth is 10 bit or higher (required for 10-bit color output). Devices -&amp;gt; -&amp;gt; properties: 3D format is Line Alternative (this works for passive displays like LG OLEDs, *not* for any other kind of display) Devices -&amp;gt; -&amp;gt; hdr: passthrough HDR content to the display, and send HDR metadata to the display Hope this is helpful to someone else.</summary></entry><entry><title type="html">The Cookie Krank House</title><link href="http://gregorygundersen.com/blog/2017/07/30/the-cookie-krank-house/" rel="alternate" type="text/html" title="The Cookie Krank House" /><published>2017-07-30T16:32:00-07:00</published><updated>2017-07-30T16:32:00-07:00</updated><id>http://gregorygundersen.com/blog/2017/07/30/the-cookie-krank-house</id><content type="html" xml:base="http://gregorygundersen.com/blog/2017/07/30/the-cookie-krank-house/">This must be from around 2004. Rafael Miguel and Matthew Smolich had a homework assignment for religion class at
+Christian Brothers High School. The assignment was to imagine a new Catholic religious order and create a brochure for
+it. Real examples of such orders include the&amp;nbsp;De La Salle Brothers (who started our high school), Franciscans and
+Dominicans.&lt;br /&gt;&lt;br /&gt;Each order focuses on a particular &quot;charism&quot;, which essentially is a gift of a skill granted by
+God to individuals that they can go out and help others. Rafa and Matt envisioned an order called The Cookie Krank House
+which helped others through making and selling cookies. At some point they got help from Matthew Braly to do the
+drawings fro the brochure.&lt;br /&gt;&lt;br /&gt;The teacher grading the assignment did not appreciate it. She claimed that &quot;Krank
+House&quot; was synonymous with &quot;crack house&quot;, which is clearly not an appropriate thing to call a monastery. She gave Rafa
+and Matt an F on the assignment. I personally couldn&apos;t disagree more with the grade. Cookie Monster appearing in monk&apos;s
+robes with full crazy eyes alone deserves an A. But you can judge for yourselves.&lt;br /&gt;
+&lt;table align=&quot;center&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;tr-caption-container&quot;
+    style=&quot;margin-left: auto; margin-right: auto; text-align: center;&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td style=&quot;text-align: center;&quot;&gt;&lt;a
+                    href=&quot;https://3.bp.blogspot.com/-Qm5muw9V7_E/WX5sEO9BRJI/AAAAAAAA6g8/5SztdfCMYp0OdwhSZMkbtCpIPkQCkPdmwCLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Boutside.png&quot;
+                    imageanchor=&quot;1&quot; style=&quot;margin-left: auto; margin-right: auto;&quot;&gt;&lt;img border=&quot;0&quot;
+                        data-original-height=&quot;1222&quot; data-original-width=&quot;1600&quot; height=&quot;488&quot;
+                        src=&quot;https://3.bp.blogspot.com/-Qm5muw9V7_E/WX5sEO9BRJI/AAAAAAAA6g8/5SztdfCMYp0OdwhSZMkbtCpIPkQCkPdmwCLcBGAs/s640/The%2BCookie%2BKrank%2BHouse%2B-%2Boutside.png&quot;
+                        width=&quot;640&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;tr-caption&quot; style=&quot;text-align: center;&quot;&gt;Outside of the brochure. Front page is on the left, if it
+                were folded.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table align=&quot;center&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;tr-caption-container&quot;
+    style=&quot;margin-left: auto; margin-right: auto; text-align: center;&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td style=&quot;text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;1214&quot; data-original-width=&quot;1600&quot;
+                    height=&quot;484&quot;
+                    src=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s640/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
+                    style=&quot;margin-left: auto; margin-right: auto;&quot; width=&quot;640&quot; /&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;tr-caption&quot; style=&quot;text-align: center;&quot;&gt;Inside of the brochure.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a
+        href=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
+        imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;/a&gt;&lt;br /&gt;&lt;a
+        href=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
+        imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;</content><author><name>garymm</name></author><summary type="html">This must be from around 2004. Rafael Miguel and Matthew Smolich had a homework assignment for religion class at Christian Brothers High School. The assignment was to imagine a new Catholic religious order and create a brochure for it. Real examples of such orders include the&amp;nbsp;De La Salle Brothers (who started our high school), Franciscans and Dominicans.Each order focuses on a particular &quot;charism&quot;, which essentially is a gift of a skill granted by God to individuals that they can go out and help others. Rafa and Matt envisioned an order called The Cookie Krank House which helped others through making and selling cookies. At some point they got help from Matthew Braly to do the drawings fro the brochure.The teacher grading the assignment did not appreciate it. She claimed that &quot;Krank House&quot; was synonymous with &quot;crack house&quot;, which is clearly not an appropriate thing to call a monastery. She gave Rafa and Matt an F on the assignment. I personally couldn&apos;t disagree more with the grade. Cookie Monster appearing in monk&apos;s robes with full crazy eyes alone deserves an A. But you can judge for yourselves. Outside of the brochure. Front page is on the left, if it were folded. Inside of the brochure.</summary></entry><entry><title type="html">Matching donations to Against Malaria Foundation, 2016 edition</title><link href="http://gregorygundersen.com/blog/2016/12/08/matching-donations-to-against-malaria/" rel="alternate" type="text/html" title="Matching donations to Against Malaria Foundation, 2016 edition" /><published>2016-12-08T18:02:00-08:00</published><updated>2016-12-08T18:02:00-08:00</updated><id>http://gregorygundersen.com/blog/2016/12/08/matching-donations-to-against-malaria</id><content type="html" xml:base="http://gregorygundersen.com/blog/2016/12/08/matching-donations-to-against-malaria/">&lt;h3&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Short version:&lt;/span&gt;&lt;/h3&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;If you donate to
+    Against Malaria Foundation before the end of 2016, I&apos;ll match your donation, and then Google will match my match, so
+    your impact will be trebled. Just email me your receipt.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Offer valid
+    up until I exhaust my remaining 3,000 USD in Google matching funds.&lt;/span&gt;&lt;br /&gt;&lt;span
+    style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;The easiest way to donate is through
+    &lt;a href=&quot;https://www.paypal.com/fundraiser/105865137050618816/charity/113632&quot;&gt;PayPal&lt;/a&gt;. PayPal will waive all the
+    fees and even match 1% of your donation.&lt;/span&gt;&lt;br /&gt;
+&lt;h3&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Long version:&lt;/span&gt;&lt;/h3&gt;
+&lt;div style=&quot;line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;&quot;&gt;&lt;span
+        style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;&lt;span
+            style=&quot;font-family: inherit;&quot;&gt;Imagine there’s a child stuck in a burning building. You see the flames, you
+            hear the screams. Imagine what it would feel like to run into the building, grab the child and deliver the
+            child to his mother’s arms. I know I would feel great about being able to help someone like
+            that.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;span
+            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span
+            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;Fortunately there aren’t
+            burning buildings all around me, but there are opportunities to save dying children that are a lot less
+            dangerous.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;span
+            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span
+            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;Malaria killed an
+            estimated &lt;/span&gt;&lt;a href=&quot;http://www.who.int/gho/malaria/epidemic/deaths/en/&quot;
+            style=&quot;text-decoration: none;&quot;&gt;&lt;span
+                style=&quot;background-color: white; color: #1155cc; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;627,000
+                people&lt;/span&gt;&lt;/a&gt;&lt;span
+            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt; in 2012. &lt;/span&gt;&lt;a
+            href=&quot;http://www.givewell.org/charities/against-malaria-foundation&quot; style=&quot;text-decoration: none;&quot;&gt;&lt;span
+                style=&quot;background-color: white; color: #1155cc; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;GiveWell&lt;/span&gt;&lt;/a&gt;&lt;span
+            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt; rates the Against Malaria
+            Foundation as the most cost-effective charity for saving and improving human lives. They estimate that for
+            every $3,500 given to AMF, one person will be saved from death. This week, I will match your contributions
+            to AMF and so will Google. Let’s all save some lives together!&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Check out&amp;nbsp;&lt;a
+            href=&quot;http://www.econtalk.org/archives/2015/09/william_macaski.html&quot;&gt;William MacAskill on
+            EconTalk&lt;/a&gt;&amp;nbsp;for a great discussion of these issues.&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;</content><author><name>garymm</name></author><category term="charity" /><summary type="html">Short version:If you donate to Against Malaria Foundation before the end of 2016, I&apos;ll match your donation, and then Google will match my match, so your impact will be trebled. Just email me your receipt.Offer valid up until I exhaust my remaining 3,000 USD in Google matching funds.The easiest way to donate is through PayPal. PayPal will waive all the fees and even match 1% of your donation. Long version: Imagine there’s a child stuck in a burning building. You see the flames, you hear the screams. Imagine what it would feel like to run into the building, grab the child and deliver the child to his mother’s arms. I know I would feel great about being able to help someone like that. Fortunately there aren’t burning buildings all around me, but there are opportunities to save dying children that are a lot less dangerous. Malaria killed an estimated 627,000 people in 2012. GiveWell rates the Against Malaria Foundation as the most cost-effective charity for saving and improving human lives. They estimate that for every $3,500 given to AMF, one person will be saved from death. This week, I will match your contributions to AMF and so will Google. Let’s all save some lives together! Check out&amp;nbsp;William MacAskill on EconTalk&amp;nbsp;for a great discussion of these issues.</summary></entry><entry><title type="html">I regret getting a master’s degree</title><link href="http://gregorygundersen.com/blog/2016/07/31/i-regret-getting-masters-degree/" rel="alternate" type="text/html" title="I regret getting a master’s degree" /><published>2016-07-31T20:27:00-07:00</published><updated>2016-07-31T20:27:00-07:00</updated><id>http://gregorygundersen.com/blog/2016/07/31/i-regret-getting-masters-degree</id><content type="html" xml:base="http://gregorygundersen.com/blog/2016/07/31/i-regret-getting-masters-degree/">As I write this, I am two weeks away from finishing my master&apos;s degree. I think getting it has not been and will not be
+worth the costs.&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;div&gt;Some background on my situation: I am getting my degree from Stanford in Computer Science. I have worked at Google
+    the whole time. I&apos;ve taken 15 classes (10 weeks each) over 5 years. No research or thesis, just classes.&lt;/div&gt;
+&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;h2&gt;Reasons to get a degree&lt;/h2&gt;
+&lt;div&gt;These are the main reasons I can think of to get a degree and why they&apos;re not good enough reasons for me.&lt;/div&gt;
+&lt;h3&gt;To gain useful skills&lt;/h3&gt;
+&lt;div&gt;Many people think one learns skills in school which can be used to do useful stuff outside of school. My
+    objections:&lt;/div&gt;
+&lt;h4&gt;Degrees are like a cable package&lt;/h4&gt;
+&lt;div&gt;To get my degree, I had to take 15 classes and I had limited freedom in choosing those 15. Of course each class is
+    itself a bundle of topics, and I have no freedom to choose what topics get covered in each class. Sticking with the
+    cable TV analogy, this is like having to watch an entire week&apos;s worth of a TV channel. I estimate at least 1/3 of
+    the material I learned was totally useless for me. And as for the remaining 2/3, see the next point.&lt;/div&gt;
+&lt;h4&gt;I forget things that I don&apos;t use&lt;/h4&gt;
+&lt;div&gt;This is a lesson that I should have learned very early in this whole process. Stanford requires master&apos;s students
+    who don&apos;t have a bachelor&apos;s from Stanford to take certain &quot;foundation&quot; undergraduate level CS classes to complete
+    the master&apos;s degree.&lt;/div&gt;
+&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;One&apos;s adviser has the power to waive these requirements. I looked over the list of foundation requirements and
+    thought &quot;I took all those classes already in undergrad, no need to take them again&quot;. So I went into my adviser&apos;s
+    office and asked him to waive the requirements. He responded by verbally quizzing me on the spot about several of
+    the topics. I miserably failed to recall basic details of these classes that I had gotten A&apos;s in a few years before.
+&lt;/div&gt;
+&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;At that point, it had been 2 years since I finished my bachelor&apos;s in CS, and I had been working full-time as a
+    software engineer since then, yet &lt;b&gt;I hadn&apos;t used any of the stuff, so I forgot most of it pretty thoroughly&lt;/b&gt;.
+&lt;/div&gt;
+&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div&gt;Since then I&apos;ve become ever more skeptical that it&apos;s useful to take classes now in the hopes of using the knowledge
+    several years down the road. Maybe it will be useful some day, but if it&apos;s not any time soon, I may as well not have
+    taken the class at all. My brain just doesn&apos;t work that way.&lt;/div&gt;
+&lt;h3&gt;To signal personal qualities to employers&lt;/h3&gt;There&apos;s a lot of evidence that employers value people with degrees not
+because of the useful skills one gains in school, but because the completion of the degree shows one has certain
+personal qualities: intelligence, perseverance, cooperativeness, conformity, etc. For more on this evidence, check out
+this &lt;a href=&quot;http://www.econtalk.org/archives/2014/04/bryan_caplan_on.html&quot; target=&quot;_blank&quot;&gt;awesome episode of
+    EconTalk&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;I agree that employers think this way and thus degrees have some value. However in my
+particular case, I already had a job at one of the most sought-after companies in my field. Even if I were to switch
+companies but stay in software engineering, I&apos;m skeptical many employers would care about my degree now that I have 7
+years of job experience from well-regarded companies. However I grant that this is an empirical question and I could
+very well be proven wrong.&lt;br /&gt;
+&lt;h3&gt;For the love of learning&lt;/h3&gt;I often enjoy learning new things, but doing it on someone else&apos;s schedule can be very
+stressful. Over the course of my degree, I had more than one occassion where I had to stay up all night to finish a
+shcool assignment and then I had a regular work day ahead of me. Even when I got to bed at a reasonable hour, doing all
+the school work on nights and weekends after working a full work day / week really killed a lot of the fun for me. Also,
+learning with other people is more fun than learning alone, but because I did the degree part-time and mostly
+off-campus, I didn&apos;t get much contact with other students. Which brings me to the next point...&lt;br /&gt;
+&lt;h3&gt;To meet people&lt;/h3&gt;
+&lt;div&gt;I didn&apos;t get to meet many other students or hang out with the ones I did meet because I did my degree part-time,
+    remotely and while working full time. This is in stark contrast to my undergrad experience, where I formed wonderful
+    long-lasting relationships with people who I took classes with or who were just around campus or in the same dorm at
+    the same time that I was.&lt;/div&gt;
+&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;h2&gt;Reasons to not get a degree&lt;/h2&gt;
+&lt;h3&gt;Money&lt;/h3&gt;
+&lt;h3&gt;
+    &lt;div style=&quot;font-size: medium; font-weight: normal;&quot;&gt;My degree cost about $54,000 in tuition. My employer paid for
+        most of it, but I still paid for some of it and honestly I&apos;d rather my employer used the money on&amp;nbsp;&lt;a
+            href=&quot;https://www.google.com/loon/&quot; target=&quot;_blank&quot;&gt;project loon&lt;/a&gt;.&lt;/div&gt;
+&lt;/h3&gt;
+&lt;h3&gt;Time&lt;/h3&gt;
+&lt;div&gt;Because I was studying, I had less time for sleep, exercise, work, friends and family. These things are all
+    extremely valuable to me. Given all my above objections, it should be clear I think most of the time I spent getting
+    this degree would have been better spent on one of those other things. Now that I&apos;m almost done, I&apos;m not at all
+    excited about how much knowledge or prestige I will have. I&apos;m excited that I&apos;ll have more time to spend on more
+    important things.&lt;/div&gt;
+&lt;h3&gt;&lt;br /&gt;&lt;/h3&gt;</content><author><name>garymm</name></author><category term="education" /><summary type="html">As I write this, I am two weeks away from finishing my master&apos;s degree. I think getting it has not been and will not be worth the costs. Background Some background on my situation: I am getting my degree from Stanford in Computer Science. I have worked at Google the whole time. I&apos;ve taken 15 classes (10 weeks each) over 5 years. No research or thesis, just classes. Reasons to get a degree These are the main reasons I can think of to get a degree and why they&apos;re not good enough reasons for me. To gain useful skills Many people think one learns skills in school which can be used to do useful stuff outside of school. My objections: Degrees are like a cable package To get my degree, I had to take 15 classes and I had limited freedom in choosing those 15. Of course each class is itself a bundle of topics, and I have no freedom to choose what topics get covered in each class. Sticking with the cable TV analogy, this is like having to watch an entire week&apos;s worth of a TV channel. I estimate at least 1/3 of the material I learned was totally useless for me. And as for the remaining 2/3, see the next point. I forget things that I don&apos;t use This is a lesson that I should have learned very early in this whole process. Stanford requires master&apos;s students who don&apos;t have a bachelor&apos;s from Stanford to take certain &quot;foundation&quot; undergraduate level CS classes to complete the master&apos;s degree. One&apos;s adviser has the power to waive these requirements. I looked over the list of foundation requirements and thought &quot;I took all those classes already in undergrad, no need to take them again&quot;. So I went into my adviser&apos;s office and asked him to waive the requirements. He responded by verbally quizzing me on the spot about several of the topics. I miserably failed to recall basic details of these classes that I had gotten A&apos;s in a few years before. At that point, it had been 2 years since I finished my bachelor&apos;s in CS, and I had been working full-time as a software engineer since then, yet I hadn&apos;t used any of the stuff, so I forgot most of it pretty thoroughly. Since then I&apos;ve become ever more skeptical that it&apos;s useful to take classes now in the hopes of using the knowledge several years down the road. Maybe it will be useful some day, but if it&apos;s not any time soon, I may as well not have taken the class at all. My brain just doesn&apos;t work that way. To signal personal qualities to employersThere&apos;s a lot of evidence that employers value people with degrees not because of the useful skills one gains in school, but because the completion of the degree shows one has certain personal qualities: intelligence, perseverance, cooperativeness, conformity, etc. For more on this evidence, check out this awesome episode of EconTalk.I agree that employers think this way and thus degrees have some value. However in my particular case, I already had a job at one of the most sought-after companies in my field. Even if I were to switch companies but stay in software engineering, I&apos;m skeptical many employers would care about my degree now that I have 7 years of job experience from well-regarded companies. However I grant that this is an empirical question and I could very well be proven wrong. For the love of learningI often enjoy learning new things, but doing it on someone else&apos;s schedule can be very stressful. Over the course of my degree, I had more than one occassion where I had to stay up all night to finish a shcool assignment and then I had a regular work day ahead of me. Even when I got to bed at a reasonable hour, doing all the school work on nights and weekends after working a full work day / week really killed a lot of the fun for me. Also, learning with other people is more fun than learning alone, but because I did the degree part-time and mostly off-campus, I didn&apos;t get much contact with other students. Which brings me to the next point... To meet people I didn&apos;t get to meet many other students or hang out with the ones I did meet because I did my degree part-time, remotely and while working full time. This is in stark contrast to my undergrad experience, where I formed wonderful long-lasting relationships with people who I took classes with or who were just around campus or in the same dorm at the same time that I was. Reasons to not get a degree Money My degree cost about $54,000 in tuition. My employer paid for most of it, but I still paid for some of it and honestly I&apos;d rather my employer used the money on&amp;nbsp;project loon. Time Because I was studying, I had less time for sleep, exercise, work, friends and family. These things are all extremely valuable to me. Given all my above objections, it should be clear I think most of the time I spent getting this degree would have been better spent on one of those other things. Now that I&apos;m almost done, I&apos;m not at all excited about how much knowledge or prestige I will have. I&apos;m excited that I&apos;ll have more time to spend on more important things.</summary></entry><entry><title type="html">Econtalk transcript: Housing and Regulation</title><link href="http://gregorygundersen.com/blog/2015/04/25/econtalk-transcript-housing-and/" rel="alternate" type="text/html" title="Econtalk transcript: Housing and Regulation" /><published>2015-04-25T11:09:00-07:00</published><updated>2015-04-25T11:09:00-07:00</updated><id>http://gregorygundersen.com/blog/2015/04/25/econtalk-transcript-housing-and</id><content type="html" xml:base="http://gregorygundersen.com/blog/2015/04/25/econtalk-transcript-housing-and/">An excerpt from &lt;a href=&quot;http://www.econtalk.org/archives/2015/04/scott_sumner_on.html&quot;&gt;EconTalk&lt;/a&gt;&amp;nbsp;on an issue I
+am passionate about.&lt;br /&gt;I started transcribing around 54 minutes in.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Scott Sumner:&lt;/b&gt;&lt;br /&gt;So there&apos;s
+this perception that housing was really overbuilt... during the housing boom. And you know that&apos;s certainly true in some
+locations. But the data doesn&apos;t really tend to support that. Rents have been rising, actually fairly rapidly in recent
+decades... faster than people&apos;s incomes in many cases. And people that invest in rental apartments have done very very
+well in recent years. And one of the reasons for that is that there&apos;s a lot of restrictions on building now, so building
+since 2008 has been at very low levels, and yet the population continues to grow. So people are going more and more into
+rental units, they&apos;re having difficulty getting mortgages.&lt;br /&gt;&lt;br /&gt;So that part of the real estate sector, rental
+units, is doing very well, and rents are rising and in many of the most prosperous parts of the country, you can
+actually argue that there&apos;s too little housing because of regulations that make it difficult to build, and so that
+pushes up prices and rents in those areas. So again we have a market that&apos;s kind of complex and I think the story that
+people focused on a few years ago was the over building in a few locations, but nation-wide you could argue that we
+actually aren&apos;t building enough housing, and as a result, the costs are going up, which means the returns to land lords
+in New York City and California and so on are actually very high right now.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Russ Roberts:&lt;/b&gt;&lt;br /&gt;And
+home owners generally, right?&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Scott:&lt;/b&gt;&lt;br /&gt;Yeah, they get an implicit, you know, rent on the... And
+they may profit if the price of their home goes up in those areas.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Russ:&lt;/b&gt;&lt;br /&gt;Which they have
+dramatically, in many of them. And ... you raise a great point, which is the restriction on supply part of this story.
+It depresses me greatly when people say things like, &quot;We need to build some low-income housing in such and such a city&quot;
+or &quot;We need to have more opportunities for the middle class to have comfortable places to live.&quot; Well, in New York, in
+any city, again take the two places that, I&apos;ll take the three that I have some acquaintance with, New York, Washington
+and California. These are three places where it&apos;s very expensive to live if you&apos;re a young person starting out in your
+life and you&apos;d like to either own a house, or just rent an apartment. And the question is why, because it wasn&apos;t always?
+And people say things like, &quot;Well, California has great weather&quot;. Well, it had great weather in 1962. &quot;New York&apos;s a
+great city&quot;. It was a great city in 1960. It had some issues, yes. But why is it that as these places have grown in
+their attractiveness, the mix of housing has, I suspect, moved greatly toward the high-end. And, uh, that I think is due
+to regulation. And it&apos;s a terrible result, and capitalism or markets get blamed. &quot;The market doesn&apos;t produce low income
+housing, middle-income housing, it only produces high-end.&quot; Well there&apos;s a reason for that, there&apos;s a reason it&apos;s so
+profitable.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Scott:&lt;/b&gt;&lt;br /&gt;I think a lot of people on the left don&apos;t fully realize how much of some of
+the issues they worry about is actually driven by regulation. One is inequality. And I&apos;m working on an article on that
+topic right now. But also this investment question we were looking at may be part of it as well. And it&apos;s just a lot
+harder to get approval for all sorts of building projects. One is you know the housing, as we&apos;ve been talking
+about.&lt;br /&gt;&lt;br /&gt;But even things that people on the left tend to favor, you know, government projects, like high speed
+rail. In Massachusetts they fought endlessly to build a wind farm off the cost. Well these days these get tied up in the
+courts forever, and it&apos;s very hard to get a project actually built. A major, like, infrastructure project of that
+sort.&lt;br /&gt;&lt;br /&gt;Because of the increasing complexity of regulation, land restrictions, environmental rules and so-on,
+it&apos;s just harder for us to have the sort of economy we had in the 1960s where we just build highways and housing
+developments all across the country whenever there was a demand for it in a certain location. And you know, there are
+costs of that. One is there&apos;s less investment in the economy. I would argue it worsens inequality in a number of ways as
+well. It&apos;s hurting renters right now, relative to home-owners. But that&apos;s something I think people on the left don&apos;t
+fully recognize when they think about the effects of regulation. They don&apos;t think about the connection with inequality.
+...&lt;br /&gt;&lt;b&gt;&lt;br /&gt;&lt;/b&gt;&lt;b&gt;Russ:&lt;/b&gt;&lt;br /&gt;I was just in Israel for two weeks. They have security issues of course, but on
+the domestic side the thing people are most worried about is the price of food and housing. There have been protests in
+the street. Netanyahu almost lost this last election because of his failure to do anything about it. He&apos;s made lots of
+pledges, he&apos;s going to fix it. But the reason that there&apos;s a food and housing crisis in Israel is pretty straight
+forward. There&apos;s a lot of barriers to importing food and to creating retailing in food, so food&apos;s really expensive.
+There are cartels, literally, in some parts of food supply that keep the food price high, and growing. And that&apos;s,
+that&apos;s easily fixed if you wanted to, but politically it may be very difficult.&lt;br /&gt;&lt;br /&gt;And with housing, the
+government owns a lot of the housing, a lot of the land in Israel. And to the extent that it doesn&apos;t, it makes it hard
+to use it privately. So, recently I was talking to a guy who&apos;s building a house. He said it&apos;s going to take 3 and a half
+years. When I told that story to someone else, he laughed, he said &quot;Oh, he &lt;i&gt;thinks&lt;/i&gt; it&apos;s going to take three and
+half years. Now, when it takes maybe half a decade to build a house, you&apos;re pretty confident that rental prices are
+going to be pretty high in a growing economy. Which is your point. And one way to quantify that would be to try to see
+how much longer it takes to build a house in Israel today than say ten or twenty years ago. I don&apos;t know if it&apos;s
+changed. It may have gotten a little bit shorter, but in the face of growing demand, it may be off set by
+that.&lt;br /&gt;&lt;br /&gt;And similarly in the United States, when we talk about regulation in real estate, which is enormous in
+major urban areas, I&apos;d like to see some measures: how long does it take? How many bureaucracies do you have to go
+through? We&apos;re still much better than Israel, but I&apos;d say we&apos;re probably still in the ball-park. Maybe it&apos;s not the
+three and half year thing to build a house, but I assume if you wanted to start a real estate development in New York,
+it&apos;s a major political investment. And as you say, that rewards high-end, large firms. And if you&apos;re going to have to
+incur a large fixed cost, you&apos;re probably going to build on the higher-end. So I assume that&apos;s a part of the problem.
+That&apos;s a story, I&apos;d like to see some evidence.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Scott:&lt;/b&gt;&lt;br /&gt;Yeah, there&apos;s actually quite a bit of
+evidence that the cost is large. One piece is that in places like Los Angeles, if you have say a ten thousand square
+foot piece of land that is zoned for 2 units rather than 1 unit, it&apos;s worth vastly more money in the market place. And
+so that gives you a pretty good estimate of what that particular zoning rule, if it is only zoned for one unit, it tells
+you that zoning rule is costing quite a bit of money. In the hundreds of thousands.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Russ:&lt;/b&gt;&lt;br /&gt;...
+Real estate, and the cost of renting, or the return to home owners who already own homes. And their ability to use the
+political process to protect those investments seems to me to be a really big problem, that doesn&apos;t get enough
+attention.</content><author><name>garymm</name></author><category term="economics" /><summary type="html">An excerpt from EconTalk&amp;nbsp;on an issue I am passionate about.I started transcribing around 54 minutes in.Scott Sumner:So there&apos;s this perception that housing was really overbuilt... during the housing boom. And you know that&apos;s certainly true in some locations. But the data doesn&apos;t really tend to support that. Rents have been rising, actually fairly rapidly in recent decades... faster than people&apos;s incomes in many cases. And people that invest in rental apartments have done very very well in recent years. And one of the reasons for that is that there&apos;s a lot of restrictions on building now, so building since 2008 has been at very low levels, and yet the population continues to grow. So people are going more and more into rental units, they&apos;re having difficulty getting mortgages.So that part of the real estate sector, rental units, is doing very well, and rents are rising and in many of the most prosperous parts of the country, you can actually argue that there&apos;s too little housing because of regulations that make it difficult to build, and so that pushes up prices and rents in those areas. So again we have a market that&apos;s kind of complex and I think the story that people focused on a few years ago was the over building in a few locations, but nation-wide you could argue that we actually aren&apos;t building enough housing, and as a result, the costs are going up, which means the returns to land lords in New York City and California and so on are actually very high right now.Russ Roberts:And home owners generally, right?Scott:Yeah, they get an implicit, you know, rent on the... And they may profit if the price of their home goes up in those areas.Russ:Which they have dramatically, in many of them. And ... you raise a great point, which is the restriction on supply part of this story. It depresses me greatly when people say things like, &quot;We need to build some low-income housing in such and such a city&quot; or &quot;We need to have more opportunities for the middle class to have comfortable places to live.&quot; Well, in New York, in any city, again take the two places that, I&apos;ll take the three that I have some acquaintance with, New York, Washington and California. These are three places where it&apos;s very expensive to live if you&apos;re a young person starting out in your life and you&apos;d like to either own a house, or just rent an apartment. And the question is why, because it wasn&apos;t always? And people say things like, &quot;Well, California has great weather&quot;. Well, it had great weather in 1962. &quot;New York&apos;s a great city&quot;. It was a great city in 1960. It had some issues, yes. But why is it that as these places have grown in their attractiveness, the mix of housing has, I suspect, moved greatly toward the high-end. And, uh, that I think is due to regulation. And it&apos;s a terrible result, and capitalism or markets get blamed. &quot;The market doesn&apos;t produce low income housing, middle-income housing, it only produces high-end.&quot; Well there&apos;s a reason for that, there&apos;s a reason it&apos;s so profitable.Scott:I think a lot of people on the left don&apos;t fully realize how much of some of the issues they worry about is actually driven by regulation. One is inequality. And I&apos;m working on an article on that topic right now. But also this investment question we were looking at may be part of it as well. And it&apos;s just a lot harder to get approval for all sorts of building projects. One is you know the housing, as we&apos;ve been talking about.But even things that people on the left tend to favor, you know, government projects, like high speed rail. In Massachusetts they fought endlessly to build a wind farm off the cost. Well these days these get tied up in the courts forever, and it&apos;s very hard to get a project actually built. A major, like, infrastructure project of that sort.Because of the increasing complexity of regulation, land restrictions, environmental rules and so-on, it&apos;s just harder for us to have the sort of economy we had in the 1960s where we just build highways and housing developments all across the country whenever there was a demand for it in a certain location. And you know, there are costs of that. One is there&apos;s less investment in the economy. I would argue it worsens inequality in a number of ways as well. It&apos;s hurting renters right now, relative to home-owners. But that&apos;s something I think people on the left don&apos;t fully recognize when they think about the effects of regulation. They don&apos;t think about the connection with inequality. ...Russ:I was just in Israel for two weeks. They have security issues of course, but on the domestic side the thing people are most worried about is the price of food and housing. There have been protests in the street. Netanyahu almost lost this last election because of his failure to do anything about it. He&apos;s made lots of pledges, he&apos;s going to fix it. But the reason that there&apos;s a food and housing crisis in Israel is pretty straight forward. There&apos;s a lot of barriers to importing food and to creating retailing in food, so food&apos;s really expensive. There are cartels, literally, in some parts of food supply that keep the food price high, and growing. And that&apos;s, that&apos;s easily fixed if you wanted to, but politically it may be very difficult.And with housing, the government owns a lot of the housing, a lot of the land in Israel. And to the extent that it doesn&apos;t, it makes it hard to use it privately. So, recently I was talking to a guy who&apos;s building a house. He said it&apos;s going to take 3 and a half years. When I told that story to someone else, he laughed, he said &quot;Oh, he thinks it&apos;s going to take three and half years. Now, when it takes maybe half a decade to build a house, you&apos;re pretty confident that rental prices are going to be pretty high in a growing economy. Which is your point. And one way to quantify that would be to try to see how much longer it takes to build a house in Israel today than say ten or twenty years ago. I don&apos;t know if it&apos;s changed. It may have gotten a little bit shorter, but in the face of growing demand, it may be off set by that.And similarly in the United States, when we talk about regulation in real estate, which is enormous in major urban areas, I&apos;d like to see some measures: how long does it take? How many bureaucracies do you have to go through? We&apos;re still much better than Israel, but I&apos;d say we&apos;re probably still in the ball-park. Maybe it&apos;s not the three and half year thing to build a house, but I assume if you wanted to start a real estate development in New York, it&apos;s a major political investment. And as you say, that rewards high-end, large firms. And if you&apos;re going to have to incur a large fixed cost, you&apos;re probably going to build on the higher-end. So I assume that&apos;s a part of the problem. That&apos;s a story, I&apos;d like to see some evidence.Scott:Yeah, there&apos;s actually quite a bit of evidence that the cost is large. One piece is that in places like Los Angeles, if you have say a ten thousand square foot piece of land that is zoned for 2 units rather than 1 unit, it&apos;s worth vastly more money in the market place. And so that gives you a pretty good estimate of what that particular zoning rule, if it is only zoned for one unit, it tells you that zoning rule is costing quite a bit of money. In the hundreds of thousands.Russ:... Real estate, and the cost of renting, or the return to home owners who already own homes. And their ability to use the political process to protect those investments seems to me to be a really big problem, that doesn&apos;t get enough attention.</summary></entry><entry><title type="html">Octave silently downcasts doubles to ints in some cases</title><link href="http://gregorygundersen.com/blog/2014/10/31/octave-silently-downcasts-doubles-to/" rel="alternate" type="text/html" title="Octave silently downcasts doubles to ints in some cases" /><published>2014-10-31T18:26:00-07:00</published><updated>2014-10-31T18:26:00-07:00</updated><id>http://gregorygundersen.com/blog/2014/10/31/octave-silently-downcasts-doubles-to</id><content type="html" xml:base="http://gregorygundersen.com/blog/2014/10/31/octave-silently-downcasts-doubles-to/">&lt;div class=&quot;post_region_text&quot; id=&quot;questionText&quot;
+    style=&quot;background-color: white; color: #333333; font-size: 12.7272720336914px; line-height: 14.7727270126343px; margin: 5px 0px;&quot;&gt;
+    &lt;div
+        style=&quot;font-family: &apos;Helvetica Neue&apos;, Helvetica, Arial, sans-serif; margin-bottom: 2px; min-height: 15px; word-break: break-word;&quot;&gt;
+        My answers for a recent homework assignment were wrong because octave silently downcasts doubles to ints in some
+        cases. Specifically when constructing a matrix from one vector of doubles and one vector of ints.&lt;/div&gt;
+    &lt;div
+        style=&quot;font-family: &apos;Helvetica Neue&apos;, Helvetica, Arial, sans-serif; margin-bottom: 2px; min-height: 15px; word-break: break-word;&quot;&gt;
+        for example:&lt;/div&gt;
+    &lt;div style=&quot;margin-bottom: 2px; min-height: 15px; word-break: break-word;&quot;&gt;&lt;span
+            style=&quot;font-family: Courier New, Courier, monospace;&quot;&gt;&amp;gt; doubles = [1.01; -0.01];&lt;br /&gt;&amp;gt; ints =
+            [int32(10); int32(0)];&lt;/span&gt;&lt;/div&gt;
+    &lt;div style=&quot;margin-bottom: 2px; min-height: 15px; word-break: break-word;&quot;&gt;&lt;span
+            style=&quot;font-family: Courier New, Courier, monospace;&quot;&gt;&amp;gt; [doubles ints]&lt;br /&gt;ans =&lt;/span&gt;&lt;/div&gt;
+    &lt;div style=&quot;margin-bottom: 2px; min-height: 15px; word-break: break-word;&quot;&gt;&lt;span
+            style=&quot;font-family: Courier New, Courier, monospace;&quot;&gt;1 10&lt;br /&gt;0 0&lt;/span&gt;&lt;/div&gt;
+    &lt;div
+        style=&quot;font-family: &apos;Helvetica Neue&apos;, Helvetica, Arial, sans-serif; margin-bottom: 2px; min-height: 15px; word-break: break-word;&quot;&gt;
+        &lt;br /&gt;
+    &lt;/div&gt;
+    &lt;div
+        style=&quot;font-family: &apos;Helvetica Neue&apos;, Helvetica, Arial, sans-serif; margin-bottom: 2px; min-height: 15px; word-break: break-word;&quot;&gt;
+        Just a PSA.&lt;/div&gt;
+&lt;/div&gt;</content><author><name>garymm</name></author><category term="programming" /><category term="octave" /><summary type="html">My answers for a recent homework assignment were wrong because octave silently downcasts doubles to ints in some cases. Specifically when constructing a matrix from one vector of doubles and one vector of ints. for example: &amp;gt; doubles = [1.01; -0.01];&amp;gt; ints = [int32(10); int32(0)]; &amp;gt; [doubles ints]ans = 1 100 0 Just a PSA.</summary></entry></feed>
