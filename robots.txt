@@ -1,1 +1,1 @@
-Sitemap: http://gregorygundersen.com/sitemap.xml
+Sitemap: http://garymm.org/sitemap.xml
