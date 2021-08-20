@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2021-08-20T10:05:07-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering</title><link href="http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour/" rel="alternate" type="text/html" title="Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering" /><published>2020-10-02T14:04:00-07:00</published><updated>2020-10-02T14:04:00-07:00</updated><id>http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour</id><content type="html" xml:base="http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour/">&lt;p&gt;I&apos;ve been spending quite a bit of my free time studying machine learning over the past 3 months. After spending quite
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2021-08-20T10:06:19-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Seeing Coworkers In Person Again</title><link href="http://garymm.org/blog/2021/08/20/seeing-coworkers-in-person-again/" rel="alternate" type="text/html" title="Seeing Coworkers In Person Again" /><published>2021-08-20T00:00:00-07:00</published><updated>2021-08-20T00:00:00-07:00</updated><id>http://garymm.org/blog/2021/08/20/seeing-coworkers-in-person-again</id><content type="html" xml:base="http://garymm.org/blog/2021/08/20/seeing-coworkers-in-person-again/">&lt;p&gt;In March I started a new job at Microsoft and in May I started managing a team.
+I have been pleasantly surprised at how happy and productive I have been
+working entirely remotely for the past ~17 months, but I was eager to meet people
+in person. I live in the SF Bay Area, but my manager and almost all of the people
+I manage are in the Seattle area, so a few weeks ago I travelled to meet them.&lt;/p&gt;
+
+&lt;p&gt;I worked from my team’s office area for a few days. Despite it being almost
+completely empty, I did bump into one of my team members and we
+went out to lunch together and had a great time. Besides that serendipitous encounter,
+I arranged a meeting with my manager in a park, a meeting with a peer in a different park,
+and a cruise on lakes Union and Washington for my team.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2021-08-20-seeing-coworkers-in-person-again-cruise.jpeg&quot; alt=&quot;cruising with my team&quot; width=&quot;700&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It seems likely to me that even after COVID-19 is a distant memory, a lot of
+work will be done by geographically distributed teams. I believe wise companies
+will take some of the money they save on office real estate and spend it instead
+on paying for team members to regularly get together in person. In my
+experience, in-person gatherings catalyze emotional bonds that can persist for a
+long time and help make remote interactions more pleasant and productive. I
+first noticed this years ago back when I still worked in an office every day,
+but I was working closely with people who sat in an office in a different
+continent. During my first business trip to visit them I felt very guilty for
+wasting the company’s money. In terms of concrete business goals, I didn’t do
+much on that trip to justify the travel bill. But over time I found that it was
+easier for me to think of those coworkers as real people who I cared about
+because we had hung out together and gotten to know each other, and that helped
+me work with them for years afterwards.&lt;/p&gt;
+
+&lt;p&gt;By the way, if you’d like to join my team and meet me in person once in a while,
+I’m hiring! &lt;a href=&quot;https://careers.microsoft.com/us/en/job/1036775/SENIOR-SOFTWARE-ENGINEER&quot;&gt;Apply
+here&lt;/a&gt;
+or send me an email or LinkedIn message. The job listing says the job is only
+available in specific locations, but if those don’t work for you, I can be
+flexible for the right candidate.&lt;/p&gt;</content><author><name>garymm</name></author><category term="work" /><summary type="html">In March I started a new job at Microsoft and in May I started managing a team. I have been pleasantly surprised at how happy and productive I have been working entirely remotely for the past ~17 months, but I was eager to meet people in person. I live in the SF Bay Area, but my manager and almost all of the people I manage are in the Seattle area, so a few weeks ago I travelled to meet them.</summary></entry><entry><title type="html">Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering</title><link href="http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour/" rel="alternate" type="text/html" title="Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering" /><published>2020-10-02T14:04:00-07:00</published><updated>2020-10-02T14:04:00-07:00</updated><id>http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour</id><content type="html" xml:base="http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour/">&lt;p&gt;I&apos;ve been spending quite a bit of my free time studying machine learning over the past 3 months. After spending quite
   a bit of time deciding what learning materials to start with, I decided on fast.ai&apos;s Practical Deep Learning for
   Coders (I saw the&amp;nbsp;&lt;a href=&quot;https://course19.fast.ai/&quot;&gt;2019 version&lt;/a&gt;). Overall I highly recommend the course,
   and I&apos;m planning to go back and do the 2020 version of it.&lt;/p&gt;
@@ -369,30 +403,4 @@ attention.</content><author><name>garymm</name></author><category term="economic
 pro-market and pro-business policies. Some key quotes:&lt;br /&gt;&quot;Today, one in every three jobs requires a
 license.&quot;&lt;br /&gt;&quot;You always hear this idea that business is opposed to regulation... Businesses are often in favor of
 regulation, in fact they love it... it helps make them more money!&quot;&lt;br /&gt;&lt;br /&gt;I encourage you to listen to the whole
-thing.&lt;br /&gt;&lt;br /&gt;</content><author><name>garymm</name></author><category term="economics" /><summary type="html">Re-listening to one of my favorite episodes of Planet Money, &quot;Why It&apos;s Illegal To Braid Hair Without A License&quot; reminds me of the difference between pro-market and pro-business policies. Some key quotes:&quot;Today, one in every three jobs requires a license.&quot;&quot;You always hear this idea that business is opposed to regulation... Businesses are often in favor of regulation, in fact they love it... it helps make them more money!&quot;I encourage you to listen to the whole thing.</summary></entry><entry><title type="html">The Sultan of Kinakuta and Larry Page on government regulations</title><link href="http://garymm.org/blog/2014/07/12/the-sultan-of-kinakuta-and-larry-page/" rel="alternate" type="text/html" title="The Sultan of Kinakuta and Larry Page on government regulations" /><published>2014-07-12T10:04:00-07:00</published><updated>2014-07-12T10:04:00-07:00</updated><id>http://garymm.org/blog/2014/07/12/the-sultan-of-kinakuta-and-larry-page</id><content type="html" xml:base="http://garymm.org/blog/2014/07/12/the-sultan-of-kinakuta-and-larry-page/">I noticed an interesting parallel between two statements made by powerful figures.&lt;br /&gt;First the Sultan of
-Kinakuta:&lt;br /&gt;&lt;br /&gt;
-&lt;blockquote class=&quot;tr_bq&quot;&gt;Perhaps I can make an analogy to &lt;a href=&quot;http://en.wikipedia.org/wiki/Go_(game)&quot;
-        target=&quot;_blank&quot;&gt;Go&lt;/a&gt;... At the beginning of the game, the pieces are arranged in a pattern that is simple and
-    easy to understand. The players make small decisions, one turn at a time, each decision fairly simple in and of
-    itself, and made for reasons that can be easily understood, even by a &amp;nbsp;novice. But over the course of many such
-    turns, the pattern develops such great complexity that only the finest minds... can comprehend it... The analogy is
-    clear. Our policies concerning free speech, telecommunications, and cryptography have evolved from a series of
-    simple, rational decisions. But they are today so complex that no one can understand them, even in one single
-    country, to say nothing of all countries taken together.&lt;/blockquote&gt;
-&lt;blockquote class=&quot;tr_bq&quot;&gt;&lt;/blockquote&gt;Next, Larry Page, CEO of Google, in response to a question &quot;What would be
-government 2.0 in your mind?&quot;:&lt;br /&gt;
-&lt;blockquote class=&quot;tr_bq&quot;&gt;I do worry that when I look at... our interactions with governments or the things we get
-    interested in, you know spectrum or whatever, that it becomes pretty illogical. And I think the reasons aren&apos;t that
-    the people aren&apos;t good and that they&apos;re not trying to do good things. I mean most people you talk to in government,
-    you know, are in there for the right reasons, they&apos;re not there for the pay, typically. They&apos;re there because they
-    want to make the world better. But I think the set of rules that we have... One thing that I would observe is that
-    the complexity of government increases over time. So you just look at all of our democracies around the world... The
-    amount of regulation and law that we have, increases without bound.&lt;/blockquote&gt;
-&lt;blockquote class=&quot;tr_bq&quot;&gt;So I was trying to reduce the complexity in Google. I was thinking, we&apos;re getting to be a
-    bigger company, let&apos;s take our rules and regulations, let&apos;s ... make sure they stay at fifty pages, so that people
-    can actually read it. But the problem that I discovered about that was that by reference we include the entire law
-    and regulation of the entire world. Because we&apos;re a multinational company, we operate everywhere, our employees,
-    what they do affects everything and so in some sense we&apos;d have to read the 100 million pages of law and regulation
-    that are out there....&lt;/blockquote&gt;The first quote is from a novel published in 1999: &lt;a
-    href=&quot;http://books.google.com/books?id=nilEngEACAAJ&quot; target=&quot;_blank&quot;&gt;Cryptonomicon&lt;/a&gt;. The second quote is from a
-&lt;a href=&quot;http://www.youtube.com/watch?v=Wdnp_7atZ0M#t=2202&quot; target=&quot;_blank&quot;&gt;video&lt;/a&gt; made in 2014.</content><author><name>garymm</name></author><category term="economics" /><summary type="html">I noticed an interesting parallel between two statements made by powerful figures.First the Sultan of Kinakuta: Perhaps I can make an analogy to Go... At the beginning of the game, the pieces are arranged in a pattern that is simple and easy to understand. The players make small decisions, one turn at a time, each decision fairly simple in and of itself, and made for reasons that can be easily understood, even by a &amp;nbsp;novice. But over the course of many such turns, the pattern develops such great complexity that only the finest minds... can comprehend it... The analogy is clear. Our policies concerning free speech, telecommunications, and cryptography have evolved from a series of simple, rational decisions. But they are today so complex that no one can understand them, even in one single country, to say nothing of all countries taken together. Next, Larry Page, CEO of Google, in response to a question &quot;What would be government 2.0 in your mind?&quot;: I do worry that when I look at... our interactions with governments or the things we get interested in, you know spectrum or whatever, that it becomes pretty illogical. And I think the reasons aren&apos;t that the people aren&apos;t good and that they&apos;re not trying to do good things. I mean most people you talk to in government, you know, are in there for the right reasons, they&apos;re not there for the pay, typically. They&apos;re there because they want to make the world better. But I think the set of rules that we have... One thing that I would observe is that the complexity of government increases over time. So you just look at all of our democracies around the world... The amount of regulation and law that we have, increases without bound. So I was trying to reduce the complexity in Google. I was thinking, we&apos;re getting to be a bigger company, let&apos;s take our rules and regulations, let&apos;s ... make sure they stay at fifty pages, so that people can actually read it. But the problem that I discovered about that was that by reference we include the entire law and regulation of the entire world. Because we&apos;re a multinational company, we operate everywhere, our employees, what they do affects everything and so in some sense we&apos;d have to read the 100 million pages of law and regulation that are out there....The first quote is from a novel published in 1999: Cryptonomicon. The second quote is from a video made in 2014.</summary></entry></feed>
+thing.&lt;br /&gt;&lt;br /&gt;</content><author><name>garymm</name></author><category term="economics" /><summary type="html">Re-listening to one of my favorite episodes of Planet Money, &quot;Why It&apos;s Illegal To Braid Hair Without A License&quot; reminds me of the difference between pro-market and pro-business policies. Some key quotes:&quot;Today, one in every three jobs requires a license.&quot;&quot;You always hear this idea that business is opposed to regulation... Businesses are often in favor of regulation, in fact they love it... it helps make them more money!&quot;I encourage you to listen to the whole thing.</summary></entry></feed>
