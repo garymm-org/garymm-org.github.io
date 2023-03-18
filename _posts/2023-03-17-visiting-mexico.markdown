@@ -92,7 +92,7 @@ But just avoid the bright spots and you’ll probably be fine!
 Here are some homicide rates in a few cities in Mexico that I recommend in green, compared with some cities in the USA and France you might be familiar with:
 
 <img src="/assets/2023-03-17-visiting-mexico/city-homicides-2020.svg"
-alt="homicide rates in different cities (2020)">
+alt="homicide rates in different cities (2020)" class="wrap">
 
 We can see the city with the highest homicide rate that I’ve recommended is Oaxaca, which has a rate significantly less than Washington DC. In both Washington DC and Oaxaca I think the places a tourist is likely to visit are very safe.
 
@@ -231,13 +231,13 @@ We can see these correlate somewhat with the homicide data but not as well as I�
 All Homicide rates are per 100k population. Mexico data is 2022 data from [El Crimen](https://elcri.men/en/violence-map/) (Note: I spent a few minutes trying to get the official data for previous years from [datos.gob.mx](https://datos.gob.mx/) but I was unable to find it. If you can find it please let me know how). USA homicide numbers are [from the FBI](https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/crime-trend). Where the FBI provided counts rather than rates, I divided by population numbers from the 2020 [US Census](https://www.census.gov/quickfacts). For the USA I included both 2019 and 2020 because there was [a spike in homicides in 2020](https://astralcodexten.substack.com/p/what-caused-the-2020-homicide-spike) in the USA, so it’s hard to know which year is a more useful comparison. I threw in Paris for fun (I’m not sure if I interpreted the data correctly. I downloaded it from [here](https://www.data.gouv.fr/fr/datasets/crimes-et-delits-enregistres-par-les-services-de-gendarmerie-et-de-police-depuis-2012/#_) and summed rows 5-8, columns RD-RS).
 
 <img src="/assets/2023-03-17-visiting-mexico/city-homicides-2019.svg"
-alt="homicide rates in different cities (2019)">
+alt="homicide rates in different cities (2019)" class="wrap">
 
 <img src="/assets/2023-03-17-visiting-mexico/city-homicides-2020.svg"
-alt="homicide rates in different cities (2020)">
+alt="homicide rates in different cities (2020)" class="wrap">
 
 <img src="/assets/2023-03-17-visiting-mexico/state-homicides-2019.svg"
-alt="homicide rates in different states (2019)">
+alt="homicide rates in different states (2019)" class="wrap">
 
 <img src="/assets/2023-03-17-visiting-mexico/state-homicides-2020.svg"
-alt="homicide rates in different states (2020)">
+alt="homicide rates in different states (2020)" class="wrap">
