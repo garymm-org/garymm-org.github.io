@@ -19,8 +19,6 @@ See <https://github.com/yegor256/jekyll-github-deploy/blob/master/README.md>.
 
 ## TODO:
 
-
-* Add email subscription button.
 * Add discuss on buttons:
   * Twitter
   * Hacker News
