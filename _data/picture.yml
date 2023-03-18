@@ -1,0 +1,4 @@
+# configuration for http://rbuchberger.github.io/jekyll_picture_tag/
+presets:
+  default:
+    formats: [webp]
