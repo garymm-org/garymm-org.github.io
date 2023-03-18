@@ -12,7 +12,8 @@ bundle exec jekyll serve --livereload --trace --incremental
 To push to GitHub pages, run:
 
 ```sh
-jgd
+git push # push to master
+env JEKYLL_ENV=production jgd
 ```
 
 See <https://github.com/yegor256/jekyll-github-deploy/blob/master/README.md>.
