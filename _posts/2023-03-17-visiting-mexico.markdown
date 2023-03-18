@@ -10,7 +10,6 @@ tags:
 
 Mexico is an amazing place to visit, but a lot of people I know have never been, or haven’t been in a long time, despite enjoying international travel. In this post I’ll explain why I think you should consider visiting and address some common reasons people don’t go, including safety. This is not a travel guide, but I’ll provide a few recommendations for where to go and a few tips for how to do it.
 
-
 If you’re the type of person who goes for celebrity endorsements:
 <div align="center">
 {% twitter https://twitter.com/tylercowen/status/799655526384615424 %}
@@ -87,7 +86,7 @@ Here’s a map from [El Crimen](https://elcri.men/en/cluster-map/), where bright
 %}
 
 One of the brightest spots is Guaymas, Sonora, which has a homicide rate of 115 / 100k population.
-But just avoid the bright spots and you’ll probably be fine!
+That's way more murdery than I would be comfortable with, but just avoid the bright spots and you’ll probably be fine!
 
 Here are some homicide rates in a few cities in Mexico that I recommend in green, compared with some cities in the USA and France you might be familiar with:
 
