@@ -1,0 +1,5 @@
+name: garymm.org
+channels:
+  - conda-forge
+dependencies:
+  - libvips # for jekyll_picture_tag

@@ -19,12 +19,18 @@ body {
 
 a {
   color: rgba(0, 0, 0, 0.8);
+
   &:hover {
     text-decoration: none;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: @font-family;
 }
 
@@ -58,10 +64,12 @@ h1 {
     text-decoration: none;
     border-bottom: none;
     font-size: 12px;
+
     &:hover {
       font-weight: bold;
     }
   }
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -81,20 +89,25 @@ h1 {
   h4 {
     font-family: @font-family;
   }
+
   .bylines {
 
     .byline {
       margin-right: 20px;
       float: left;
-      h3, p {
+
+      h3,
+      p {
         margin: 0;
         font-family: @font-family;
       }
+
       h3 {
         font-size: 9px;
         text-transform: uppercase;
         color: rgba(0, 0, 0, 0.5);
       }
+
       p {
         font-size: 10px;
         line-height: 1.6em;
@@ -133,8 +146,9 @@ h1 {
       padding-top: 15px;
       display: inline-block;
       font-size: 13px;
-      line-heigh: 1.2em;
+      line-height: 1.2em;
     }
+
     .caption-label {
       font-weight: bold;
     }
@@ -187,6 +201,7 @@ h1 {
 
   .quote {
     margin-bottom: 30px;
+
     p {
       margin-bottom: 5px;
     }
@@ -200,6 +215,7 @@ h1 {
     margin-top: 4px;
     margin-bottom: 4px;
   }
+
   .post-title {
     display: inline-block;
     font-weight: bold;
@@ -208,11 +224,13 @@ h1 {
     a {
       font-size: 18px;
       text-decoration: none;
+
       &:hover {
-      	text-decoration: underline;
+        text-decoration: underline;
       }
     }
   }
+
   .post-subtitle {
     font-size: 14px;
     margin-top: 0;
@@ -225,9 +243,10 @@ h1 {
     position: relative;
     right: 100px;
     color: rgba(0, 0, 0, 0.5);
-    width: 100px;  // Critical, otherwise the header overlaps the first post.
-    margin-bottom: -24px;  // Manually picked to remove space created by header.
+    width: 100px; // Critical, otherwise the header overlaps the first post.
+    margin-bottom: -24px; // Manually picked to remove space created by header.
   }
+
   #y2017.year,
   #y2018.year {
     margin-top: 0px;
