@@ -19,7 +19,12 @@ went out to lunch together and had a great time. Besides that serendipitous enco
 I arranged a meeting with my manager in a park, a meeting with a peer in a different park,
 and a cruise on lakes Union and Washington for my team.
 
-<img src="/assets/2021-08-20-seeing-coworkers-in-person-again-cruise.jpeg" alt="cruising with my team" width="700"/>
+{%
+   picture
+   2021-08-20-seeing-coworkers-in-person-again-cruise.jpeg
+   --alt cruising with my team
+   --img class="wrap"
+%}
 
 It seems likely to me that even after COVID-19 is a distant memory, a lot of
 work will be done by geographically distributed teams. I believe wise companies
