@@ -185,7 +185,7 @@ I have had fun by seeking out very specific local experiences. Some that I’ve 
 
 ### Use the internet {#use-the-internet}
 
-You can buy a cheap SIM in the airport, or get an [eSIM](https://esimdb.com/mexico) before leaving home. 3G coverage is pretty widespread (though not ubiquitous in very rural areas away from major roads) and 4G is very good in all cities and major highways. (Footnote: [Here’s the Telcel coverage map](https://www.telcel.com/mundo_telcel/quienes-somos/corporativo/mapas-cobertura) (I think has the widest coverage)).
+You can buy a cheap SIM in the airport, or get an [eSIM](https://esimdb.com/mexico) before leaving home. 3G coverage is pretty widespread (though not ubiquitous in very rural areas away from major roads) and 4G is very good in all cities and major highways ([here’s the coverage map](https://www.telcel.com/mundo_telcel/quienes-somos/corporativo/mapas-cobertura) for Telcel, one of the carriers with the widest coverage)).
 
 Fixed-line internet is fast and widely available in cities.
 
