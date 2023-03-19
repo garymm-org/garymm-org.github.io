@@ -117,17 +117,53 @@ These are not the only places worth going to. These are some of the places that 
 
 Balance of culture and nature. Pre-columbian ruins (e.g., [Chichén Itzá](https://en.wikipedia.org/wiki/Chichen_Itza)), beautiful [cenotes](https://en.wikipedia.org/wiki/Cenote) (pools in limestone caves where you can swim), excellent birding (e.g., in [Ría Lagartos](https://en.wikipedia.org/wiki/R%C3%ADa_Lagartos_Biosphere_Reserve)), great food (e.g., [marquesitas](https://en.wikipedia.org/wiki/Marquesita), [sikil paak](https://www.seriouseats.com/sikil-paak-from-yucatan), [panuchos](https://en.wikipedia.org/wiki/Panucho)), and the safe, walkable and charming capital city, [Mérida](https://en.wikipedia.org/wiki/M%C3%A9rida,_Yucat%C3%A1n).
 
+{%
+picture
+2023-03-17-visiting-mexico/chichen-itza.jpg
+--img class="wrap"
+--alt chichen itza in Yucatán state
+%}
+
+<div align="center"><i>Chichén Itzá. Not my favorite Mayan ruin, but perhaps the most photogenic. Credit <a href="https://www.instagram.com/p/CoaimXmprgu/">visitmeridamx</a></i></div>
+
 ### Baja California Sur ([W](https://en.wikipedia.org/wiki/Baja_California_Sur))
 
 Low on culture, high on nature. Release newly hatched sea turtles (e.g., in [Todos Santos](https://en.wikipedia.org/wiki/Todos_Santos,_Baja_California_Sur)), get really close to mother and child whales (in the [San Ignacio Lagoon](https://en.wikipedia.org/wiki/San_Ignacio_Lagoon)), kayak and swim with seals and dolphins (e.g., near [Loreto](https://en.wikipedia.org/wiki/Loreto,_Baja_California_Sur)), hike in the desert to find prehistoric petroglyphs, snorkel, SCUBA dive, or surf. If you want to stay at a fancy resort, there are lots of those in [Los Cabos](https://en.wikipedia.org/wiki/Los_Cabos_Municipality).
 
+{%
+picture
+2023-03-17-visiting-mexico/baja-dolphins.jpg
+--img class="wrap"
+--alt dolphins in Loreto Bay, Baja California Sur
+%}
+
+<div align="center"><i>Dolphins in Loreto Bay. I took this one.</i></div>
+
 ### Mexico City ([W](https://en.wikipedia.org/wiki/Mexico_City))
 
-High on culture, low on nature. Pre-columbian ruins (both in the middle of the city e.g., [Templo Mayor](https://en.wikipedia.org/wiki/Templo_Mayor) and just outside in [Teotihuacán](https://en.wikipedia.org/wiki/Teotihuacan)), amazing architecture (e.g., [University City](https://en.wikipedia.org/wiki/Ciudad_Universitaria,_Mexico_City)), great museums (e.g., [National Museum of Anthropology](https://en.wikipedia.org/wiki/National_Museum_of_Anthropology_(Mexico)), [Palacio de Cultura Banamex](https://www.yelp.com/biz/palacio-de-cultura-banamex-m%C3%A9xico)), religious pilgrimage sites (e.g., [Basilica of Our Lady of Guadalupe](https://en.wikipedia.org/wiki/Basilica_of_Our_Lady_of_Guadalupe)), fancy restaurants (e.g., [Contramar](http://www.contramar.com.mx/)), food from every region of Mexico, and excellent Lebanese food.
+High on culture, low on nature. Pre-columbian ruins (both in the middle of the city e.g., [Templo Mayor](https://en.wikipedia.org/wiki/Templo_Mayor) and just outside in [Teotihuacán](https://en.wikipedia.org/wiki/Teotihuacan)), amazing architecture (e.g., the [Postal Palace](https://en.wikipedia.org/wiki/Palacio_de_Correos_de_M%C3%A9xico), [University City](https://en.wikipedia.org/wiki/Ciudad_Universitaria,_Mexico_City)), great museums (e.g., [National Museum of Anthropology](https://en.wikipedia.org/wiki/National_Museum_of_Anthropology_(Mexico)), [Palacio de Cultura Banamex](https://www.yelp.com/biz/palacio-de-cultura-banamex-m%C3%A9xico)), religious pilgrimage sites (e.g., [Basilica of Our Lady of Guadalupe](https://en.wikipedia.org/wiki/Basilica_of_Our_Lady_of_Guadalupe)), fancy restaurants (e.g., [Contramar](http://www.contramar.com.mx/)), food from every region of Mexico, and excellent Lebanese food (e.g., [Al Andalus](https://www.opentable.com/r/al-andalus-san-angel-ciudad-de-mexico)).
+
+{%
+picture
+2023-03-17-visiting-mexico/mexico-city-post-office.jpg
+--img class="wrap"
+--alt postal palace in Mexico City. Credit fourbroadsabroad.com
+%}
+
+<div align="center"><i>Postal Palace in Mexico City. If my local post office looked like this I wouldn't even mind the customer service. Credit <a href="https://www.fourbroadsabroad.com/mexico">Four Broads Abroad</a>.</i></div>
 
 ### Oaxaca state ([W](https://en.wikipedia.org/wiki/Oaxaca))
 
 High on culture, medium on nature. The best food in Mexico (e.g., [mole](https://en.wikipedia.org/wiki/Oaxacan_cuisine#Seven_moles)), pre-columbian ruins (e.g., [Mitla](https://en.wikipedia.org/wiki/Mitla)), a vibrant economy of artisan goods such as ceramics (e.g., the people in [San Bartolo Coyotepec](https://en.wikipedia.org/wiki/San_Bartolo_Coyotepec) who have been making pottery for 2000 years), relaxing beach towns (e.g., [Puerto Escondido](https://en.wikipedia.org/wiki/Puerto_Escondido,_Oaxaca)), excellent bird-watching (e.g., at the [Laguna de Manialtepec](https://en.wikipedia.org/wiki/Laguna_de_Manialtepec)), a walkable and beautiful capital city ([Oaxaca City](https://en.wikipedia.org/wiki/Oaxaca_City)) with loads of free museums (e.g., the [Textile Museum](https://www.google.com/maps/search/?api=1&query=Museo%20Textil%20at%20Hidalgo%20917%2C%20Centro%20Hist%C3%B3rico%2C%20Oaxaca%20de%20Ju%C3%A1rez%2C%20M%C3%A9xico%2C%20C.P.%2068000)).
+
+{%
+picture
+2023-03-17-visiting-mexico/azompa-oaxaca-pottery.jpg
+--img class="wrap"
+--alt a woman making pottery in Azompa, Oaxaca
+%}
+
+<div align="center"><i>A woman making pottery in Azompa, Oaxaca. My wife took this when we visited the workshop.</i></div>
 
 ## General tips {#general-tips}
 
@@ -174,35 +210,11 @@ To learn about the history of civilization in Mexico and how it fits into the wo
 
 Some data from [Our World in Data](https://ourworldindata.org/grapher/death-rates-road-incidents?tab=chart&country=USA~MEX~FRA) for 2019:
 
+__Death rate from road injuries / 100k population__
 
-<table>
-  <tr>
-   <td>
-   </td>
-   <td><strong>Death rate from road injuries / 100k population</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>France
-   </td>
-   <td>5.8
-   </td>
-  </tr>
-  <tr>
-   <td>USA
-   </td>
-   <td>11.1
-   </td>
-  </tr>
-  <tr>
-   <td>Mexico
-   </td>
-   <td>16.8
-   </td>
-  </tr>
-</table>
-
-
+* France: 5.8
+* USA: 11.1
+* Mexico: 16.8
 
 ### State department recommendations {#state-department-recommendations}
 
