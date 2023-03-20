@@ -30,6 +30,13 @@
         ml('account', '371042');
     </script>
     <!-- End MailerLite Universal -->
+    <!-- TODO: I can't get this to work in blog.css for some reason -->
+    <style>
+        .twitter svg {
+            height: 0.8em;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -45,7 +52,11 @@
                         <p>{{ page.date | date: "%Y-%m-%d" }}</p>
                     </div>
                     <div align="right">
-                        <button class="ml-onclick-form" onclick="ml('show', 'cmkM4M', true)">email signup</button>
+                        {% if page.tweet_url and page.tweet_url != "" and page.tweet_url != nil %}
+                        {% include discuss_on_twitter.html %}
+                        {% endif %}
+                        <button class="ml-onclick-form" onclick="ml('show', 'IUXI0E', true)">get new posts via
+                            email</button>
                     </div>
                 </div>
                 <div class="clear"></div>

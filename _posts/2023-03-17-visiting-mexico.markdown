@@ -6,6 +6,7 @@ author: garymm
 tags:
 - travel
 - crime
+tweet_url: https://twitter.com/garymigu/status/1637594065205338112
 ---
 
 Mexico is an amazing place to visit, but a lot of people I know have never been, or haven’t been in a long time, despite enjoying international travel. In this post I’ll explain why I think you should consider visiting and address some common reasons people don’t go, including safety. This is not a travel guide, but I’ll provide a few recommendations for where to go and a few tips for how to do it.
