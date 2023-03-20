@@ -26,7 +26,7 @@ It’s close! There are lots of flights, and they’re not too long. E.g., flyin
 
 #### Relatively affordable
 
-The [Trivago Hotel Price Index](https://businessblog.trivago.com/trivago-hotel-price-index/) says the average hotel room in Mexico City in 2023-03 is $110 ($249 in San Francisco, $258 in Paris). A seven-course tasing menu with drinks at the amazing [Criollo](https://www.nytimes.com/2017/01/27/travel/criollo-oaxaca-elrique-olvera-restaurant-review.html) in Oaxaca costs less than $50.
+The [Trivago Hotel Price Index](https://businessblog.trivago.com/trivago-hotel-price-index/) says the average hotel room in Mexico City in 2023-03 is $110 ($249 in San Francisco, $258 in Paris). A seven-course tasting menu with drinks at the amazing [Criollo](https://www.nytimes.com/2017/01/27/travel/criollo-oaxaca-elrique-olvera-restaurant-review.html) in Oaxaca costs less than $50.
 
 #### Loads of history
 
