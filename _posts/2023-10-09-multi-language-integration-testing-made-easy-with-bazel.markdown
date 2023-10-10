@@ -6,6 +6,7 @@ author: garymm
 tags:
 - programming
 - bazel
+tweet_url: https://twitter.com/garymigu/status/1711536345783677213
 ---
 
 When developing mlflow-go, a Go client for MLFlow, I realized integration testing was crucial to ensure correctness. Since the official MLFlow server and client are written in Python, such an integration test would involve multiple languages. Bazel made it easy to set up and automate a multi-language test.
