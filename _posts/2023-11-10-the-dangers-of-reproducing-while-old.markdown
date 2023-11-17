@@ -60,7 +60,7 @@ Pre-implantation genetic testing is done on embryos that have been fertilized in
 Note that for almost everything else, the outcome being tested for is bad, whereas here it is live birth rate, or the odds of a child being born alive after an embryo is transferred into a woman.
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Mother’s age</strong>
    </td>
@@ -121,7 +121,7 @@ This chart from [Magnus et al.](https://www.bmj.com/content/364/bmj.l869) shows 
 And here’s some data from [du Fossé et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7456349/) on the risk by father’s age. For the absolute risk, I assumed the absolute risk for the reference age is 10%, which seems to be about the value for a 27 year old woman from the chart above.
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Father’s age</strong>
    </td>
@@ -182,7 +182,7 @@ And here’s some data from [du Fossé et al.](https://www.ncbi.nlm.nih.gov/pmc/
 People with a huge range of abilities and tendencies are all diagnosed with autism, and there’s a lot of debate about the accuracy of many diagnoses. However “profound autism” is a diagnosis with much clearer criteria. [Hughes et al.](https://www.researchgate.net/publication/370128310_The_Prevalence_and_Characteristics_of_Children_With_Profound_Autism_15_Sites_United_States_2000-2016) defined profound autism “as children with autism who were either nonverbal or minimally verbal or had an (intelligence quotient) IQ &lt;50”. That study estimated the prevalence of profound autism in the USA as:
 
 
-<table>
+<table border="1">
   <tr>
    <td>Female
    </td>
@@ -214,7 +214,7 @@ The studies I found on the impact of parental age did not restrict themselves to
 Here are the results from [Durkin et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2638544/), who looked at both the father’s and mother’s ages. For the absolute risk for fathers, I used the number of autism spectrum disorder cases / size of the “Birth Chort Comparison Group” for the father’s or mother’s reference age, extracted from table 3 of the paper. For fathers that’s 322 / 67,080 = 0.48%. For mother’s that’s 366 / 75,053 = 0.49%. These numbers are close to the overall risk of profound autism from Hughes et al. above, but this study considered any autism diagnosis, so something is probably wrong either with my calculation or with one or both of these studies.
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Father’s age</strong>
    </td>
@@ -275,7 +275,7 @@ Here are the results from [Durkin et al.](https://www.ncbi.nlm.nih.gov/pmc/artic
 
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Mother’s age</strong>
    </td>
@@ -332,7 +332,7 @@ Note from paper: “Because the increased risk was similar for ages 35–39 and 
 And here are results from [another study](https://doi.org/10.1038/mp.2010.121) that looked only at the father’s age:
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Father’s age</strong>
    </td>
@@ -388,7 +388,7 @@ This chart shows absolute risks from that same study:
 To compute absolute risk, I took the prevalence number from above and then divided it by 5.66 (the middle of the odds ratio CI for mothers aged >= 35) to get 1.79 % / 5.66 = 0.32%.
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Father’s age</strong>
    </td>
@@ -427,7 +427,7 @@ To compute absolute risk, I took the prevalence number from above and then divid
 From [Fang et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/)
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Mother’s age</strong>
    </td>
@@ -479,7 +479,7 @@ From [Ahn et al.](https://obgyn.onlinelibrary.wiley.com/doi/10.1111/aogs.14339)
 I didn’t find an easy way to calculate absolute risk.
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Father’s age</strong>
    </td>
@@ -510,7 +510,7 @@ I didn’t find an easy way to calculate absolute risk.
 From [Fang et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/)
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Mother’s age</strong>
    </td>
@@ -550,7 +550,7 @@ Note: this seems really high to me. Maybe most of these are not very serious, or
 I didn’t find an easy way to calculate absolute risk.
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Father’s age</strong>
    </td>
@@ -581,7 +581,7 @@ I didn’t find an easy way to calculate absolute risk.
 From [Fang et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/)
 
 
-<table>
+<table border="1">
   <tr>
    <td><strong>Mother’s age</strong>
    </td>
