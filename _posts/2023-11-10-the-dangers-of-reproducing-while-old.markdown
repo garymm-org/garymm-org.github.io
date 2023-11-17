@@ -11,26 +11,37 @@ tags:
 
 # The dangers of reproducing while old
 
-I had my first child when I was 36 years old, which made me want to understand the risks of having children at different ages. Before looking into this, my impression was that the main biological problems with old-age parenthood had to do with not having the necessary health and vigor to care for young’uns. And I had also heard that older women have trouble getting pregnant. While those are real issues, there are many others worthy of consideration.
+I had my first child when I was 36 years old, which made me want to understand the risks of having children at different ages. Before looking into this, my impression was that the main biological problems with old-age parenthood had to do with not having the necessary health and vigor to care for young’uns, and I had heard that older women have trouble getting pregnant. While those are real issues, there are many others worthy of consideration.
 
-My read of the evidence is that the risks of miscarriage and serious health problems for children, including autism and birth defects, increase significantly with parental (both paternal and maternal) age. The risk starts rising at around 30 years old, rises gradually through to about 40 years old, and then sharply after that.
+My read of the evidence is that the risks of miscarriage and serious health problems for children, including autism and birth defects, increase significantly with parental (both paternal and maternal) age. The data I could find for most risks is not very fine-grained and not very precise, but I think this qualitative description matches the data: Risks start rising at around 30 years old for both mothers and fathers, rises gradually through about 35 for mothers and 40 for fathers, and then sharply after that.
 
-Interestingly, the ages at which things start to go wrong are similar for fathers and mothers, but the mechanisms are different. Sperm cells are produced throughout a man’s life, and each time a new cell is produced, there is a chance of a genetic mutation. The sperm are produced by copying the DNA of other short-lived cells, which are themselves produced in the same way, so mutations accumulate. Women’s egg cells, however, are all present when a woman is born, but the problems in eggs accumulate during the eggs’ lives rather than during reproduction.
+Interestingly, the ages at which things start to go wrong are similar for fathers and mothers, but the mechanisms are different. Sperm cells are produced throughout a man’s life, and each time a new cell is produced, there is a chance of a genetic mutation. Sperm are produced by copying the DNA of other short-lived cells, which are themselves produced in the same way, so mutations accumulate. Women’s egg cells, however, are all present when a woman is born, but over time they accumulate damage.
 
-If this is correct, then there are two ways to reduce these risks: have kids when young, or use frozen gametes from younger people. If you’re already in the danger zone and don’t have frozen gametes, pre-implantation genetic testing may be able to screen out embryos that have certain genetic defects, and thus reduce the risk of some bad outcomes.
+If this is correct, then there are two ways to reduce these risks: have kids when young, or use frozen gametes from your younger selves. If you’re already in the danger zone and don’t have frozen gametes, pre-implantation genetic testing may be able to screen out embryos that have certain genetic defects, and thus reduce the risk of some bad outcomes.
+
+My advice:
+
+
+
+* If you want to have kids at some later age, and that later age is >= 35 for a woman or >= 40 for a man, freeze your gametes ASAP.
+* If you’re already past those age thresholds and you have the means, consider in-vitro fertilization so you can take advantage of pre-implantation genetic testing.
+
+In “the dangers” section below I summarize some evidence on how parental age interacts with various risks. What’s not obvious is the relationship between the different risks. That is, are they mostly independent of each other, or is a child born with e.g., a heart defect much more likely to be autistic? They are not independent. For example, [Eide et al.](https://www.nature.com/articles/pr2006181) find a significant correlation between birth defects and intellectual disability. So if you want to know “what are the odds my kid comes out totally healthy”, I think just looking at the highest risk and ignoring the others is reasonable.
 
 If you’re interested in the details supporting the above conclusions, read on.
 
 
-## A note on jargon
+## Technical jargon
 
 Skip this if you know these terms.
 
 
 ### Prevalence
 
-The prevalence is
-(number of people with the outcome) / (number of people in the entire population).
+The prevalence is what fraction of the population has the outcome of interest. Basically:
+
+(number of people with the outcome) / (number of people that were studied).
+
 
 ### Odds ratio
 
@@ -44,7 +55,7 @@ A 95% CI (confidence interval) is a range of values. Under certain assumptions[^
 
 ## Pre-implantation genetic testing
 
-Pre-implantation genetic testing is done on embryos that have been fertilized in-vitro before implanting them into a woman. [This study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9674466/) looks at the effects of testing for aneuploidy, which is a specific kind of genetic defect which often results in miscarriage or abortion. It finds significant benefits for women >= 35 years old, but not for younger women.
+Pre-implantation genetic testing is done on embryos that have been fertilized in-vitro before implanting them into a woman (more details [here](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children#But_how_do_they_even_get_an_embryo_s_DNA_)). After developing for about 10 days, embryos have enough cells that some can be removed for genetic testing. [Sordia-Hernandez et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9674466/) look at the effects of testing for aneuploidy, which is a specific kind of genetic defect which often results in miscarriage or abortion. It finds significant benefits for women >= 35 years old, but not for younger women.
 
 Note that for almost everything else, the outcome being tested for is bad, whereas here it is live birth rate, or the odds of a child being born alive after an embryo is transferred into a woman.
 
@@ -53,7 +64,7 @@ Note that for almost everything else, the outcome being tested for is bad, where
   <tr>
    <td><strong>Mother’s age</strong>
    </td>
-   <td>Live birth rate odds ratio 95% CI (relative to no genetic testing)
+   <td><strong>Live birth rate odds ratio 95% CI (relative to no genetic testing)</strong>
    </td>
   </tr>
   <tr>
@@ -71,7 +82,26 @@ Note that for almost everything else, the outcome being tested for is bad, where
 </table>
 
 
-Very recently, some companies have started offering more in-depth genetic screening for embryos, such as sequencing the whole genome and assessing risk for things like breast cancer. The companies offering this service claim all sorts of benefits, but I don’t think it’s been independently evaluated, and it’s probably too new to truly evaluate, since there’s a very small number of people alive who were screened in this way. [Here’s a post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children) that’s very enthusiastic about such screening, and [my response trying to summarize the skeptical position](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children?commentId=uiFXXRpdXCzXjmfj8).
+Very recently, some companies have started offering more in-depth genetic screening for embryos, such as sequencing the whole genome and assessing risk for polygenic traits, meaning influenced by many genes. The companies offering this service claim all sorts of benefits, such as reducing the risk of cancer and diabetes, but I don’t think it’s been independently evaluated, and it’s probably too new to truly evaluate, since there’s a very small number of people alive who were screened in this way. [Here’s Gene Smith's post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children) that’s very enthusiastic about such screening and tells you how to go about it, and [my response trying to summarize a skeptical position](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children?commentId=uiFXXRpdXCzXjmfj8).
+
+So if you’re older and you don’t have frozen gametes, should you do IVF just so you can do pre-implantation genetic testing?
+
+Pros:
+
+
+
+* Very effective at detecting aneuploidy, and thus increasing live birth rate per pregnancy.
+* You can choose the child’s sex.
+* If you opt for whole-genome sequencing, it is possible to reduce other health risks and possibly improve other desirable traits like IQ. Again, see [Gene Smith’s post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children) for more details on this.
+* I haven’t seen any strong evidence that IVF results in worse health outcomes. Note there are many studies that show worse outcomes for IVF, but since IVF is largely used by people who have fertility problems, and differences seem to disappear entirely when controlling for this. [More here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3650450/).
+
+Cons:
+
+
+
+* Expensive in time and money (maybe $25,000 in 2023).
+* Will be more expensive and / or less effective for women who produce fewer eggs per retrieval, which is mostly older women.
+* There is [some evidence](https://academic.oup.com/humupd/article/25/2/137/5316072?login=false) that IVF results in differences in the embryo that might possibly result in less healthy people (vs old-fashioned conception). I think the odds that this results in worse outcomes are quite low, but it’s worth mentioning.
 
 
 ## The dangers
@@ -79,11 +109,7 @@ Very recently, some companies have started offering more in-depth genetic screen
 
 ### Miscarriage
 
-
-#### Risk by maternal age
-
-Y-axis is the proportion of pregnancies that end in miscarriage:
-
+This chart from [Magnus et al.](https://www.bmj.com/content/364/bmj.l869) shows the absolute risk by mother’s age. Y-axis is the proportion of pregnancies that end in miscarriage:
 
 {%
    picture
@@ -92,13 +118,7 @@ Y-axis is the proportion of pregnancies that end in miscarriage:
    --img class="wrap"
 %}
 
-
-[Source.](https://www.bmj.com/content/364/bmj.l869)
-
-
-#### Risk by paternal age
-
-For the absolute risk, I just assumed the baseline risk is 10%, which seems to be about the value for a 27 year old woman.
+And here’s some data from [du Fossé et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7456349/) on the risk by father’s age. For the absolute risk, I assumed the absolute risk for the reference age is 10%, which seems to be about the value for a 27 year old woman from the chart above.
 
 
 <table>
@@ -153,15 +173,13 @@ For the absolute risk, I just assumed the baseline risk is 10%, which seems to b
 </table>
 
 
-[Source.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7456349/)
-
 
 ### Autism
 
 
 #### Prevalence
 
-People with a huge range of abilities and tendencies are all diagnosed with autism, and there’s a lot of debate about the accuracy of many diagnoses. However “profound autism” is a diagnosis with much clearer criteria. In [the study I looked at](https://www.researchgate.net/publication/370128310_The_Prevalence_and_Characteristics_of_Children_With_Profound_Autism_15_Sites_United_States_2000-2016), “profound autism was defined as children with autism who were either nonverbal or minimally verbal or had an (intelligence quotient) IQ &lt;50”. That study estimated the prevalence of profound autism in the USA as:
+People with a huge range of abilities and tendencies are all diagnosed with autism, and there’s a lot of debate about the accuracy of many diagnoses. However “profound autism” is a diagnosis with much clearer criteria. [Hughes et al.](https://www.researchgate.net/publication/370128310_The_Prevalence_and_Characteristics_of_Children_With_Profound_Autism_15_Sites_United_States_2000-2016) defined profound autism “as children with autism who were either nonverbal or minimally verbal or had an (intelligence quotient) IQ &lt;50”. That study estimated the prevalence of profound autism in the USA as:
 
 
 <table>
@@ -186,12 +204,14 @@ People with a huge range of abilities and tendencies are all diagnosed with auti
 </table>
 
 
+These numbers seem shockingly high, but they do somewhat match my casual observations. I don’t know a lot of children, but I know of at least 2 profoundly autistic boys.
+
 
 #### Risk by parental age
 
 The studies I found on the impact of parental age did not restrict themselves to just profound autism, so it’s possible that parental age interacts with profound autism differently, but my guess is it’s at least qualitatively correct.
 
-Here are the results from [one study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2638544/) that looked at both the father’s and mother’s ages. For the absolute risk for fathers, I used the number of ASD cases / size of the “Birth Chort Comparison Group” for the father’s or mother’s reference age, extracted from table 3 of the paper. For fathers that’s 322 / 67,080 = 0.48%. For mother’s that’s 366 / 75,053 = 0.49%.
+Here are the results from [Durkin et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2638544/), who looked at both the father’s and mother’s ages. For the absolute risk for fathers, I used the number of autism spectrum disorder cases / size of the “Birth Chort Comparison Group” for the father’s or mother’s reference age, extracted from table 3 of the paper. For fathers that’s 322 / 67,080 = 0.48%. For mother’s that’s 366 / 75,053 = 0.49%. These numbers are close to the overall risk of profound autism from Hughes et al. above, but this study considered any autism diagnosis, so something is probably wrong either with my calculation or with one or both of these studies.
 
 
 <table>
@@ -285,7 +305,7 @@ Here are the results from [one study](https://www.ncbi.nlm.nih.gov/pmc/articles/
    </td>
    <td>Reference
    </td>
-   <td>0.49%, 0.49%
+   <td>0.49%
    </td>
   </tr>
   <tr>
@@ -355,16 +375,12 @@ This chart shows absolute risks from that same study:
    --img class="wrap"
 %}
 
-
-
 ### Chromosome disorders
 
 
 #### Prevalence
 
-For mothers aged >= 35,  1.79% or 1 / 55 have a chromosomal disorder in the second trimester. Note that some chromosomal disorders result in miscarriage earlier than that, so the true prevalence is certainly higher.
-
-[Source](https://pubmed.ncbi.nlm.nih.gov/9934980/).
+[Caron, Tihy, and Dallaire](https://pubmed.ncbi.nlm.nih.gov/9934980/) find that of mothers aged >= 35,  1.79% or 1 / 55 have a chromosomal disorder in the second trimester. Note that some chromosome disorders result in miscarriage earlier than that, so the true prevalence is certainly higher.
 
 
 #### Risk by parental age
@@ -408,6 +424,8 @@ To compute absolute risk, I took the prevalence number from above and then divid
 </table>
 
 
+From [Fang et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/)
+
 
 <table>
   <tr>
@@ -445,7 +463,7 @@ To compute absolute risk, I took the prevalence number from above and then divid
 </table>
 
 
-[Source.](https://obgyn.onlinelibrary.wiley.com/doi/10.1111/aogs.14339)
+From [Ahn et al.](https://obgyn.onlinelibrary.wiley.com/doi/10.1111/aogs.14339)
 
 
 ### Urogenital defects
@@ -489,7 +507,7 @@ I didn’t find an easy way to calculate absolute risk.
 </table>
 
 
-[Source.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/)
+From [Fang et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/)
 
 
 <table>
@@ -514,7 +532,7 @@ I didn’t find an easy way to calculate absolute risk.
 </table>
 
 
-[Source.](https://obgyn.onlinelibrary.wiley.com/doi/10.1111/aogs.14339)
+From [Ahn et al.](https://obgyn.onlinelibrary.wiley.com/doi/10.1111/aogs.14339)
 
 
 ### Heart defects
@@ -534,7 +552,7 @@ I didn’t find an easy way to calculate absolute risk.
 
 <table>
   <tr>
-   <td><strong>Paternal age at delivery</strong>
+   <td><strong>Father’s age</strong>
    </td>
    <td><strong>Odds ratio 95% CI</strong>
    </td>
@@ -560,12 +578,12 @@ I didn’t find an easy way to calculate absolute risk.
 </table>
 
 
-[Source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/).
+From [Fang et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/)
 
 
 <table>
   <tr>
-   <td><strong>Maternal age at delivery</strong>
+   <td><strong>Mother’s age</strong>
    </td>
    <td><strong>Odds ratio 95% CI</strong>
    </td>
@@ -591,7 +609,7 @@ I didn’t find an easy way to calculate absolute risk.
 </table>
 
 
-[Source](https://obgyn.onlinelibrary.wiley.com/doi/10.1111/aogs.14339).
+From [Ahn et al.](https://obgyn.onlinelibrary.wiley.com/doi/10.1111/aogs.14339)
 
 
 <!-- Footnotes themselves at the bottom. -->
