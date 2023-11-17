@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2023-11-16T21:35:28-08:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">The dangers of reproducing while old</title><link href="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/" rel="alternate" type="text/html" title="The dangers of reproducing while old" /><published>2023-11-10T00:00:00-08:00</published><updated>2023-11-10T00:00:00-08:00</updated><id>http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old</id><content type="html" xml:base="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/">&lt;h1 id=&quot;the-dangers-of-reproducing-while-old&quot;&gt;The dangers of reproducing while old&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2023-11-16T21:39:26-08:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">The dangers of reproducing while old</title><link href="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/" rel="alternate" type="text/html" title="The dangers of reproducing while old" /><published>2023-11-10T00:00:00-08:00</published><updated>2023-11-10T00:00:00-08:00</updated><id>http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old</id><content type="html" xml:base="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/">&lt;h1 id=&quot;the-dangers-of-reproducing-while-old&quot;&gt;The dangers of reproducing while old&lt;/h1&gt;
 
 &lt;p&gt;I had my first child when I was 36 years old, which made me want to understand the risks of having children at different ages. Before looking into this, my impression was that the main biological problems with old-age parenthood had to do with not having the necessary health and vigor to care for young’uns, and I had heard that older women have trouble getting pregnant. While those are real issues, there are many others worthy of consideration.&lt;/p&gt;
 
@@ -43,7 +43,7 @@
 
 &lt;p&gt;Note that for almost everything else, the outcome being tested for is bad, whereas here it is live birth rate, or the odds of a child being born alive after an embryo is transferred into a woman.&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Mother’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -95,7 +95,7 @@
 
 &lt;p&gt;And here’s some data from &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7456349/&quot;&gt;du Fossé et al.&lt;/a&gt; on the risk by father’s age. For the absolute risk, I assumed the absolute risk for the reference age is 10%, which seems to be about the value for a 27 year old woman from the chart above.&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Father’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -152,7 +152,7 @@
 
 &lt;p&gt;People with a huge range of abilities and tendencies are all diagnosed with autism, and there’s a lot of debate about the accuracy of many diagnoses. However “profound autism” is a diagnosis with much clearer criteria. &lt;a href=&quot;https://www.researchgate.net/publication/370128310_The_Prevalence_and_Characteristics_of_Children_With_Profound_Autism_15_Sites_United_States_2000-2016&quot;&gt;Hughes et al.&lt;/a&gt; defined profound autism “as children with autism who were either nonverbal or minimally verbal or had an (intelligence quotient) IQ &amp;lt;50”. That study estimated the prevalence of profound autism in the USA as:&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;Female
    &lt;/td&gt;
@@ -181,7 +181,7 @@
 
 &lt;p&gt;Here are the results from &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2638544/&quot;&gt;Durkin et al.&lt;/a&gt;, who looked at both the father’s and mother’s ages. For the absolute risk for fathers, I used the number of autism spectrum disorder cases / size of the “Birth Chort Comparison Group” for the father’s or mother’s reference age, extracted from table 3 of the paper. For fathers that’s 322 / 67,080 = 0.48%. For mother’s that’s 366 / 75,053 = 0.49%. These numbers are close to the overall risk of profound autism from Hughes et al. above, but this study considered any autism diagnosis, so something is probably wrong either with my calculation or with one or both of these studies.&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Father’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -240,7 +240,7 @@
   &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Mother’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -295,7 +295,7 @@
 
 &lt;p&gt;And here are results from &lt;a href=&quot;https://doi.org/10.1038/mp.2010.121&quot;&gt;another study&lt;/a&gt; that looked only at the father’s age:&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Father’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -342,7 +342,7 @@
 
 &lt;p&gt;To compute absolute risk, I took the prevalence number from above and then divided it by 5.66 (the middle of the odds ratio CI for mothers aged &amp;gt;= 35) to get 1.79 % / 5.66 = 0.32%.&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Father’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -379,7 +379,7 @@
 
 &lt;p&gt;From &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/&quot;&gt;Fang et al.&lt;/a&gt;&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Mother’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -426,7 +426,7 @@
 
 &lt;p&gt;I didn’t find an easy way to calculate absolute risk.&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Father’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -455,7 +455,7 @@
 
 &lt;p&gt;From &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/&quot;&gt;Fang et al.&lt;/a&gt;&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Mother’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -490,7 +490,7 @@
 
 &lt;p&gt;I didn’t find an easy way to calculate absolute risk.&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Father’s age&lt;/strong&gt;
    &lt;/td&gt;
@@ -519,7 +519,7 @@
 
 &lt;p&gt;From &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803514/&quot;&gt;Fang et al.&lt;/a&gt;&lt;/p&gt;
 
-&lt;table&gt;
+&lt;table border=&quot;1&quot;&gt;
   &lt;tr&gt;
    &lt;td&gt;&lt;strong&gt;Mother’s age&lt;/strong&gt;
    &lt;/td&gt;
