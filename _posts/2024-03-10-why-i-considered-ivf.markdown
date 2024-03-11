@@ -7,7 +7,7 @@ tags:
 - parenting
 - biology
 - health
-# tweet_url: https://twitter.com/garymigu/status/1725388954508427553
+tweet_url: https://twitter.com/garymigu/status/1767034998883000401
 # hn_url: https://news.ycombinator.com/item?id=38300102
 ---
 
