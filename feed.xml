@@ -1,4 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-01-23T20:55:52-08:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">The dangers of reproducing while old</title><link href="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/" rel="alternate" type="text/html" title="The dangers of reproducing while old" /><published>2023-11-10T00:00:00-08:00</published><updated>2023-11-10T00:00:00-08:00</updated><id>http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old</id><content type="html" xml:base="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/">&lt;p&gt;I had my first child when I was 36 years old, which made me want to understand the risks of having children at different ages. Before looking into this, my impression was that the main biological problems with old-age parenthood had to do with not having the necessary health and vigor to care for young’uns, and I had heard that older women have trouble getting pregnant. While those are real issues, there are many others worthy of consideration.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-03-10T20:47:17-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Why I considered IVF despite not having any fertility issues, and then decided against it</title><link href="http://garymm.org/blog/2024/03/10/why-i-considered-ivf/" rel="alternate" type="text/html" title="Why I considered IVF despite not having any fertility issues, and then decided against it" /><published>2024-03-10T00:00:00-08:00</published><updated>2024-03-10T00:00:00-08:00</updated><id>http://garymm.org/blog/2024/03/10/why-i-considered-ivf</id><content type="html" xml:base="http://garymm.org/blog/2024/03/10/why-i-considered-ivf/">&lt;p&gt;In &lt;a href=&quot;https://www.garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/&quot;&gt;The dangers of reproducing while old&lt;/a&gt;, I mentioned that pre-implanation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Older parents are at much higher risk of passing harmful genetic mutations to their embryos.&lt;/li&gt;
+  &lt;li&gt;IVF gives people the opportunity to screen for these harmful mutations, potentially avoiding miscarriage or serious health conditions later on. It also provides an opportunity to use polygenic screening to select for desirable traits.&lt;/li&gt;
+  &lt;li&gt;There’s not much evidence that IVF results in worse health outcomes for children.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After investigating this more, I now think:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The benefit of polygenic screening is currently generally small, and in our case it would be tiny.&lt;/li&gt;
+  &lt;li&gt;There’s some evidence of IVF producing worse health outcomes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;polygenic-screening&quot;&gt;Polygenic screening&lt;/h2&gt;
+
+&lt;p&gt;I think polygenic screening&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; has a lot of potential. However it has the following limitations:&lt;/p&gt;
+
+&lt;p&gt;To make good predictions, people need to create models that are based on data from many people. Currently there are a few issues:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The models for certain traits like intelligence just aren’t very good at predicting. This is partly because the models that exist are based on things like educational attainment, which are correlated with intelligence, but not perfectly (&lt;a href=&quot;https://www.sciencedirect.com/science/article/abs/pii/S0160289606000171?via%3Dihubhttps://www.sciencedirect.com/science/article/abs/pii/S0160289606000171?via%3Dihub&quot;&gt;e.g. this study finds 0.81&lt;/a&gt;). And it’s partly because some of the variance in traits we care about is probably caused by very rare variants which would require huge sample sizes to detect.&lt;/li&gt;
+  &lt;li&gt;The models are much better for people of certain ancestry than others, because of the data that they were created with. My impression is that the models currently work best for people of northern European ancestry.&lt;/li&gt;
+  &lt;li&gt;The expected variance in two embryos from the same parents is pretty low. To have good odds of finding an embryo that has very good polygenic scores, one needs a lot of embryos to choose from.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Point 1 should decrease the appeal of polygenic screening for everyone. Point 2 decreased it for me because my children would be mostly not-northern European. As for the number of embryos, my partner took a test that suggested a round of egg retrieval would yield relatively few eggs. This meant she’d probably have to undergo multiple rounds of egg retrieval, which is expensive and unpleasant.&lt;/p&gt;
+
+&lt;p&gt;It’s hard to find good information on this topic. It’s not hard to find people saying that the technology doesn’t work, but I get the distinct whiff of motivated reasoning from articles like &lt;a href=&quot;https://liorpachter.wordpress.com/2021/04/12/the-amoral-nonsense-of-orchids-embryo-selection/&quot;&gt;this&lt;/a&gt;. Basically I think the author thinks polygenic screening is morally wrong or disgusting, and therefore he’s finding reasons to say it won’t work.&lt;/p&gt;
+
+&lt;p&gt;I want polygenic screening to work. If we were doing IVF anyways, I would definitely have the embryos polygenically screened.&lt;/p&gt;
+
+&lt;h2 id=&quot;ivf-health-outcomes&quot;&gt;IVF health outcomes&lt;/h2&gt;
+
+&lt;p&gt;I found the excellent paper &lt;a href=&quot;https://academic.oup.com/humupd/article/25/2/137/5316072?login=false&quot;&gt;The health of children conceived by ART: ‘the chicken or the egg?’&lt;/a&gt;, which looks at studies that try to control for the systematic differences between people who pursue IVF and those who don’t. That review, and newer studies such as &lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/35934120/&quot;&gt;Sutclifffe (2023&lt;/a&gt;) did not find large differences in IVF babies later in life. But the best-controlled studies &lt;em&gt;do&lt;/em&gt; find a pretty large increased risk of preterm birth (relative risk somewhere in 1.5 - 2). &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5791955/&quot;&gt;Elsewhere&lt;/a&gt; I found the absolute risk of preterm birth for a 36 year old mother is about 6%, so IVF might take that up to 9-12%. Since preterm birth is associated with a lot of bad health conditions, it would be surprising if IVF children are more likely to be born preterm but are equally healthy later on.&lt;/p&gt;
+
+&lt;p&gt;I’m wondering how it’s possible to reconcile the preterm birth and generally good outcomes in adults. Some possibilities:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Preterm birth rates are not higher. The studies are just not controlling for something important.&lt;/li&gt;
+  &lt;li&gt;Preterm birth caused by IVF is not associated with later bad health, but preterm birth caused by other things is.&lt;/li&gt;
+  &lt;li&gt;There are negative impacts, but the studies of adults have missed them. Some possible reasons why: studies are too small, the negative health outcomes haven’t shown up yet because most IVF babies are too young, studies looked at the wrong metrics, there’s some selection bias such that the least healthy people are less likely to be studied (this one seems quite plausible to me).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My current guess is there’s a small but real tendency for people conceived via IVF to be less healthy later in life, though I’m extremely uncertain about the exact aspects of health, the magnitude and the frequency involved.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;If you are not familiar with polygenic screening, I recommend &lt;a href=&quot;https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children&quot;&gt;Gene Smith’s post&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>garymm</name></author><category term="parenting" /><category term="biology" /><category term="health" /><summary type="html">In The dangers of reproducing while old, I mentioned that pre-implanation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:</summary></entry><entry><title type="html">The dangers of reproducing while old</title><link href="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/" rel="alternate" type="text/html" title="The dangers of reproducing while old" /><published>2023-11-10T00:00:00-08:00</published><updated>2023-11-10T00:00:00-08:00</updated><id>http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old</id><content type="html" xml:base="http://garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/">&lt;p&gt;I had my first child when I was 36 years old, which made me want to understand the risks of having children at different ages. Before looking into this, my impression was that the main biological problems with old-age parenthood had to do with not having the necessary health and vigor to care for young’uns, and I had heard that older women have trouble getting pregnant. While those are real issues, there are many others worthy of consideration.&lt;/p&gt;
 
 &lt;p&gt;My read of the evidence is that the risks of miscarriage and serious health problems for children, including autism and birth defects, increase significantly with parental (both paternal and maternal) age. The data I could find for most risks is not very fine-grained and not very precise, but I think this qualitative description matches the data: Risks start rising at around 30 years old for both mothers and fathers, rises gradually through about 35 for mothers and 40 for fathers, and then sharply after that.&lt;/p&gt;
 
@@ -62,7 +115,7 @@
   &lt;/tr&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Very recently, some companies have started offering more in-depth genetic screening for embryos, such as sequencing the whole genome and assessing risk for polygenic traits, meaning influenced by many genes. The companies offering this service claim all sorts of benefits, such as reducing the risk of cancer and diabetes, but I don’t think it’s been independently evaluated, and it’s probably too new to truly evaluate, since there’s a very small number of people alive who were screened in this way. &lt;a href=&quot;https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children&quot;&gt;Here’s Gene Smith’s post&lt;/a&gt; that’s very enthusiastic about such screening and tells you how to go about it, and &lt;a href=&quot;https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children?commentId=uiFXXRpdXCzXjmfj8&quot;&gt;my response trying to summarize a skeptical position&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Very recently, some companies have started offering more in-depth genetic screening for embryos, such as assessing risk for polygenic traits, meaning influenced by many genes. The companies offering this service claim all sorts of benefits, such as reducing the risk of cancer and diabetes, but I don’t think it’s been independently evaluated, and it’s probably too new to truly evaluate, since there’s a very small number of people alive who were screened in this way. &lt;a href=&quot;https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children&quot;&gt;Here’s Gene Smith’s post&lt;/a&gt; that’s very enthusiastic about such screening and tells you how to go about it, and &lt;a href=&quot;https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children?commentId=uiFXXRpdXCzXjmfj8&quot;&gt;my response trying to summarize a skeptical position&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;So if you’re older and you don’t have frozen gametes, should you do IVF just so you can do pre-implantation genetic testing?&lt;/p&gt;
 
@@ -71,7 +124,7 @@
 &lt;ul&gt;
   &lt;li&gt;Very effective at detecting aneuploidy, and thus increasing live birth rate per pregnancy.&lt;/li&gt;
   &lt;li&gt;You can choose the child’s sex.&lt;/li&gt;
-  &lt;li&gt;If you opt for whole-genome sequencing, it is possible to reduce other health risks and possibly improve other desirable traits like IQ. Again, see &lt;a href=&quot;https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children&quot;&gt;Gene Smith’s post&lt;/a&gt; for more details on this.&lt;/li&gt;
+  &lt;li&gt;If you opt for polygenic screening, it is possible to reduce other health risks and possibly improve other desirable traits like IQ. Again, see &lt;a href=&quot;https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children&quot;&gt;Gene Smith’s post&lt;/a&gt; for more details on this.&lt;/li&gt;
   &lt;li&gt;I haven’t seen any strong evidence that IVF results in worse health outcomes. Note there are many studies that show worse outcomes for IVF, but since IVF is largely used by people who have fertility problems, and differences seem to disappear entirely when controlling for this. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3650450/&quot;&gt;More here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1090,72 +1143,4 @@ robes with full crazy eyes alone deserves an A. But you can judge for yourselves
 &lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Check out&amp;nbsp;&lt;a
             href=&quot;http://www.econtalk.org/archives/2015/09/william_macaski.html&quot;&gt;William MacAskill on
             EconTalk&lt;/a&gt;&amp;nbsp;for a great discussion of these issues.&lt;/span&gt;&lt;/div&gt;
-&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;</content><author><name>garymm</name></author><category term="charity" /><summary type="html">Short version:If you donate to Against Malaria Foundation before the end of 2016, I&apos;ll match your donation, and then Google will match my match, so your impact will be trebled. Just email me your receipt.Offer valid up until I exhaust my remaining 3,000 USD in Google matching funds.The easiest way to donate is through PayPal. PayPal will waive all the fees and even match 1% of your donation. Long version: Imagine there’s a child stuck in a burning building. You see the flames, you hear the screams. Imagine what it would feel like to run into the building, grab the child and deliver the child to his mother’s arms. I know I would feel great about being able to help someone like that. Fortunately there aren’t burning buildings all around me, but there are opportunities to save dying children that are a lot less dangerous. Malaria killed an estimated 627,000 people in 2012. GiveWell rates the Against Malaria Foundation as the most cost-effective charity for saving and improving human lives. They estimate that for every $3,500 given to AMF, one person will be saved from death. This week, I will match your contributions to AMF and so will Google. Let’s all save some lives together! Check out&amp;nbsp;William MacAskill on EconTalk&amp;nbsp;for a great discussion of these issues.</summary></entry><entry><title type="html">I regret getting a master’s degree</title><link href="http://garymm.org/blog/2016/07/31/i-regret-getting-masters-degree/" rel="alternate" type="text/html" title="I regret getting a master’s degree" /><published>2016-07-31T20:27:00-07:00</published><updated>2016-07-31T20:27:00-07:00</updated><id>http://garymm.org/blog/2016/07/31/i-regret-getting-masters-degree</id><content type="html" xml:base="http://garymm.org/blog/2016/07/31/i-regret-getting-masters-degree/">As I write this, I am two weeks away from finishing my master&apos;s degree. I think getting it has not been and will not be
-worth the costs.&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Background&lt;/h2&gt;
-&lt;div&gt;Some background on my situation: I am getting my degree from Stanford in Computer Science. I have worked at Google
-    the whole time. I&apos;ve taken 15 classes (10 weeks each) over 5 years. No research or thesis, just classes.&lt;/div&gt;
-&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;h2&gt;Reasons to get a degree&lt;/h2&gt;
-&lt;div&gt;These are the main reasons I can think of to get a degree and why they&apos;re not good enough reasons for me.&lt;/div&gt;
-&lt;h3&gt;To gain useful skills&lt;/h3&gt;
-&lt;div&gt;Many people think one learns skills in school which can be used to do useful stuff outside of school. My
-    objections:&lt;/div&gt;
-&lt;h4&gt;Degrees are like a cable package&lt;/h4&gt;
-&lt;div&gt;To get my degree, I had to take 15 classes and I had limited freedom in choosing those 15. Of course each class is
-    itself a bundle of topics, and I have no freedom to choose what topics get covered in each class. Sticking with the
-    cable TV analogy, this is like having to watch an entire week&apos;s worth of a TV channel. I estimate at least 1/3 of
-    the material I learned was totally useless for me. And as for the remaining 2/3, see the next point.&lt;/div&gt;
-&lt;h4&gt;I forget things that I don&apos;t use&lt;/h4&gt;
-&lt;div&gt;This is a lesson that I should have learned very early in this whole process. Stanford requires master&apos;s students
-    who don&apos;t have a bachelor&apos;s from Stanford to take certain &quot;foundation&quot; undergraduate level CS classes to complete
-    the master&apos;s degree.&lt;/div&gt;
-&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div&gt;One&apos;s adviser has the power to waive these requirements. I looked over the list of foundation requirements and
-    thought &quot;I took all those classes already in undergrad, no need to take them again&quot;. So I went into my adviser&apos;s
-    office and asked him to waive the requirements. He responded by verbally quizzing me on the spot about several of
-    the topics. I miserably failed to recall basic details of these classes that I had gotten A&apos;s in a few years before.
-&lt;/div&gt;
-&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div&gt;At that point, it had been 2 years since I finished my bachelor&apos;s in CS, and I had been working full-time as a
-    software engineer since then, yet &lt;b&gt;I hadn&apos;t used any of the stuff, so I forgot most of it pretty thoroughly&lt;/b&gt;.
-&lt;/div&gt;
-&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div&gt;Since then I&apos;ve become ever more skeptical that it&apos;s useful to take classes now in the hopes of using the knowledge
-    several years down the road. Maybe it will be useful some day, but if it&apos;s not any time soon, I may as well not have
-    taken the class at all. My brain just doesn&apos;t work that way.&lt;/div&gt;
-&lt;h3&gt;To signal personal qualities to employers&lt;/h3&gt;There&apos;s a lot of evidence that employers value people with degrees not
-because of the useful skills one gains in school, but because the completion of the degree shows one has certain
-personal qualities: intelligence, perseverance, cooperativeness, conformity, etc. For more on this evidence, check out
-this &lt;a href=&quot;http://www.econtalk.org/archives/2014/04/bryan_caplan_on.html&quot; target=&quot;_blank&quot;&gt;awesome episode of
-    EconTalk&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;I agree that employers think this way and thus degrees have some value. However in my
-particular case, I already had a job at one of the most sought-after companies in my field. Even if I were to switch
-companies but stay in software engineering, I&apos;m skeptical many employers would care about my degree now that I have 7
-years of job experience from well-regarded companies. However I grant that this is an empirical question and I could
-very well be proven wrong.&lt;br /&gt;
-&lt;h3&gt;For the love of learning&lt;/h3&gt;I often enjoy learning new things, but doing it on someone else&apos;s schedule can be very
-stressful. Over the course of my degree, I had more than one occassion where I had to stay up all night to finish a
-shcool assignment and then I had a regular work day ahead of me. Even when I got to bed at a reasonable hour, doing all
-the school work on nights and weekends after working a full work day / week really killed a lot of the fun for me. Also,
-learning with other people is more fun than learning alone, but because I did the degree part-time and mostly
-off-campus, I didn&apos;t get much contact with other students. Which brings me to the next point...&lt;br /&gt;
-&lt;h3&gt;To meet people&lt;/h3&gt;
-&lt;div&gt;I didn&apos;t get to meet many other students or hang out with the ones I did meet because I did my degree part-time,
-    remotely and while working full time. This is in stark contrast to my undergrad experience, where I formed wonderful
-    long-lasting relationships with people who I took classes with or who were just around campus or in the same dorm at
-    the same time that I was.&lt;/div&gt;
-&lt;div&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;h2&gt;Reasons to not get a degree&lt;/h2&gt;
-&lt;h3&gt;Money&lt;/h3&gt;
-&lt;h3&gt;
-    &lt;div style=&quot;font-size: medium; font-weight: normal;&quot;&gt;My degree cost about $54,000 in tuition. My employer paid for
-        most of it, but I still paid for some of it and honestly I&apos;d rather my employer used the money on&amp;nbsp;&lt;a
-            href=&quot;https://www.google.com/loon/&quot; target=&quot;_blank&quot;&gt;project loon&lt;/a&gt;.&lt;/div&gt;
-&lt;/h3&gt;
-&lt;h3&gt;Time&lt;/h3&gt;
-&lt;div&gt;Because I was studying, I had less time for sleep, exercise, work, friends and family. These things are all
-    extremely valuable to me. Given all my above objections, it should be clear I think most of the time I spent getting
-    this degree would have been better spent on one of those other things. Now that I&apos;m almost done, I&apos;m not at all
-    excited about how much knowledge or prestige I will have. I&apos;m excited that I&apos;ll have more time to spend on more
-    important things.&lt;/div&gt;
-&lt;h3&gt;&lt;br /&gt;&lt;/h3&gt;</content><author><name>garymm</name></author><category term="education" /><summary type="html">As I write this, I am two weeks away from finishing my master&apos;s degree. I think getting it has not been and will not be worth the costs. Background Some background on my situation: I am getting my degree from Stanford in Computer Science. I have worked at Google the whole time. I&apos;ve taken 15 classes (10 weeks each) over 5 years. No research or thesis, just classes. Reasons to get a degree These are the main reasons I can think of to get a degree and why they&apos;re not good enough reasons for me. To gain useful skills Many people think one learns skills in school which can be used to do useful stuff outside of school. My objections: Degrees are like a cable package To get my degree, I had to take 15 classes and I had limited freedom in choosing those 15. Of course each class is itself a bundle of topics, and I have no freedom to choose what topics get covered in each class. Sticking with the cable TV analogy, this is like having to watch an entire week&apos;s worth of a TV channel. I estimate at least 1/3 of the material I learned was totally useless for me. And as for the remaining 2/3, see the next point. I forget things that I don&apos;t use This is a lesson that I should have learned very early in this whole process. Stanford requires master&apos;s students who don&apos;t have a bachelor&apos;s from Stanford to take certain &quot;foundation&quot; undergraduate level CS classes to complete the master&apos;s degree. One&apos;s adviser has the power to waive these requirements. I looked over the list of foundation requirements and thought &quot;I took all those classes already in undergrad, no need to take them again&quot;. So I went into my adviser&apos;s office and asked him to waive the requirements. He responded by verbally quizzing me on the spot about several of the topics. I miserably failed to recall basic details of these classes that I had gotten A&apos;s in a few years before. At that point, it had been 2 years since I finished my bachelor&apos;s in CS, and I had been working full-time as a software engineer since then, yet I hadn&apos;t used any of the stuff, so I forgot most of it pretty thoroughly. Since then I&apos;ve become ever more skeptical that it&apos;s useful to take classes now in the hopes of using the knowledge several years down the road. Maybe it will be useful some day, but if it&apos;s not any time soon, I may as well not have taken the class at all. My brain just doesn&apos;t work that way. To signal personal qualities to employersThere&apos;s a lot of evidence that employers value people with degrees not because of the useful skills one gains in school, but because the completion of the degree shows one has certain personal qualities: intelligence, perseverance, cooperativeness, conformity, etc. For more on this evidence, check out this awesome episode of EconTalk.I agree that employers think this way and thus degrees have some value. However in my particular case, I already had a job at one of the most sought-after companies in my field. Even if I were to switch companies but stay in software engineering, I&apos;m skeptical many employers would care about my degree now that I have 7 years of job experience from well-regarded companies. However I grant that this is an empirical question and I could very well be proven wrong. For the love of learningI often enjoy learning new things, but doing it on someone else&apos;s schedule can be very stressful. Over the course of my degree, I had more than one occassion where I had to stay up all night to finish a shcool assignment and then I had a regular work day ahead of me. Even when I got to bed at a reasonable hour, doing all the school work on nights and weekends after working a full work day / week really killed a lot of the fun for me. Also, learning with other people is more fun than learning alone, but because I did the degree part-time and mostly off-campus, I didn&apos;t get much contact with other students. Which brings me to the next point... To meet people I didn&apos;t get to meet many other students or hang out with the ones I did meet because I did my degree part-time, remotely and while working full time. This is in stark contrast to my undergrad experience, where I formed wonderful long-lasting relationships with people who I took classes with or who were just around campus or in the same dorm at the same time that I was. Reasons to not get a degree Money My degree cost about $54,000 in tuition. My employer paid for most of it, but I still paid for some of it and honestly I&apos;d rather my employer used the money on&amp;nbsp;project loon. Time Because I was studying, I had less time for sleep, exercise, work, friends and family. These things are all extremely valuable to me. Given all my above objections, it should be clear I think most of the time I spent getting this degree would have been better spent on one of those other things. Now that I&apos;m almost done, I&apos;m not at all excited about how much knowledge or prestige I will have. I&apos;m excited that I&apos;ll have more time to spend on more important things.</summary></entry></feed>
+&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;</content><author><name>garymm</name></author><category term="charity" /><summary type="html">Short version:If you donate to Against Malaria Foundation before the end of 2016, I&apos;ll match your donation, and then Google will match my match, so your impact will be trebled. Just email me your receipt.Offer valid up until I exhaust my remaining 3,000 USD in Google matching funds.The easiest way to donate is through PayPal. PayPal will waive all the fees and even match 1% of your donation. Long version: Imagine there’s a child stuck in a burning building. You see the flames, you hear the screams. Imagine what it would feel like to run into the building, grab the child and deliver the child to his mother’s arms. I know I would feel great about being able to help someone like that. Fortunately there aren’t burning buildings all around me, but there are opportunities to save dying children that are a lot less dangerous. Malaria killed an estimated 627,000 people in 2012. GiveWell rates the Against Malaria Foundation as the most cost-effective charity for saving and improving human lives. They estimate that for every $3,500 given to AMF, one person will be saved from death. This week, I will match your contributions to AMF and so will Google. Let’s all save some lives together! Check out&amp;nbsp;William MacAskill on EconTalk&amp;nbsp;for a great discussion of these issues.</summary></entry></feed>
