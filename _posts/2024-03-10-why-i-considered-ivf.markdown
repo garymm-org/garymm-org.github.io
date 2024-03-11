@@ -11,7 +11,7 @@ tags:
 # hn_url: https://news.ycombinator.com/item?id=38300102
 ---
 
-In [The dangers of reproducing while old](https://www.garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/), I mentioned that pre-implanation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:
+In [The dangers of reproducing while old](https://www.garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/), I mentioned that pre-implantation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:
 
 * Older parents are at much higher risk of passing harmful genetic mutations to their embryos.
 * IVF gives people the opportunity to screen for these harmful mutations, potentially avoiding miscarriage or serious health conditions later on. It also provides an opportunity to use polygenic screening to select for desirable traits.
