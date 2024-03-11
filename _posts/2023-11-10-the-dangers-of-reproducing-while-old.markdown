@@ -82,7 +82,7 @@ Note that for almost everything else, the outcome being tested for is bad, where
 </table>
 
 
-Very recently, some companies have started offering more in-depth genetic screening for embryos, such as sequencing the whole genome and assessing risk for polygenic traits, meaning influenced by many genes. The companies offering this service claim all sorts of benefits, such as reducing the risk of cancer and diabetes, but I don’t think it’s been independently evaluated, and it’s probably too new to truly evaluate, since there’s a very small number of people alive who were screened in this way. [Here’s Gene Smith's post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children) that’s very enthusiastic about such screening and tells you how to go about it, and [my response trying to summarize a skeptical position](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children?commentId=uiFXXRpdXCzXjmfj8).
+Very recently, some companies have started offering more in-depth genetic screening for embryos, such as assessing risk for polygenic traits, meaning influenced by many genes. The companies offering this service claim all sorts of benefits, such as reducing the risk of cancer and diabetes, but I don’t think it’s been independently evaluated, and it’s probably too new to truly evaluate, since there’s a very small number of people alive who were screened in this way. [Here’s Gene Smith's post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children) that’s very enthusiastic about such screening and tells you how to go about it, and [my response trying to summarize a skeptical position](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children?commentId=uiFXXRpdXCzXjmfj8).
 
 So if you’re older and you don’t have frozen gametes, should you do IVF just so you can do pre-implantation genetic testing?
 
@@ -92,7 +92,7 @@ Pros:
 
 * Very effective at detecting aneuploidy, and thus increasing live birth rate per pregnancy.
 * You can choose the child’s sex.
-* If you opt for whole-genome sequencing, it is possible to reduce other health risks and possibly improve other desirable traits like IQ. Again, see [Gene Smith’s post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children) for more details on this.
+* If you opt for polygenic screening, it is possible to reduce other health risks and possibly improve other desirable traits like IQ. Again, see [Gene Smith’s post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children) for more details on this.
 * I haven’t seen any strong evidence that IVF results in worse health outcomes. Note there are many studies that show worse outcomes for IVF, but since IVF is largely used by people who have fertility problems, and differences seem to disappear entirely when controlling for this. [More here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3650450/).
 
 Cons:
