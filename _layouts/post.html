@@ -35,7 +35,6 @@
         .twitter svg {
             height: 0.8em;
         }
-
     </style>
 </head>
 
@@ -52,8 +51,8 @@
                         <p>{{ page.date | date: "%Y-%m-%d" }}</p>
                     </div>
                     <div align="right">
-                        {% if page.tweet_url and page.tweet_url != "" and page.tweet_url != nil %}
-                        {% include discuss_on_twitter.html %}
+                        {% if page.tweet_url and page.tweet_url != "" or page.hn_url and page.hn_url != "" %}
+                        {% include discuss.html %}
                         {% endif %}
                         <button class="ml-onclick-form" onclick="ml('show', 'IUXI0E', true)">get new posts via
                             email</button>

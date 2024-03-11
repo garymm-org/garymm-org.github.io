@@ -8,6 +8,7 @@ tags:
 - biology
 - health
 tweet_url: https://twitter.com/garymigu/status/1725388954508427553
+hn_url: https://news.ycombinator.com/item?id=38300102
 ---
 
 I had my first child when I was 36 years old, which made me want to understand the risks of having children at different ages. Before looking into this, my impression was that the main biological problems with old-age parenthood had to do with not having the necessary health and vigor to care for young’uns, and I had heard that older women have trouble getting pregnant. While those are real issues, there are many others worthy of consideration.

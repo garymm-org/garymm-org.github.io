@@ -1,0 +1,13 @@
+<div class="discuss">
+    discuss on
+    {% if page.tweet_url and page.tweet_url != "" %}
+    <a href="{{ page.tweet_url }}">
+        <img src="/assets/x-logo.png" alt="Twitter" width="24" height="24" />
+    </a>
+    {% endif %}
+    {% if page.hn_url and page.hn_url != "" %}
+    <a href="{{ page.hn_url }}">
+        <img src="/assets/y-combinator.png" alt="Hacker News" width="24" height="24" />
+    </a>
+    {% endif %}
+</div>
