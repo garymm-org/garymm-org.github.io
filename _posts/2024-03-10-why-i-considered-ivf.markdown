@@ -8,7 +8,7 @@ tags:
 - biology
 - health
 tweet_url: https://twitter.com/garymigu/status/1767034998883000401
-permalink: https://www.garymm.org/blog/2024/03/10/why-i-considered-ivf/
+permalink: /2024/03/10/why-i-considered-ivf/
 ---
 
 In [The dangers of reproducing while old](https://www.garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/), I mentioned that pre-implantation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:
