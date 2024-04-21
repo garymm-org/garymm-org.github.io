@@ -8,7 +8,7 @@ tags:
 - biology
 - health
 tweet_url: https://twitter.com/garymigu/status/1767034998883000401
-# hn_url: https://news.ycombinator.com/item?id=38300102
+permalink: https://www.garymm.org/blog/2024/03/10/why-i-considered-ivf/
 ---
 
 In [The dangers of reproducing while old](https://www.garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/), I mentioned that pre-implantation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:
@@ -25,17 +25,15 @@ After investigating this more, I now think:
 
 ## Polygenic screening
 
-I think polygenic screening[^1] has a lot of potential. However it has the following limitations:
+I think polygenic screening[^1] has a lot of potential, but currently it has serious limitations, including:
 
-To make good predictions, people need to create models that are based on data from many people. Currently there are a few issues:
-
-1. The models for certain traits like intelligence just aren’t very good at predicting. This is partly because the models that exist are based on things like educational attainment, which are correlated with intelligence, but not perfectly ([e.g. this study finds 0.81](https://www.sciencedirect.com/science/article/abs/pii/S0160289606000171?via%3Dihubhttps://www.sciencedirect.com/science/article/abs/pii/S0160289606000171?via%3Dihub)). And it’s partly because some of the variance in traits we care about is probably caused by very rare variants which would require huge sample sizes to detect.
+1. The models for certain traits like intelligence just aren’t very good at predicting. This is called the "missing heritability" problem, and it's quite controversial exactly what's going on, but some of the issues are clear. One is that current models are based on data that measured other things, like educational attainment, which are correlated with intelligence, but not perfectly ([e.g. Deary et. al find 0.81](https://www.sciencedirect.com/science/article/abs/pii/S0160289606000171)). And it’s partly because some of the variance in traits we care about is probably caused by very rare variants which would require huge sample sizes to detect.
 2. The models are much better for people of certain ancestry than others, because of the data that they were created with. My impression is that the models currently work best for people of northern European ancestry.
-3. The expected variance in two embryos from the same parents is pretty low. To have good odds of finding an embryo that has very good polygenic scores, one needs a lot of embryos to choose from.
+3. The expected variance amongst embryos from the same parents is pretty low. To have good odds of finding an embryo that has polygenic scores much better than the average of its genetic siblings (i.e. the other embryos parents will be choosing amongst[^2]), one needs a lot of embryos to choose from.
 
 Point 1 should decrease the appeal of polygenic screening for everyone. Point 2 decreased it for me because my children would be mostly not-northern European. As for the number of embryos, my partner took a test that suggested a round of egg retrieval would yield relatively few eggs. This meant she’d probably have to undergo multiple rounds of egg retrieval, which is expensive and unpleasant.
 
-It’s hard to find good information on this topic. It’s not hard to find people saying that the technology doesn’t work, but I get the distinct whiff of motivated reasoning from articles like [this](https://liorpachter.wordpress.com/2021/04/12/the-amoral-nonsense-of-orchids-embryo-selection/). Basically I think the author thinks polygenic screening is morally wrong or disgusting, and therefore he’s finding reasons to say it won’t work.
+It’s hard to find good information on this topic. It’s not hard to find people saying that the technology doesn’t work, but I get the distinct whiff of motivated reasoning from articles like [this one by Lior Pachter](https://liorpachter.wordpress.com/2021/04/12/the-amoral-nonsense-of-orchids-embryo-selection/). Basically I think the author thinks polygenic screening is morally wrong or disgusting, and therefore he’s finding reasons to say it won’t work.
 
 I want polygenic screening to work. If we were doing IVF anyways, I would definitely have the embryos polygenically screened.
 
@@ -55,3 +53,4 @@ I'm wondering how it's possible to reconcile the preterm birth and generally goo
 My current guess is there’s a small but real tendency for people conceived via IVF to be less healthy later in life, though I’m extremely uncertain about the exact aspects of health, the magnitude and the frequency involved.
 
 [^1]: If you are not familiar with polygenic screening, I recommend [Gene Smith's post](https://www.lesswrong.com/posts/yT22RcWrxZcXyGjsA/how-to-have-polygenically-screened-children)
+[^2]: Unless you're using donor gametes. In which case you might use multiple donors and compare across non-siblings.
