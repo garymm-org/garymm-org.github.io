@@ -6,8 +6,8 @@ author: garymm
 tags:
 - work
 - productivity
-# tweet_url: https://twitter.com/garymigu/status/1767034998883000401
-# hn_url: https://news.ycombinator.com/item?id=38300102
+tweet_url: https://x.com/garymigu/status/1800005224104702129
+hn_url: https://news.ycombinator.com/item?id=40629828
 permalink: /blog/2024/06/09/attention-memory-productive-knowledge-work/
 ---
 
