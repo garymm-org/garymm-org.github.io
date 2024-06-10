@@ -1,4 +1,147 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-04-20T20:55:11-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Why I considered IVF despite not having any fertility issues, and then decided against it</title><link href="http://garymm.org/blog/2024/03/10/why-i-considered-ivf/" rel="alternate" type="text/html" title="Why I considered IVF despite not having any fertility issues, and then decided against it" /><published>2024-03-10T00:00:00-08:00</published><updated>2024-03-10T00:00:00-08:00</updated><id>http://garymm.org/blog/2024/03/10/why-i-considered-ivf</id><content type="html" xml:base="http://garymm.org/blog/2024/03/10/why-i-considered-ivf/">&lt;p&gt;In &lt;a href=&quot;https://www.garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/&quot;&gt;The dangers of reproducing while old&lt;/a&gt;, I mentioned that pre-implantation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-06-09T20:18:59-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Attention, Memory, and Productive Knowledge Work</title><link href="http://garymm.org/blog/2024/06/09/attention-memory-productive-knowledge-work/" rel="alternate" type="text/html" title="Attention, Memory, and Productive Knowledge Work" /><published>2024-06-09T00:00:00-07:00</published><updated>2024-06-09T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/06/09/attention-memory-and-productive-knowledge-work</id><content type="html" xml:base="http://garymm.org/blog/2024/06/09/attention-memory-productive-knowledge-work/">&lt;p&gt;Here I present some ideas for increasing the productivity of knowledge workers by structuring their workflows around attention and memory.
+I wrote this for my own benefit, but I hope you find it useful too!&lt;/p&gt;
+
+&lt;h2 id=&quot;workflow-matters&quot;&gt;Workflow matters&lt;/h2&gt;
+
+&lt;p&gt;By “workflow” I mean loosely how execution tasks are scheduled and coordinated. By “execution tasks” I mean the activities which more-or-less-directly create value. For a software engineer, these tasks include programming and designing.&lt;/p&gt;
+
+&lt;p&gt;Much of the most influential thinking about optimizing workflows to increase productivity comes from the automobile industry. The history of car manufacturing has several inspiring examples. In 1909, a Ford Model T Runabout sold for $27,977 (in 2024 USD). In 1925 (16 years later), it sold for $4,517 (also in 2024 USD)&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. The number of Model Ts you could buy per dollar increased by over 6x!&lt;/p&gt;
+
+&lt;p&gt;Much of this increasing productivity was due to changes in the workflow. One major change was the introduction of the moving assembly line. Prior to the assembly line, cars were built through “the craft method”, in which teams of fifteen workers worked simultaneously on a single car”&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, which makes me think of young children playing soccer. This was inefficient in many ways. People got in each others’ ways, and they had to spend time walking around the factory to go between cars. With a moving assembly line, parts came to the workers and each worker could complete their stage of production without having to walk, coordinate with others, move tools, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;attention-and-memory-matter&quot;&gt;Attention and memory matter&lt;/h2&gt;
+
+&lt;p&gt;In manufacturing, the main inputs wer materials, equipment and manual labor. In knowledge work, the main input is human minds. To increase productivity, we need to produce more output without increasing inputs. One way to do this is to optimize the workflow! One way to optimize the knowledge worker workflow is to understand some properties of attention and memory.&lt;/p&gt;
+
+&lt;p&gt;“Working memory is a cognitive system with a limited capacity that can hold information temporarily.”&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; It is essential for reasoning and decision making, which are crucial in knowledge work. The set of mental objects you can mentally manipulate at one time is limited by the capacity of your working memory. After switching tasks, it takes time to build up working memory.&lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Long-term memory is the system that lets you restore previous working memories. “Forgetting” means something being lost from long-term memory. The “forgetting curve”&lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; is a stylized fact. The longer you go without retrieving a memory, the more likely you are to forget it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;wrap&quot; src=&quot;/generated/2024-06-09-attention-memory-productive-knowledge-work-forgetting-curve-659-d8ed2f894.png&quot; alt=&quot;the forgetting curve&quot; srcset=&quot;/generated/2024-06-09-attention-memory-productive-knowledge-work-forgetting-curve-400-9b57bcb5c.webp 400w, /generated/2024-06-09-attention-memory-productive-knowledge-work-forgetting-curve-600-9b57bcb5c.webp 600w, /generated/2024-06-09-attention-memory-productive-knowledge-work-forgetting-curve-659-9b57bcb5c.webp 659w&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This conceptualization of human memory is quite similar to how computers work: working memory is analogous to a computer’s volatile memory (e.g., registers), long-term memory is analogous to persistent storage (e.g., a flash drive), and forgetting is analogous to deleting a file.&lt;sup id=&quot;fnref:6&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;If it’s not obvious by now, workflow interacts with how our memories work. Every time one switches tasks, one must repopulate working memory before becoming productive. And extended periods between working on a task leads to forgetting. One must re-learn, which takes time.&lt;/p&gt;
+
+&lt;h2 id=&quot;ways-our-workflow-makes-us-less-productive&quot;&gt;Ways our workflow makes us less productive&lt;/h2&gt;
+
+&lt;p&gt;Yet many knowledge workers switch tasks very often. This has obviously been the case in many places I’ve worked, but there is some objective data to support this impression: A report from the summer of 2018 analyzed data from over fifty thousand active users of the RescueTime time tracking software. It found that the median time between checking communication apps like email and Slack was 6 minutes, and more than 2/3 of the users &lt;em&gt;never&lt;/em&gt; experienced an hour of uninterrupted time.&lt;sup id=&quot;fnref:7&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Besides this short-term switching between execution and collaboration, people often switch between tasks that they are executing. On several projects I worked on it was common to have work items that went unfinished for months, with sporadic bouts of work spaced weeks apart. Work done this way has many costs, but it definitely incurs costs of forgetting and re-learning.&lt;/p&gt;
+
+&lt;h2 id=&quot;suggestions&quot;&gt;Suggestions&lt;/h2&gt;
+
+&lt;p&gt;At a high level:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Minimize context switches so as to avoid cost of loading things into working memory.&lt;/li&gt;
+  &lt;li&gt;Minimize time between sessions of work on a single task so as to avoid forgetting.&lt;/li&gt;
+  &lt;li&gt;Remember that convenience ≠ productivity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And now some specific ways to put these principles into practice.&lt;/p&gt;
+
+&lt;h3 id=&quot;use-meetings-well&quot;&gt;Use meetings well&lt;/h3&gt;
+
+&lt;p&gt;Instant messages, e-mail, and interactions on doc comments are all asynchronous. Each message involves a context switch. Meetings are synchronous, rapid, concentrated communication. My rule of thumb: after the third message in an E-Mail or IM conversation, it’s better to switch to a meeting. An illustration of the cost of context switches that can be avoided by a meeting:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;wrap&quot; src=&quot;/generated/2024-06-09-attention-memory-productive-knowledge-work-side-by-side-653-0d3f63e19.png&quot; alt=&quot;two alternative ways to schedule work&quot; srcset=&quot;/generated/2024-06-09-attention-memory-productive-knowledge-work-side-by-side-400-e692b153f.webp 400w, /generated/2024-06-09-attention-memory-productive-knowledge-work-side-by-side-600-e692b153f.webp 600w, /generated/2024-06-09-attention-memory-productive-knowledge-work-side-by-side-653-e692b153f.webp 653w&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Meetings certainly have their own costs, and are often run poorly, but producing fewer context switches is a huge and underappreciated advantage of meetings over asynchronous communication.&lt;/p&gt;
+
+&lt;h4 id=&quot;meeting-tips&quot;&gt;Meeting tips&lt;/h4&gt;
+
+&lt;p&gt;Regularly scheduled meetings are useful for regular, non-urgent communication. Participants know they’ll be able to discuss things relatively soon, and therefore can avoid resorting to asynchronous communication. Between meetings, participants can collect agenda items in a document as they arise. This is an example of convenience ≠ productivity. If I think of something to ask my coworker, it’s more convenient for me to IM him. But, if it’s not urgent, it’s more productive for me to write it the agenda of our next regularly scheduled meeting.&lt;/p&gt;
+
+&lt;p&gt;For group meetings, it can be efficient to have a structured way for participants to schedule smaller-group follow-up meetings. When I was a manager at Microsoft, my team’s regular sync meetings were 60 minutes, but the whole team was only expected to meet for at most 30 minutes, and the rest of the hour was used for smaller group follow-up meetings. This avoids a context switch between blocks of meetings and blocks of solo wrk. And it avoids asynchronous back-and-forth to schedule a follow-up meeting.&lt;/p&gt;
+
+&lt;p&gt;Finally, there are many ways meetings can be inefficient, but if participants are vigilant and vocal, they can be improved (or cancelled! Not all meetings are worthwhile).&lt;/p&gt;
+
+&lt;h3 id=&quot;schedule-asynchronous-communication&quot;&gt;Schedule asynchronous communication&lt;/h3&gt;
+
+&lt;p&gt;By default, don’t leave your inbox open, don’t leave your IM app open, and don’t leave your phone notifications on. Check these things on a schedule that balances responsiveness to others with your own ability to focus. Personally I follow a loose schedule of checking things first thing in the morning, immediately before meetings, and once or twice during the afternoon, when I happen to feel blocked or need a mental break.&lt;/p&gt;
+
+&lt;p&gt;I used to have a problem with getting distracted by my inbox every time I sent an email. To send email without checking your inbox, you can use &lt;a href=&quot;https://mail.google.com/mail/?fs=1&amp;amp;tf=cm&quot;&gt;this link for GMail&lt;/a&gt; or &lt;a href=&quot;https://outlook.office365.com/mail/0/deeplink/compose&quot;&gt;this one for Outlook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;schedule-focused-work&quot;&gt;Schedule focused work&lt;/h3&gt;
+
+&lt;p&gt;One technique for avoiding self-imposed distraction is called “&lt;a href=&quot;https://en.wikipedia.org/wiki/Pomodoro_Technique&quot;&gt;Pomodoro&lt;/a&gt;”, which basically consists of setting a timer, and taking a break when the timer goes off.&lt;/p&gt;
+
+&lt;p&gt;To increase the odds of having large blocks of time to focus, schedule events on your calendar that prevent others from scheduling meetings. If you have the option to work in a place that is quiet and physically isolated, try to do that during your scheduled focus blocks.&lt;/p&gt;
+
+&lt;h3 id=&quot;limit-the-number-of-in-progress-tasks&quot;&gt;Limit the number of in-progress tasks&lt;/h3&gt;
+
+&lt;p&gt;Limiting the number of tasks that you have in-progress can help reduce the temptation to context switch (and flush your working memory) and it will reduce the odds that you forget important details about one incomplete task while you’re working on another. This is a key feature of &lt;a href=&quot;https://en.wikipedia.org/wiki/Kanban_(development)&quot;&gt;Kanban&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Scrum_(software_development)&quot;&gt;Scrum&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;use-tools-to-disseminate-commonly-needed-information&quot;&gt;Use tools to disseminate commonly needed information&lt;/h3&gt;
+
+&lt;p&gt;Some information is so commonly needed that the questions should be anticipated and built into tools that are used as part of the regular workflow. For example “Who is working on this task?” Proper use of an issue tracker (e.g., GitHub Issues, Asana) can answer this without the back-and-forth of asynchronous communication or the time burden of a meeting. If you find there is some question like this that is repeatedly asked, but has fairly formulaic answers, check if there’s a tool that you can adopt that will disseminate that information more efficiently.&lt;/p&gt;
+
+&lt;h3 id=&quot;speed-up-testing-and-reviews&quot;&gt;Speed up testing and reviews&lt;/h3&gt;
+
+&lt;p&gt;This is somewhat specific to software development, but it probably has analogs in other professions.&lt;/p&gt;
+
+&lt;p&gt;The “testing and reviews” part of the software workflow typically looks like:&lt;/p&gt;
+
+&lt;p&gt;While not approved:&lt;/p&gt;
+
+&lt;p&gt;    Author: rebase, (read / think, write, build, run) until ready.&lt;/p&gt;
+
+&lt;p&gt;    Wait for automatic checks.&lt;/p&gt;
+
+&lt;p&gt;    Reviewer: read / think, comment. Maybe approve.&lt;/p&gt;
+
+&lt;p&gt;This leaves plenty of room for context switching and forgetting:&lt;/p&gt;
+
+&lt;p&gt;While not approved:&lt;/p&gt;
+
+&lt;p&gt;    Wait for author to start.  &lt;b&gt;Author and reviewer forget.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;    Author: rebase, (read / think, write, build, run) until ready.  &lt;b&gt;Author context switch. Reviewer forgets.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;    Wait for max(automatic checks, reviewer to start).  &lt;b&gt;Author and reviewer context switch + forget.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;    Reviewer: read / think, comment. Maybe approve.  &lt;b&gt;Reviewer context switch.  Author forgets.&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;What can we do about this? If automatic checks are frequently the bottleneck, spend time speeding them up. If code reviews are the bottleneck, speed those up. On a previous team I set up a duty rotation to review any changes that did not yet have a reviewer. You might also experiment with pair programming, which basically combines code review and programming.&lt;/p&gt;
+
+&lt;h2 id=&quot;acknowledgements-and-further-reading&quot;&gt;Acknowledgements and further reading&lt;/h2&gt;
+
+&lt;p&gt;Besides my own experience, this post is based on the following:&lt;/p&gt;
+
+&lt;p&gt;A World Without Email by Cal Newport.&lt;/p&gt;
+
+&lt;p&gt;Deep Work by Cal Newport.&lt;/p&gt;
+
+&lt;p&gt;Getting Things Done by David Allen.&lt;/p&gt;
+
+&lt;p&gt;More Effective Agile by Steve McConnell.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://en.wikipedia.org/wiki/Ford_Model_T#Price_and_production &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;A world without email, page 97. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Working_memory&quot;&gt;https://en.wikipedia.org/wiki/Working_memory&lt;/a&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://en.wikipedia.org/wiki/Psychological_refractory_period &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://en.wikipedia.org/wiki/Forgetting_curve &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://en.wikipedia.org/wiki/Memory_hierarchy &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;A world without email, page 11 &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>garymm</name></author><category term="work" /><category term="productivity" /><summary type="html">Here I present some ideas for increasing the productivity of knowledge workers by structuring their workflows around attention and memory. I wrote this for my own benefit, but I hope you find it useful too!</summary></entry><entry><title type="html">Why I considered IVF despite not having any fertility issues, and then decided against it</title><link href="http://garymm.org/blog/2024/03/10/why-i-considered-ivf/" rel="alternate" type="text/html" title="Why I considered IVF despite not having any fertility issues, and then decided against it" /><published>2024-03-10T00:00:00-08:00</published><updated>2024-03-10T00:00:00-08:00</updated><id>http://garymm.org/blog/2024/03/10/why-i-considered-ivf</id><content type="html" xml:base="http://garymm.org/blog/2024/03/10/why-i-considered-ivf/">&lt;p&gt;In &lt;a href=&quot;https://www.garymm.org/blog/2023/11/10/the-dangers-of-reproducing-while-old/&quot;&gt;The dangers of reproducing while old&lt;/a&gt;, I mentioned that pre-implantation genetic testing could be a way for older prospective parents to improve outcomes. This led my partner and I to seriously consider doing IVF despite not having any fertility issues. At a high level, my conclusion after writing that post was:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Older parents are at much higher risk of passing harmful genetic mutations to their embryos.&lt;/li&gt;
@@ -1107,41 +1250,4 @@ robes with full crazy eyes alone deserves an A. But you can judge for yourselves
         href=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
         imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;/a&gt;&lt;br /&gt;&lt;a
         href=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
-        imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;</content><author><name>garymm</name></author><summary type="html">This must be from around 2004. Rafael Miguel and Matthew Smolich had a homework assignment for religion class at Christian Brothers High School. The assignment was to imagine a new Catholic religious order and create a brochure for it. Real examples of such orders include the&amp;nbsp;De La Salle Brothers (who started our high school), Franciscans and Dominicans.Each order focuses on a particular &quot;charism&quot;, which essentially is a gift of a skill granted by God to individuals that they can go out and help others. Rafa and Matt envisioned an order called The Cookie Krank House which helped others through making and selling cookies. At some point they got help from Matthew Braly to do the drawings fro the brochure.The teacher grading the assignment did not appreciate it. She claimed that &quot;Krank House&quot; was synonymous with &quot;crack house&quot;, which is clearly not an appropriate thing to call a monastery. She gave Rafa and Matt an F on the assignment. I personally couldn&apos;t disagree more with the grade. Cookie Monster appearing in monk&apos;s robes with full crazy eyes alone deserves an A. But you can judge for yourselves. Outside of the brochure. Front page is on the left, if it were folded. Inside of the brochure.</summary></entry><entry><title type="html">Matching donations to Against Malaria Foundation, 2016 edition</title><link href="http://garymm.org/blog/2016/12/08/matching-donations-to-against-malaria/" rel="alternate" type="text/html" title="Matching donations to Against Malaria Foundation, 2016 edition" /><published>2016-12-08T18:02:00-08:00</published><updated>2016-12-08T18:02:00-08:00</updated><id>http://garymm.org/blog/2016/12/08/matching-donations-to-against-malaria</id><content type="html" xml:base="http://garymm.org/blog/2016/12/08/matching-donations-to-against-malaria/">&lt;h3&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Short version:&lt;/span&gt;&lt;/h3&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;If you donate to
-    Against Malaria Foundation before the end of 2016, I&apos;ll match your donation, and then Google will match my match, so
-    your impact will be trebled. Just email me your receipt.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Offer valid
-    up until I exhaust my remaining 3,000 USD in Google matching funds.&lt;/span&gt;&lt;br /&gt;&lt;span
-    style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;The easiest way to donate is through
-    &lt;a href=&quot;https://www.paypal.com/fundraiser/105865137050618816/charity/113632&quot;&gt;PayPal&lt;/a&gt;. PayPal will waive all the
-    fees and even match 1% of your donation.&lt;/span&gt;&lt;br /&gt;
-&lt;h3&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Long version:&lt;/span&gt;&lt;/h3&gt;
-&lt;div style=&quot;line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;&quot;&gt;&lt;span
-        style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;&lt;span
-            style=&quot;font-family: inherit;&quot;&gt;Imagine there’s a child stuck in a burning building. You see the flames, you
-            hear the screams. Imagine what it would feel like to run into the building, grab the child and deliver the
-            child to his mother’s arms. I know I would feel great about being able to help someone like
-            that.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div style=&quot;line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;span
-            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span
-            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;Fortunately there aren’t
-            burning buildings all around me, but there are opportunities to save dying children that are a lot less
-            dangerous.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div style=&quot;line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;&quot;&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;span
-            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span
-            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;Malaria killed an
-            estimated &lt;/span&gt;&lt;a href=&quot;http://www.who.int/gho/malaria/epidemic/deaths/en/&quot;
-            style=&quot;text-decoration: none;&quot;&gt;&lt;span
-                style=&quot;background-color: white; color: #1155cc; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;627,000
-                people&lt;/span&gt;&lt;/a&gt;&lt;span
-            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt; in 2012. &lt;/span&gt;&lt;a
-            href=&quot;http://www.givewell.org/charities/against-malaria-foundation&quot; style=&quot;text-decoration: none;&quot;&gt;&lt;span
-                style=&quot;background-color: white; color: #1155cc; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;GiveWell&lt;/span&gt;&lt;/a&gt;&lt;span
-            style=&quot;background-color: white; vertical-align: baseline; white-space: pre-wrap;&quot;&gt; rates the Against Malaria
-            Foundation as the most cost-effective charity for saving and improving human lives. They estimate that for
-            every $3,500 given to AMF, one person will be saved from death. This week, I will match your contributions
-            to AMF and so will Google. Let’s all save some lives together!&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;Check out&amp;nbsp;&lt;a
-            href=&quot;http://www.econtalk.org/archives/2015/09/william_macaski.html&quot;&gt;William MacAskill on
-            EconTalk&lt;/a&gt;&amp;nbsp;for a great discussion of these issues.&lt;/span&gt;&lt;/div&gt;
-&lt;div&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;</content><author><name>garymm</name></author><category term="charity" /><summary type="html">Short version:If you donate to Against Malaria Foundation before the end of 2016, I&apos;ll match your donation, and then Google will match my match, so your impact will be trebled. Just email me your receipt.Offer valid up until I exhaust my remaining 3,000 USD in Google matching funds.The easiest way to donate is through PayPal. PayPal will waive all the fees and even match 1% of your donation. Long version: Imagine there’s a child stuck in a burning building. You see the flames, you hear the screams. Imagine what it would feel like to run into the building, grab the child and deliver the child to his mother’s arms. I know I would feel great about being able to help someone like that. Fortunately there aren’t burning buildings all around me, but there are opportunities to save dying children that are a lot less dangerous. Malaria killed an estimated 627,000 people in 2012. GiveWell rates the Against Malaria Foundation as the most cost-effective charity for saving and improving human lives. They estimate that for every $3,500 given to AMF, one person will be saved from death. This week, I will match your contributions to AMF and so will Google. Let’s all save some lives together! Check out&amp;nbsp;William MacAskill on EconTalk&amp;nbsp;for a great discussion of these issues.</summary></entry></feed>
+        imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;</content><author><name>garymm</name></author><summary type="html">This must be from around 2004. Rafael Miguel and Matthew Smolich had a homework assignment for religion class at Christian Brothers High School. The assignment was to imagine a new Catholic religious order and create a brochure for it. Real examples of such orders include the&amp;nbsp;De La Salle Brothers (who started our high school), Franciscans and Dominicans.Each order focuses on a particular &quot;charism&quot;, which essentially is a gift of a skill granted by God to individuals that they can go out and help others. Rafa and Matt envisioned an order called The Cookie Krank House which helped others through making and selling cookies. At some point they got help from Matthew Braly to do the drawings fro the brochure.The teacher grading the assignment did not appreciate it. She claimed that &quot;Krank House&quot; was synonymous with &quot;crack house&quot;, which is clearly not an appropriate thing to call a monastery. She gave Rafa and Matt an F on the assignment. I personally couldn&apos;t disagree more with the grade. Cookie Monster appearing in monk&apos;s robes with full crazy eyes alone deserves an A. But you can judge for yourselves. Outside of the brochure. Front page is on the left, if it were folded. Inside of the brochure.</summary></entry></feed>
