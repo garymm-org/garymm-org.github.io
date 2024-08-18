@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Kagi and Google web search results: a personal evaluation'
+title: 'Kagi vs Google search: a personal evaluation'
 date: '2024-08-17'
 author: garymm
 tags:
@@ -8,6 +8,7 @@ tags:
 - information
 - computers
 - search
+tweet_url: https://x.com/garymigu/status/1825272848463904953
 permalink: /blog/2024/08/17/kagigoogle/
 ---
 
@@ -18,7 +19,7 @@ which I preferred. The queries spanned various topics, heavily tilted towards so
 
 ## Summary
 
-After this experiment I've decided to pay for Kagi[^1] and set it as my default search engine on both my phone and laptop.
+After this experiment I've decided to pay for Kagi and set it as my default search engine on both my phone and laptop.
 
 Here's a qualitative comparison and some thoughts:
 
@@ -53,6 +54,4 @@ that a [37 person](https://blog.kagi.com/what-is-next-for-kagi) (as of 2024-04) 
 * "josefk simt". Kagi returned exactly what I wanted, which was [this page from "yosefk.com"](https://yosefk.com/blog/simd-simt-smt-parallelism-in-nvidia-gpus.html) even though I misspelled the domain name in the query. Google seems to have decided there were not enough relevant results for my whole query so it searched for just "josefk" and then noted next to each of the results that the result is "`Missing: simt`".
 * "how to value startup options". On Desktop, Google starts of with 4 ads which are totally irrelevant to what I wanted (though on my phone it didn't show any ads). After that it had an AI summary which seemed reasonable and itself linked to some pretty good results. After that it had some decent web results. Kagi had no ads and had some of the same results as Google, but only Kagi had [this gem](https://www.benkuhn.net/optopt/) from Ben Kuhn near the top. Reading that lead to lots of other relevant links on that same site.
 * "union find algorithm": Google's top result is GeeksforGeeks, which has relevant info but is not presented particularly well and the page has a huge amount of annoying animated ads. Google's second result is Wikipedia. Kagi links to Wikipedia first, and second to [this page](https://labuladong.gitbook.io/algo-en/iv.-high-frequency-interview-problem/union-find-explanation) which has no ads and has nice illustrations of the algorithm.
-
-[^1]: Currently $54 / year for the starter plan, which includes 300 searches / month. This does seem kind of low, but I have been using ChatGPT, Claude and Copilot a lot more, and I actually should probably be using them even more, so maybe this limit will be a useful nudge.
 
