@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-06-16T10:34:59-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Attention, Memory, and Productive Knowledge Work</title><link href="http://garymm.org/blog/2024/06/09/attention-memory-productive-knowledge-work/" rel="alternate" type="text/html" title="Attention, Memory, and Productive Knowledge Work" /><published>2024-06-09T00:00:00-07:00</published><updated>2024-06-09T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/06/09/attention-memory-and-productive-knowledge-work</id><content type="html" xml:base="http://garymm.org/blog/2024/06/09/attention-memory-productive-knowledge-work/">&lt;p&gt;Here I present some ideas for increasing the productivity of knowledge workers by structuring their workflows around attention and memory.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-08-17T21:35:19-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Kagi and Google web search results: a personal evaluation</title><link href="http://garymm.org/blog/2024/08/17/kagigoogle/" rel="alternate" type="text/html" title="Kagi and Google web search results: a personal evaluation" /><published>2024-08-17T00:00:00-07:00</published><updated>2024-08-17T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/08/17/kagi-vs-google-search</id><content type="html" xml:base="http://garymm.org/blog/2024/08/17/kagigoogle/">&lt;p&gt;&lt;a href=&quot;https://kagi.com&quot;&gt;Kagi&lt;/a&gt; is a relatively new search engine. Unlike Google, it makes money through user subscriptions and shows no ads.
+Despite having decreased my usage of web search since the release of ChatGPT, I still use it a lot, and would be willing to pay a few
+bucks a month for a significantly better experience. To evaluate Kagi, I put 75 of my recent search queries into Kagi and Google and rated
+which I preferred. The queries spanned various topics, heavily tilted towards software engineering and computer topics.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;After this experiment I’ve decided to pay for Kagi&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and set it as my default search engine on both my phone and laptop.&lt;/p&gt;
+
+&lt;p&gt;Here’s a qualitative comparison and some thoughts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When Google shows ads on my phone, it really hurts the experience since it takes up the whole screen (often two screens of scrolling) and the ads are very very rarely relevant (with the exception of Google shopping results, which are sometimes relevant). On desktop the ads are a minor annoyance since I typically can still see the non-ad results without scrolling, and in general when I’m using my laptop I’m in less of a hurry. However maybe only 1/10 of my queries trigger non-Google-shopping ads. Probably because many of my queries are very specific and technical. As noted, Kagi doesn’t show any ads ever.&lt;/li&gt;
+  &lt;li&gt;Google is better at extracting relevant information (either from web results or structured data like stock prices) and putting it at the top of the search results. For Kagi this information is usually in the pages that are at or near the top, but it takes an extra click to get it. E.g. a graph of a stock’s price.&lt;/li&gt;
+  &lt;li&gt;Kagi shows more results from somewhat obscure, non-commercial sites and blogs. For some of my queries, these sites had excellent content that I would be very unlikely to find via Google.&lt;/li&gt;
+  &lt;li&gt;Google has a lot of features that I don’t care about that you might (for example, live sports scores).&lt;/li&gt;
+  &lt;li&gt;I didn’t thoroughly evaluate queries where I was trying to buy products online. Kagi doesn’t have a shopping search feature, and I expect I will probably continue to use Google shopping in addition to other sites to shop.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having worked at Google on search and seen how much human ingenuity and money went into building it, it’s pretty shocking
+that a &lt;a href=&quot;https://blog.kagi.com/what-is-next-for-kagi&quot;&gt;37 person&lt;/a&gt; (as of 2024-04) company can compete at all, but here we are!&lt;/p&gt;
+
+&lt;h2 id=&quot;detailed-results&quot;&gt;Detailed results&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tie: 47 / 75&lt;/li&gt;
+  &lt;li&gt;Strongly prefer Google: 3 / 75&lt;/li&gt;
+  &lt;li&gt;Strongly prefer Kagi: 4 / 75&lt;/li&gt;
+  &lt;li&gt;Weakly prefer Google: 11 / 75&lt;/li&gt;
+  &lt;li&gt;Weakly prefer Kagi: 10 / 75&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;google-big-wins&quot;&gt;Google big wins&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“bryant controlbox google home”. &lt;a href=&quot;https://www.reddit.com/r/smarthome/comments/j32rkz/bryant_evolution_connex_connect_talking_to_other/&quot;&gt;This reddit post&lt;/a&gt; is the only satisfying result on either, and it’s in the first few results for Google but not for Kagi.&lt;/li&gt;
+  &lt;li&gt;“piedmont california front setback requirements”. Google has an “AI Overview” with the answer (which appears to have been extracted from a PDF). Kagi’s top result doesn’t have the answer on the page, though it does link to the PDF that contains the answer. It would take at least a minute of careful reading of the page that Kagi returned to figure out which link to click to get the right PDF, and then loading and searching in the PDF might take another minute.&lt;/li&gt;
+  &lt;li&gt;“intc stock”. Google has a nice interactive graph. Kagi has some data (like current price, 52 week range), but I like the interactive graph more.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kagi-big-wins&quot;&gt;Kagi big wins&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“lugg movers”. Google starts with several ads for other companies (competitors to Lugg I assume). On my phone, I needed to scroll down two full screens to get past the ads to the actual result I wanted. Kagi had no ads, and had the official Lugg page (which is what I wanted) at the top.&lt;/li&gt;
+  &lt;li&gt;“josefk simt”. Kagi returned exactly what I wanted, which was &lt;a href=&quot;https://yosefk.com/blog/simd-simt-smt-parallelism-in-nvidia-gpus.html&quot;&gt;this page from “yosefk.com”&lt;/a&gt; even though I misspelled the domain name in the query. Google seems to have decided there were not enough relevant results for my whole query so it searched for just “josefk” and then noted next to each of the results that the result is “&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Missing: simt&lt;/code&gt;”.&lt;/li&gt;
+  &lt;li&gt;“how to value startup options”. On Desktop, Google starts of with 4 ads which are totally irrelevant to what I wanted (though on my phone it didn’t show any ads). After that it had an AI summary which seemed reasonable and itself linked to some pretty good results. After that it had some decent web results. Kagi had no ads and had some of the same results as Google, but only Kagi had &lt;a href=&quot;https://www.benkuhn.net/optopt/&quot;&gt;this gem&lt;/a&gt; from Ben Kuhn near the top. Reading that lead to lots of other relevant links on that same site.&lt;/li&gt;
+  &lt;li&gt;“union find algorithm”: Google’s top result is GeeksforGeeks, which has relevant info but is not presented particularly well and the page has a huge amount of annoying animated ads. Google’s second result is Wikipedia. Kagi links to Wikipedia first, and second to &lt;a href=&quot;https://labuladong.gitbook.io/algo-en/iv.-high-frequency-interview-problem/union-find-explanation&quot;&gt;this page&lt;/a&gt; which has no ads and has nice illustrations of the algorithm.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Currently $54 / year for the starter plan, which includes 300 searches / month. This does seem kind of low, but I have been using ChatGPT, Claude and Copilot a lot more, and I actually should probably be using them even more, so maybe this limit will be a useful nudge. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>garymm</name></author><category term="internet" /><category term="information" /><category term="computers" /><category term="search" /><summary type="html">Kagi is a relatively new search engine. Unlike Google, it makes money through user subscriptions and shows no ads. Despite having decreased my usage of web search since the release of ChatGPT, I still use it a lot, and would be willing to pay a few bucks a month for a significantly better experience. To evaluate Kagi, I put 75 of my recent search queries into Kagi and Google and rated which I preferred. The queries spanned various topics, heavily tilted towards software engineering and computer topics.</summary></entry><entry><title type="html">Attention, Memory, and Productive Knowledge Work</title><link href="http://garymm.org/blog/2024/06/09/attention-memory-productive-knowledge-work/" rel="alternate" type="text/html" title="Attention, Memory, and Productive Knowledge Work" /><published>2024-06-09T00:00:00-07:00</published><updated>2024-06-09T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/06/09/attention-memory-and-productive-knowledge-work</id><content type="html" xml:base="http://garymm.org/blog/2024/06/09/attention-memory-productive-knowledge-work/">&lt;p&gt;Here I present some ideas for increasing the productivity of knowledge workers by structuring their workflows around attention and memory.
 I wrote this for my own benefit, but I hope you find it useful too!&lt;/p&gt;
 
 &lt;h2 id=&quot;workflow-matters&quot;&gt;Workflow matters&lt;/h2&gt;
@@ -1205,49 +1260,4 @@ questions on a detail ask and I can answer.&lt;br /&gt;First my set-up:&lt;br /&
     &lt;/ul&gt;
 &lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;blockquote style=&quot;border: none; margin: 0 0 0 40px; padding: 0px;&quot;&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;br /&gt;Hope this is helpful to
-someone else.</content><author><name>garymm</name></author><summary type="html">This took me forever to set up properly, so I figured I&apos;d share it.For now just the basic outline. If have questions on a detail ask and I can answer.First my set-up: Windows 10 64 bit with Fall Creators Update GeForce GTX 960 2016 LG OLED TV The basic ingredients are these. Note I always used 64 bit versions of everything. Kodi DSPlayer, I used 17.6, 64 bit Plex for Kodi add-on, I used 0.1.3. Install it from within Kodi. LAV Filters, I used 0.70.2 MadVR, I used v0.92.10 Basic steps: Install everything listed above. Replace Kodi DSPlayer&apos;s internal filters with the external ones: copy all the files files from C:\Program Files (x86)\LAV Filters\x64 to C:\Program Files\Kodi\system\players\dsplayer\LAVFilters, replacing files at the destination. In the nVidia control panel, disable stereoscopic 3D. With the current drivers, enabling it causes crashes in madVR when Direct3D 11 is enabled and it goes full screen. I have HDR and Advanced Color disabled in the Windows 10 display settings. MadVR enables it during playback as needed, and it makes the desktop look bad when it&apos;s on. In Plex for Kodi Settings, enable HEVC streaming. On the LG OLED TV settings, disable Screen Shift. This setting shifts the image around by 1 pixel every few minutes, which will result in the line-interlaced image output by madVR not being aligned with the FPR (3D filter), which results in the left and right eyes being swapped. Note this will increase the risk of image retention. MadVR settings (just the required stuff, other settings you should probably mess with, lots of other guides on that): rendering -&amp;gt; general settings: Use Direct3D 11 for presentation (required for 10-bit color output) rendering -&amp;gt; stereo 3D: enable stereo 3D playback. Leave everything else unchecked. Devices -&amp;gt; -&amp;gt; properties: the native display bitdepth is 10 bit or higher (required for 10-bit color output). Devices -&amp;gt; -&amp;gt; properties: 3D format is Line Alternative (this works for passive displays like LG OLEDs, *not* for any other kind of display) Devices -&amp;gt; -&amp;gt; hdr: passthrough HDR content to the display, and send HDR metadata to the display Hope this is helpful to someone else.</summary></entry><entry><title type="html">The Cookie Krank House</title><link href="http://garymm.org/blog/2017/07/30/the-cookie-krank-house/" rel="alternate" type="text/html" title="The Cookie Krank House" /><published>2017-07-30T16:32:00-07:00</published><updated>2017-07-30T16:32:00-07:00</updated><id>http://garymm.org/blog/2017/07/30/the-cookie-krank-house</id><content type="html" xml:base="http://garymm.org/blog/2017/07/30/the-cookie-krank-house/">This must be from around 2004. Rafael Miguel and Matthew Smolich had a homework assignment for religion class at
-Christian Brothers High School. The assignment was to imagine a new Catholic religious order and create a brochure for
-it. Real examples of such orders include the&amp;nbsp;De La Salle Brothers (who started our high school), Franciscans and
-Dominicans.&lt;br /&gt;&lt;br /&gt;Each order focuses on a particular &quot;charism&quot;, which essentially is a gift of a skill granted by
-God to individuals that they can go out and help others. Rafa and Matt envisioned an order called The Cookie Krank House
-which helped others through making and selling cookies. At some point they got help from Matthew Braly to do the
-drawings fro the brochure.&lt;br /&gt;&lt;br /&gt;The teacher grading the assignment did not appreciate it. She claimed that &quot;Krank
-House&quot; was synonymous with &quot;crack house&quot;, which is clearly not an appropriate thing to call a monastery. She gave Rafa
-and Matt an F on the assignment. I personally couldn&apos;t disagree more with the grade. Cookie Monster appearing in monk&apos;s
-robes with full crazy eyes alone deserves an A. But you can judge for yourselves.&lt;br /&gt;
-&lt;table align=&quot;center&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;tr-caption-container&quot;
-    style=&quot;margin-left: auto; margin-right: auto; text-align: center;&quot;&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td style=&quot;text-align: center;&quot;&gt;&lt;a
-                    href=&quot;https://3.bp.blogspot.com/-Qm5muw9V7_E/WX5sEO9BRJI/AAAAAAAA6g8/5SztdfCMYp0OdwhSZMkbtCpIPkQCkPdmwCLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Boutside.png&quot;
-                    imageanchor=&quot;1&quot; style=&quot;margin-left: auto; margin-right: auto;&quot;&gt;&lt;img border=&quot;0&quot;
-                        data-original-height=&quot;1222&quot; data-original-width=&quot;1600&quot; height=&quot;488&quot;
-                        src=&quot;https://3.bp.blogspot.com/-Qm5muw9V7_E/WX5sEO9BRJI/AAAAAAAA6g8/5SztdfCMYp0OdwhSZMkbtCpIPkQCkPdmwCLcBGAs/s640/The%2BCookie%2BKrank%2BHouse%2B-%2Boutside.png&quot;
-                        width=&quot;640&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td class=&quot;tr-caption&quot; style=&quot;text-align: center;&quot;&gt;Outside of the brochure. Front page is on the left, if it
-                were folded.&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table align=&quot;center&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; class=&quot;tr-caption-container&quot;
-    style=&quot;margin-left: auto; margin-right: auto; text-align: center;&quot;&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td style=&quot;text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;1214&quot; data-original-width=&quot;1600&quot;
-                    height=&quot;484&quot;
-                    src=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s640/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
-                    style=&quot;margin-left: auto; margin-right: auto;&quot; width=&quot;640&quot; /&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td class=&quot;tr-caption&quot; style=&quot;text-align: center;&quot;&gt;Inside of the brochure.&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a
-        href=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
-        imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;/a&gt;&lt;br /&gt;&lt;a
-        href=&quot;https://1.bp.blogspot.com/-URRxsRz_TMQ/WX5sEKqJl8I/AAAAAAAA6hA/T7vh_fZvJSAXPSUJjoAOZUj7raIfK78zACLcBGAs/s1600/The%2BCookie%2BKrank%2BHouse%2B-%2Binside.png&quot;
-        imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;</content><author><name>garymm</name></author><summary type="html">This must be from around 2004. Rafael Miguel and Matthew Smolich had a homework assignment for religion class at Christian Brothers High School. The assignment was to imagine a new Catholic religious order and create a brochure for it. Real examples of such orders include the&amp;nbsp;De La Salle Brothers (who started our high school), Franciscans and Dominicans.Each order focuses on a particular &quot;charism&quot;, which essentially is a gift of a skill granted by God to individuals that they can go out and help others. Rafa and Matt envisioned an order called The Cookie Krank House which helped others through making and selling cookies. At some point they got help from Matthew Braly to do the drawings fro the brochure.The teacher grading the assignment did not appreciate it. She claimed that &quot;Krank House&quot; was synonymous with &quot;crack house&quot;, which is clearly not an appropriate thing to call a monastery. She gave Rafa and Matt an F on the assignment. I personally couldn&apos;t disagree more with the grade. Cookie Monster appearing in monk&apos;s robes with full crazy eyes alone deserves an A. But you can judge for yourselves. Outside of the brochure. Front page is on the left, if it were folded. Inside of the brochure.</summary></entry></feed>
+someone else.</content><author><name>garymm</name></author><summary type="html">This took me forever to set up properly, so I figured I&apos;d share it.For now just the basic outline. If have questions on a detail ask and I can answer.First my set-up: Windows 10 64 bit with Fall Creators Update GeForce GTX 960 2016 LG OLED TV The basic ingredients are these. Note I always used 64 bit versions of everything. Kodi DSPlayer, I used 17.6, 64 bit Plex for Kodi add-on, I used 0.1.3. Install it from within Kodi. LAV Filters, I used 0.70.2 MadVR, I used v0.92.10 Basic steps: Install everything listed above. Replace Kodi DSPlayer&apos;s internal filters with the external ones: copy all the files files from C:\Program Files (x86)\LAV Filters\x64 to C:\Program Files\Kodi\system\players\dsplayer\LAVFilters, replacing files at the destination. In the nVidia control panel, disable stereoscopic 3D. With the current drivers, enabling it causes crashes in madVR when Direct3D 11 is enabled and it goes full screen. I have HDR and Advanced Color disabled in the Windows 10 display settings. MadVR enables it during playback as needed, and it makes the desktop look bad when it&apos;s on. In Plex for Kodi Settings, enable HEVC streaming. On the LG OLED TV settings, disable Screen Shift. This setting shifts the image around by 1 pixel every few minutes, which will result in the line-interlaced image output by madVR not being aligned with the FPR (3D filter), which results in the left and right eyes being swapped. Note this will increase the risk of image retention. MadVR settings (just the required stuff, other settings you should probably mess with, lots of other guides on that): rendering -&amp;gt; general settings: Use Direct3D 11 for presentation (required for 10-bit color output) rendering -&amp;gt; stereo 3D: enable stereo 3D playback. Leave everything else unchecked. Devices -&amp;gt; -&amp;gt; properties: the native display bitdepth is 10 bit or higher (required for 10-bit color output). Devices -&amp;gt; -&amp;gt; properties: 3D format is Line Alternative (this works for passive displays like LG OLEDs, *not* for any other kind of display) Devices -&amp;gt; -&amp;gt; hdr: passthrough HDR content to the display, and send HDR metadata to the display Hope this is helpful to someone else.</summary></entry></feed>
