@@ -8,6 +8,7 @@ tags:
 - information
 - computers
 - search
+hn_url: https://news.ycombinator.com/item?id=41293207
 tweet_url: https://x.com/garymigu/status/1825272848463904953
 permalink: /blog/2024/08/17/kagigoogle/
 ---
