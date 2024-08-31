@@ -1,0 +1,41 @@
+---
+layout: post
+title: 'Using Fidelity as a checking account to 10x your yield'
+date: '2024-08-31'
+author: garymm
+tags:
+- money
+permalink: /blog/2024/08/31/fidelity/
+---
+
+You can use an account at Fidelity as a checking account, meaning you can write and deposit checks and withdraw cash from ATMs.
+Why do this?
+
+## Higher yield
+
+At Fidelity you can get much higher yield on your money without sacrificing liquidity. E.g., the Schwab checking account I used before switching to Fidelity currently pays 0.45%. The money in the equivalent account at Fidelity had an annualized yield of 4.96% last week.
+
+To get that higher yield, Fidelity will invest your money in US treasury securities. The actual rate varies depending on the market. There are probably times when the yield will be lower than what you can get in a checking account. For example in 2021, Fidelity's [Government Money Market Fund earned 0.01%](https://fundresearch.fidelity.com/mutual-funds/performance-and-risk/31617H102) whereas the average the [checking account was paying 0.03%](https://ycharts.com/indicators/us_interest_checking_account_rate). However on this low end, the absolute difference is negligible, but when interest rates rise, the difference is huge (e.g. the current 4.96% vs 0.45%).
+
+Some consider treasuries riskier than an FDIC-insured checking account. Personally I think the odds losing money in both are very similar. They both involve the USA government defaulting on its obligations (treasury debts in one case, FDIC insurance in another). Fidelity does offer an FDIC-insured investment that is currently paying 2.72%, so ~5x what a checking account pays with the same risk.
+
+## Account consolidation
+
+You can choose to consolidate several accounts (checking, retirement investments, non-retirement investments, etc) at Fidelity and thus have one fewer financial institution to deal with. I personally have spending money (what I used to have in a checking account), non-retirement investments, a health savings account, and a retirement account there.
+
+## How to set it up
+
+There's two ways: use a brokerage account or a cash management account.
+Here's how they compare along the main axes I care about:
+
+|                     | brokerage account                                | cash management account |
+|---------------------|--------------------------------------------------|-------------------------|
+| ATM fees reimbursed | only if you have >$250k across all Fidelity accounts | yes |
+| FDIC insured option | no | yes (lower yield) |
+| use 1 account for checking + investments | yes | no |
+
+When you open your account you'll need to select what your "cash" holding is actually invested in. Currently the default for both is the Fidelity Government Money Market Fund (SPAXX). Then when you deposit money into your account it automatically is used to purchase shares of that holding.
+
+The routing number that Fidelity gives you for making direct deposits or withdrawals is actually associated with another institution (since Fidelity is not actually a bank that offers check accounts it has to partner with another institution to access the ACH system for transfers), so don't be alarmed if you enter the routing number and some website says it's not Fidelity.
+
+There's lots more details over at the [Bogleheads wiki](https://www.bogleheads.org/wiki/Fidelity:_one_stop_shop#Suggested_account_usages). The one inaccuracy I noticed there is it says that brokerage account ATM fees are reimbursed only for "Private Client Group", but it's actually both Private and Premium clients and Premium is a lower threshold (>$250k assets across all your Fidelity accounts, as of writing).
