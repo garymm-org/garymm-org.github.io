@@ -6,6 +6,8 @@ author: garymm
 tags:
 - money
 permalink: /blog/2024/08/31/fidelity/
+hn_url: https://news.ycombinator.com/item?id=41412498
+tweet_url: https://x.com/garymigu/status/1830009606019694990ß
 ---
 
 You can use an account at Fidelity as a checking account, meaning you can write and deposit checks and withdraw cash from ATMs.
