@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-08-21T20:48:14-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Kagi vs Google search: a personal evaluation</title><link href="http://garymm.org/blog/2024/08/17/kagigoogle/" rel="alternate" type="text/html" title="Kagi vs Google search: a personal evaluation" /><published>2024-08-17T00:00:00-07:00</published><updated>2024-08-17T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/08/17/kagi-vs-google-search</id><content type="html" xml:base="http://garymm.org/blog/2024/08/17/kagigoogle/">&lt;p&gt;&lt;a href=&quot;https://kagi.com&quot;&gt;Kagi&lt;/a&gt; is a relatively new search engine. Unlike Google, it makes money through user subscriptions and shows no ads.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-08-31T15:07:51-07:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Using Fidelity as a checking account to 10x your yield</title><link href="http://garymm.org/blog/2024/08/31/fidelity/" rel="alternate" type="text/html" title="Using Fidelity as a checking account to 10x your yield" /><published>2024-08-31T00:00:00-07:00</published><updated>2024-08-31T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/08/31/fidelity</id><content type="html" xml:base="http://garymm.org/blog/2024/08/31/fidelity/">&lt;p&gt;You can use an account at Fidelity as a checking account, meaning you can write and deposit checks and withdraw cash from ATMs.
+Why do this?&lt;/p&gt;
+
+&lt;h2 id=&quot;higher-yield&quot;&gt;Higher yield&lt;/h2&gt;
+
+&lt;p&gt;At Fidelity you can get much higher yield on your money without sacrificing liquidity. E.g., the Schwab checking account I used before switching to Fidelity currently pays 0.45%. The money in the equivalent account at Fidelity had an annualized yield of 4.96% last week.&lt;/p&gt;
+
+&lt;p&gt;To get that higher yield, Fidelity will invest your money in US treasury securities. The actual rate varies depending on the market. There are probably times when the yield will be lower than what you can get in a checking account. For example in 2021, Fidelity’s &lt;a href=&quot;https://fundresearch.fidelity.com/mutual-funds/performance-and-risk/31617H102&quot;&gt;Government Money Market Fund earned 0.01%&lt;/a&gt; whereas the average the &lt;a href=&quot;https://ycharts.com/indicators/us_interest_checking_account_rate&quot;&gt;checking account was paying 0.03%&lt;/a&gt;. However on this low end, the absolute difference is negligible, but when interest rates rise, the difference is huge (e.g. the current 4.96% vs 0.45%).&lt;/p&gt;
+
+&lt;p&gt;Some consider treasuries riskier than an FDIC-insured checking account. Personally I think the odds losing money in both are very similar. They both involve the USA government defaulting on its obligations (treasury debts in one case, FDIC insurance in another). Fidelity does offer an FDIC-insured investment that is currently paying 2.72%, so ~5x what a checking account pays with the same risk.&lt;/p&gt;
+
+&lt;h2 id=&quot;account-consolidation&quot;&gt;Account consolidation&lt;/h2&gt;
+
+&lt;p&gt;You can choose to consolidate several accounts (checking, retirement investments, non-retirement investments, etc) at Fidelity and thus have one fewer financial institution to deal with. I personally have spending money (what I used to have in a checking account), non-retirement investments, a health savings account, and a retirement account there.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-set-it-up&quot;&gt;How to set it up&lt;/h2&gt;
+
+&lt;p&gt;There’s two ways: use a brokerage account or a cash management account.
+Here’s how they compare along the main axes I care about:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;brokerage account&lt;/th&gt;
+      &lt;th&gt;cash management account&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ATM fees reimbursed&lt;/td&gt;
+      &lt;td&gt;only if you have &amp;gt;$250k in all Fidelity accounts&lt;/td&gt;
+      &lt;td&gt;yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FDIC insured option&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;yes (lower yield)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;use 1 account for checking + investments&lt;/td&gt;
+      &lt;td&gt;yes&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;When you open your account you’ll need to select what your “cash” holding is actually invested in. Currently the default for both is the Fidelity Government Money Market Fund (SPAXX). Then when you deposit money into your account it automatically is used to purchase shares of that holding.&lt;/p&gt;
+
+&lt;p&gt;The routing number that Fidelity gives you for making direct deposits or withdrawals is actually associated with another institution (since Fidelity is not actually a bank that offers check accounts it has to partner with another institution to access the ACH system for transfers), so don’t be alarmed if you enter the routing number and some website says it’s not Fidelity.&lt;/p&gt;
+
+&lt;p&gt;There’s lots more details over at the &lt;a href=&quot;https://www.bogleheads.org/wiki/Fidelity:_one_stop_shop#Suggested_account_usages&quot;&gt;Bogleheads wiki&lt;/a&gt;. The one inaccuracy I noticed there is it says that brokerage account ATM fees are reimbursed only for “Private Client Group”, but it’s actually both Private and Premium clients and Premium is a lower threshold (&amp;gt;$250k assets in all Fidelity accounts as of writing).&lt;/p&gt;</content><author><name>garymm</name></author><category term="money" /><summary type="html">You can use an account at Fidelity as a checking account, meaning you can write and deposit checks and withdraw cash from ATMs. Why do this?</summary></entry><entry><title type="html">Kagi vs Google search: a personal evaluation</title><link href="http://garymm.org/blog/2024/08/17/kagigoogle/" rel="alternate" type="text/html" title="Kagi vs Google search: a personal evaluation" /><published>2024-08-17T00:00:00-07:00</published><updated>2024-08-17T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/08/17/kagi-vs-google-search</id><content type="html" xml:base="http://garymm.org/blog/2024/08/17/kagigoogle/">&lt;p&gt;&lt;a href=&quot;https://kagi.com&quot;&gt;Kagi&lt;/a&gt; is a relatively new search engine. Unlike Google, it makes money through user subscriptions and shows no ads.
 Despite having decreased my usage of web search since the release of ChatGPT, I still use it a lot, and would be willing to pay a few
 bucks a month for a significantly better experience. To evaluate Kagi, I put 75 of my recent search queries into Kagi and Google and rated
 which I preferred. The queries spanned various topics, heavily tilted towards software engineering and computer topics.&lt;/p&gt;
@@ -1205,51 +1256,4 @@ flexible for the right candidate.&lt;/p&gt;</content><author><name>garymm</name>
                 generally lower grades. But again, wanting to maintain the same grade distribution over many years is
                 inconsistent with that grade being an objective measure of skill gained, unless we assume zero change in
                 pedagogical methods, how much knowledge students have coming in, or just random variation in class
-                achievement.&lt;/span&gt;&lt;/div&gt;</content><author><name>garymm</name></author><category term="education" /><summary type="html">I recently read The Case Against Education, which argues that education pays off for individuals mostly because it sends signals about intelligence and conscientiousness, not&amp;nbsp;because it equips students with useful skills.&amp;nbsp;&amp;nbsp;Here&apos;s a puzzle which was not addressed in the book, but may be solved by that model. My university courses were mostly graded on curves. I think Advanced Placement exams are also graded on curves, but I&apos;m less sure of this. At the time this didn&apos;t make sense to me. If the point of taking the courses was to gain skills, shouldn&apos;t there be an objective scale of how much skill a student gained? And shouldn&apos;t students be graded against this objective scale, rather than on how they place in the distribution of students who happen to take the exam on the same day as them? Objective grading seems especially feasible for technical courses like math, but I could imagine it being plausible for humanities courses like history as well. But if the point of a school transcript is not so much to say &quot;Look at all these skills I acquired!&quot;, but rather to say &quot;Here&apos;s where I am in the distribution of students who got this degree at this university&quot;, then the mystery is dissolved. The latter is obviously more in accordance with the signaling model. Of course there are other reasonable explanations for grading on a curve, even in technical courses. If imposed by the department or university, it can be used as a defense against grade inflation. I believe it had that effect at my undergraduate university, where some departments had distributions that all professors were supposed to adhere to, and those departments had generally lower grades. But again, wanting to maintain the same grade distribution over many years is inconsistent with that grade being an objective measure of skill gained, unless we assume zero change in pedagogical methods, how much knowledge students have coming in, or just random variation in class achievement.</summary></entry><entry><title type="html">4K, HDR, and MVC 3D in plex for Kodi on Windows</title><link href="http://garymm.org/blog/2017/12/31/4k-hdr-and-mvc-3d-in-plex-for-kodi-on/" rel="alternate" type="text/html" title="4K, HDR, and MVC 3D in plex for Kodi on Windows" /><published>2017-12-31T09:31:00-08:00</published><updated>2017-12-31T09:31:00-08:00</updated><id>http://garymm.org/blog/2017/12/31/4k-hdr-and-mvc-3d-in-plex-for-kodi-on</id><content type="html" xml:base="http://garymm.org/blog/2017/12/31/4k-hdr-and-mvc-3d-in-plex-for-kodi-on/">This took me forever to set up properly, so I figured I&apos;d share it.&lt;br /&gt;For now just the basic outline. If have
-questions on a detail ask and I can answer.&lt;br /&gt;First my set-up:&lt;br /&gt;&lt;br /&gt;
-&lt;ul&gt;
-    &lt;li&gt;Windows 10 64 bit with Fall Creators Update&lt;/li&gt;
-    &lt;li&gt;GeForce GTX 960&lt;/li&gt;
-    &lt;li&gt;2016 LG OLED TV&lt;/li&gt;
-&lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;The basic ingredients are these. Note I always used 64 bit versions of everything.&lt;br /&gt;&lt;br /&gt;
-&lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://forum.kodi.tv/showthread.php?tid=223175&quot;&gt;Kodi DSPlayer&lt;/a&gt;, I used 17.6, 64 bit&lt;/li&gt;
-    &lt;li&gt;Plex for Kodi add-on, I used 0.1.3. Install it from within Kodi.&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://github.com/Nevcairiel/LAVFilters/releases&quot;&gt;LAV Filters&lt;/a&gt;, I used 0.70.2&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://madvr.com/&quot;&gt;MadVR&lt;/a&gt;, I used v0.92.10&lt;/li&gt;
-&lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;Basic steps:&lt;br /&gt;&lt;br /&gt;
-&lt;ol&gt;
-    &lt;li&gt;Install everything listed above.&lt;/li&gt;
-    &lt;li&gt;Replace Kodi DSPlayer&apos;s internal filters with the external ones: copy all the files files from &lt;span
-            style=&quot;font-family: Courier New, Courier, monospace;&quot;&gt;C:\Program Files (x86)\LAV Filters\x64&lt;/span&gt; to &lt;span
-            style=&quot;font-family: Courier New, Courier, monospace;&quot;&gt;C:\Program
-            Files\Kodi\system\players\dsplayer\LAVFilters&lt;/span&gt;, replacing files at the destination.&lt;/li&gt;
-    &lt;li&gt;In the nVidia control panel, disable stereoscopic 3D. With the current drivers, enabling it causes crashes in
-        madVR when Direct3D 11 is enabled and it goes full screen.&lt;/li&gt;
-    &lt;li&gt;I have HDR and Advanced Color disabled in the Windows 10 display settings. MadVR enables it during playback as
-        needed, and it makes the desktop look bad when it&apos;s on.&lt;/li&gt;
-    &lt;li&gt;In Plex for Kodi Settings, enable HEVC streaming.&lt;/li&gt;
-    &lt;li&gt;On the LG OLED TV settings, disable Screen Shift. This setting shifts the image around by 1 pixel every few
-        minutes, which will result in the line-interlaced image output by madVR not being aligned with the FPR (3D
-        filter), which results in the left and right eyes being swapped. Note this will increase the risk of image
-        retention.&lt;/li&gt;
-    &lt;li&gt;MadVR settings (just the required stuff, other settings you should probably mess with, lots of other guides on
-        that):&lt;/li&gt;
-&lt;/ol&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;ul&gt;
-    &lt;ul&gt;
-        &lt;li&gt;rendering -&amp;gt; general settings: Use Direct3D 11 for presentation (required for 10-bit color output)&lt;/li&gt;
-        &lt;li&gt;rendering -&amp;gt; stereo 3D: enable stereo 3D playback. Leave everything else unchecked.&lt;/li&gt;
-        &lt;li&gt;Devices -&amp;gt; &lt;your avr=&quot;&quot; or=&quot;&quot; tv=&quot;&quot;&gt; -&amp;gt; properties: the native display bitdepth is 10 bit or higher
-                (required for 10-bit color output).&lt;/your&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Devices -&amp;gt; &lt;your avr=&quot;&quot; or=&quot;&quot; tv=&quot;&quot;&gt; -&amp;gt; properties: 3D format is Line Alternative (this works for
-                passive displays like LG OLEDs, *not* for any other kind of display)&lt;/your&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Devices -&amp;gt; &lt;your avr=&quot;&quot; or=&quot;&quot; tv=&quot;&quot;&gt; -&amp;gt; hdr: passthrough HDR content to the display, and send HDR
-                metadata to the display&lt;/your&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/ul&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;blockquote style=&quot;border: none; margin: 0 0 0 40px; padding: 0px;&quot;&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;br /&gt;Hope this is helpful to
-someone else.</content><author><name>garymm</name></author><summary type="html">This took me forever to set up properly, so I figured I&apos;d share it.For now just the basic outline. If have questions on a detail ask and I can answer.First my set-up: Windows 10 64 bit with Fall Creators Update GeForce GTX 960 2016 LG OLED TV The basic ingredients are these. Note I always used 64 bit versions of everything. Kodi DSPlayer, I used 17.6, 64 bit Plex for Kodi add-on, I used 0.1.3. Install it from within Kodi. LAV Filters, I used 0.70.2 MadVR, I used v0.92.10 Basic steps: Install everything listed above. Replace Kodi DSPlayer&apos;s internal filters with the external ones: copy all the files files from C:\Program Files (x86)\LAV Filters\x64 to C:\Program Files\Kodi\system\players\dsplayer\LAVFilters, replacing files at the destination. In the nVidia control panel, disable stereoscopic 3D. With the current drivers, enabling it causes crashes in madVR when Direct3D 11 is enabled and it goes full screen. I have HDR and Advanced Color disabled in the Windows 10 display settings. MadVR enables it during playback as needed, and it makes the desktop look bad when it&apos;s on. In Plex for Kodi Settings, enable HEVC streaming. On the LG OLED TV settings, disable Screen Shift. This setting shifts the image around by 1 pixel every few minutes, which will result in the line-interlaced image output by madVR not being aligned with the FPR (3D filter), which results in the left and right eyes being swapped. Note this will increase the risk of image retention. MadVR settings (just the required stuff, other settings you should probably mess with, lots of other guides on that): rendering -&amp;gt; general settings: Use Direct3D 11 for presentation (required for 10-bit color output) rendering -&amp;gt; stereo 3D: enable stereo 3D playback. Leave everything else unchecked. Devices -&amp;gt; -&amp;gt; properties: the native display bitdepth is 10 bit or higher (required for 10-bit color output). Devices -&amp;gt; -&amp;gt; properties: 3D format is Line Alternative (this works for passive displays like LG OLEDs, *not* for any other kind of display) Devices -&amp;gt; -&amp;gt; hdr: passthrough HDR content to the display, and send HDR metadata to the display Hope this is helpful to someone else.</summary></entry></feed>
+                achievement.&lt;/span&gt;&lt;/div&gt;</content><author><name>garymm</name></author><category term="education" /><summary type="html">I recently read The Case Against Education, which argues that education pays off for individuals mostly because it sends signals about intelligence and conscientiousness, not&amp;nbsp;because it equips students with useful skills.&amp;nbsp;&amp;nbsp;Here&apos;s a puzzle which was not addressed in the book, but may be solved by that model. My university courses were mostly graded on curves. I think Advanced Placement exams are also graded on curves, but I&apos;m less sure of this. At the time this didn&apos;t make sense to me. If the point of taking the courses was to gain skills, shouldn&apos;t there be an objective scale of how much skill a student gained? And shouldn&apos;t students be graded against this objective scale, rather than on how they place in the distribution of students who happen to take the exam on the same day as them? Objective grading seems especially feasible for technical courses like math, but I could imagine it being plausible for humanities courses like history as well. But if the point of a school transcript is not so much to say &quot;Look at all these skills I acquired!&quot;, but rather to say &quot;Here&apos;s where I am in the distribution of students who got this degree at this university&quot;, then the mystery is dissolved. The latter is obviously more in accordance with the signaling model. Of course there are other reasonable explanations for grading on a curve, even in technical courses. If imposed by the department or university, it can be used as a defense against grade inflation. I believe it had that effect at my undergraduate university, where some departments had distributions that all professors were supposed to adhere to, and those departments had generally lower grades. But again, wanting to maintain the same grade distribution over many years is inconsistent with that grade being an objective measure of skill gained, unless we assume zero change in pedagogical methods, how much knowledge students have coming in, or just random variation in class achievement.</summary></entry></feed>
