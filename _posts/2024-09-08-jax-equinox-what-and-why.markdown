@@ -7,6 +7,7 @@ tags:
 - machine learning
 - programming
 permalink: /blog/2024/09/08/jaxwhat/
+tweet_url: https://x.com/garymigu/status/1832987717392867349
 ---
 
 This post is written as a Jupyter notebook which you can run and edit using the link below:
