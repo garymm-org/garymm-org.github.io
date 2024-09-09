@@ -3,3 +3,5 @@ channels:
   - conda-forge
 dependencies:
   - libvips # for jekyll_picture_tag
+  - ipykernel # for jekyll-jupyter-notebook
+  - nbconvert # for jekyll-jupyter-notebook
