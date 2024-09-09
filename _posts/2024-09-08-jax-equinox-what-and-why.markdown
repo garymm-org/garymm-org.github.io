@@ -9,6 +9,8 @@ tags:
 permalink: /blog/2024/09/08/jaxwhat/
 ---
 
+This post is written as a Jupyter notebook which you can run and edit using the link below:
+
 <a href="https://githubtocolab.com/garymm-org/garymm-org.github.io/blob/master/assets/jax-equinox-what-and-why.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 {% jupyter_notebook "/assets/jax-equinox-what-and-why.ipynb" %}
