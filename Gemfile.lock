@@ -43,6 +43,8 @@ GEM
       terminal-table (~> 2.0)
     jekyll-feed (0.15.1)
       jekyll (>= 3.7, < 5.0)
+    jekyll-jupyter-notebook (0.0.6)
+      jekyll
     jekyll-katex (1.0.0)
       execjs (~> 2.7)
       jekyll (>= 3.6, < 5.0)
@@ -117,6 +119,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.2.0)
   jekyll-feed
+  jekyll-jupyter-notebook (~> 0.0.6)
   jekyll-katex
   jekyll-scholar
   jekyll-sitemap

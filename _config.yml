@@ -7,6 +7,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-katex
+  - jekyll-jupyter-notebook
   - jekyll-twitter-plugin
   - jekyll_picture_tag
 katex:
@@ -17,3 +18,5 @@ katex:
     error_color: "#cc0000" # errorColor
 picture:
   source: assets
+jupyter_notebook:
+  prompt: false
