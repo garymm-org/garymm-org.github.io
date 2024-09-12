@@ -7,6 +7,7 @@ tags:
 - machine learning
 - programming
 permalink: /blog/2024/09/08/jaxwhat/
+hn_url: https://news.ycombinator.com/item?id=41489026
 tweet_url: https://x.com/garymigu/status/1832987717392867349
 ---
 
