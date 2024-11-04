@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>jekyll-jupyter-notebook20241019-1335309-vvv0en</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>jekyll-jupyter-notebook20241103-2479083-sh4wqw</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7515,7 +7515,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>This is meant to provide some coneptual background that can be helpful for understanding <a href="https://jax.readthedocs.io/en/latest/beginner_guide.html">JAX</a> and <a href="https://docs.kidger.site/equinox/all-of-equinox/">Equinox</a>. I wrote it for some coworkers who were ML researchers accustomed to working with PyTorch but didn't know much about programming language theory or implementation. I hope this page will make it much easier for people like that to come up to speed with these libraries.</p>
+<p>This is meant to provide some conceptual background that can be helpful for understanding <a href="https://jax.readthedocs.io/en/latest/beginner_guide.html">JAX</a> and <a href="https://docs.kidger.site/equinox/all-of-equinox/">Equinox</a>. I wrote it for some coworkers who were ML researchers accustomed to working with PyTorch but didn't know much about programming language theory or implementation. I hope this page will make it much easier for people like that to come up to speed with these libraries.</p>
 <p>JAX and Equinox both have good official documentation, so I encourage you to check those out after (or before) reading this.</p>
 <h2 id="JAX">JAX<a class="anchor-link" href="#JAX">¶</a></h2><p>I think it's helpful to think of JAX as a domain-specific language embedded within Python rather than a Python library. Why have a domain specific language? Basically because it's very hard to get arbitrary Python code to run fast. JAX is less flexible and harder to learn than PyTorch, but in return it tends to run faster and be easier to scale.</p>
 <p>Besides the compiler that tends to make code faster, some powerful things that JAX makes easier than PyTorch are:</p>
@@ -7534,9 +7534,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="XLA-and-compilation">XLA and compilation<a class="anchor-link" href="#XLA-and-compilation">¶</a></h2><p>JAX stands for "Just Autograd and XLA". XLA is a compiler that tries to produce high-performance code for linear algebra computations.</p>
-<p>There's two main ways to convert source code into machine code that can run on a physical device:</p>
+<p>There are two main ways to convert source code into machine code that can run on a physical device:</p>
 <ul>
-<li>Interpretation. The source code is translated to machine code and executed one statement at a time. This is how Python and PyTorch work.</li>
+<li>Interpretation. The source code is translated to machine code and executed one statement at a time. This is how Python and PyTorch work (ignoring torch.compile).</li>
 <li>Compilation. A big chunk of source code is translated to machine code once and then the machine code can be executed repeatedly. This is how C works.</li>
 </ul>
 <p>JIT stands for "Just In Time" and it refers to a strategy for compiling code only when it is first run (contrasted with compilers for languages like C that compile ahead of time and produce a binary that may never run).</p>
@@ -7684,7 +7684,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>You can see that the non-array operations are not captured by the trace by noticing that the <code>print</code> statement does not execute. This is showing that my_func_jit has already been compiled and is not being recompiled (since the arguments are of the same shape and dtype).</p>
+<p>You can see that the non-array operations are not captured by the trace by noticing that the <code>print</code> statement does not execute. This is showing that <code>my_func_jit</code> has already been compiled and is not being recompiled (since the arguments are of the same shape and dtype).</p>
 </div>
 </div>
 </div>
@@ -7804,7 +7804,7 @@ See https://jax.readthedocs.io/en/latest/errors.html#jax.errors.TracerBoolConver
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Static-arguments">Static arguments<a class="anchor-link" href="#Static-arguments">¶</a></h2><p>In JAX, a static argument to a function is one that will not change after the function has been compiled. That is, calling the function with a different value of a static argument will trigger recompilation.</p>
-<p>Python control-flow on static arguments is allowed, but you should only do this if the argument is some sort of hyperparameter or configuration argument that doesn't change throughout a training, because compilation is slow.</p>
+<p>Python control-flow on static arguments is allowed, but you should only do this if the argument is some sort of hyperparameter or configuration that doesn't change throughout a computation, because compilation is slow.</p>
 </div>
 </div>
 </div>
@@ -8048,7 +8048,7 @@ identity: False
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Pytrees">Pytrees<a class="anchor-link" href="#Pytrees">¶</a></h2><p>JAX uses the term "pytree" to refer to a tree-like structure built out of container-like Python objects. Basically any Python object is in theory a valid pytree as long as it doesn't contain reference cycles.</p>
+<h2 id="Pytrees">Pytrees<a class="anchor-link" href="#Pytrees">¶</a></h2><p>JAX uses the term "pytree" to refer to a tree-like structure built out of Python objects. Basically any Python object is in theory a valid pytree as long as it doesn't contain reference cycles.</p>
 <p>Python classes have to be registered in order to be treated as pytrees, but the built-in container types (lists, dicts, tuples) are all preregistered.</p>
 <p>JAX functions that take arrays typically also work with pytrees as well, in sort of magical ways that are very powerful.</p>
 <p>For example automatic vectorization via <a href="https://jax.readthedocs.io/en/latest/_autosummary/jax.vmap.html">jax.vmap</a> works: if we vmap a function that returns a pytree, the return value of the vmapped function will have the same tree structure, but the array leaves will have the same dimension as the input.</p>
@@ -8092,15 +8092,15 @@ identity: False
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Equinox">Equinox<a class="anchor-link" href="#Equinox">¶</a></h2><p>Equinox is a neural network library for JAX. It mainly consits of:</p>
+<h2 id="Equinox">Equinox<a class="anchor-link" href="#Equinox">¶</a></h2><p>Equinox is a neural network library for JAX. It mainly consists of:</p>
 <ul>
 <li>A <code>Module</code> base class that is a pytree and behaves like a <a href="https://docs.python.org/3/library/dataclasses.html">dataclass</a>.</li>
 <li>Some common neural network layers (e.g. linear, convolutional, attention) and helpers (e.g. Sequential).</li>
 <li>Some helper functions for manipulating pytrees.</li>
-<li>Some wrappers to make it easier to use jax transformations (<code>jax.jit</code>, <code>jax.grad</code>, etc) with Modules or other pytrees.</li>
+<li>Some wrappers to make it easier to use JAX transformations (<code>jax.jit</code>, <code>jax.grad</code>, etc) with Modules or other pytrees.</li>
 </ul>
 <p><a href="https://docs.kidger.site/equinox/all-of-equinox/">Equinox's own documentation</a> is pretty good, but let me take a stab at explaining the main value that equinox provides.</p>
-<p>JAX's transformations (e.g. <code>jit</code>, <code>grad</code>) work on Arrays or pytrees whose leaves are Arrays. Equinox Module's typically hold a mix of Arrays and other objects at their leaves (e.g. a reference to a callable function like <code>jax.nn.relu</code>). If you pass a pytree with a non-array leaf into such a transformation, jax will complain. Equinox lets you keep your arrays and computation together in one pytree (Module), and provides tools to let you mark all of the non-Array parts of the Module as static before passing it in to a transformation like <code>jit</code>.</p>
+<p>JAX's transformations (e.g. <code>jit</code>, <code>grad</code>) work on Arrays or pytrees whose leaves are Arrays. Equinox Modules typically hold a mix of Arrays and other objects at their leaves (e.g. a reference to a callable function like <code>jax.nn.relu</code>). If you pass a pytree with a non-array leaf into such a transformation, JAX will complain. Equinox lets you keep your arrays and computation together in one pytree (Module), and provides tools to let you mark all of the non-Array parts of the Module as static before passing it in to a transformation like <code>jit</code>.</p>
 </div>
 </div>
 </div>
