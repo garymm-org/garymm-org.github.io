@@ -1,4 +1,186 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2024-12-21T20:51:22-08:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">JAX and Equinox: What are they and why should I bother?</title><link href="http://garymm.org/blog/2024/09/08/jaxwhat/" rel="alternate" type="text/html" title="JAX and Equinox: What are they and why should I bother?" /><published>2024-09-08T00:00:00-07:00</published><updated>2024-09-08T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/09/08/jax-equinox-what-and-why</id><content type="html" xml:base="http://garymm.org/blog/2024/09/08/jaxwhat/">&lt;p&gt;This post is written as a Jupyter notebook which you can run and edit using the link below:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://garymm.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://garymm.org/" rel="alternate" type="text/html" /><updated>2025-01-27T15:46:41-08:00</updated><id>http://garymm.org/feed.xml</id><entry><title type="html">Assembling an infrastructure for machine learning research</title><link href="http://garymm.org/blog/2025/01/27/assembling-ml-exp-infra/" rel="alternate" type="text/html" title="Assembling an infrastructure for machine learning research" /><published>2025-01-27T00:00:00-08:00</published><updated>2025-01-27T00:00:00-08:00</updated><id>http://garymm.org/blog/2025/01/27/assembling-ml-exp-infra</id><content type="html" xml:base="http://garymm.org/blog/2025/01/27/assembling-ml-exp-infra/">&lt;p&gt;While working on machine learning research at the Astera Institute&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, I led a team that assembled a system that enabled researchers to quickly and easily run experiments that used up to a full datacenter’s worth of GPUs. I intentionally wrote “assemble” rather than “build”, because the system mostly consists of off-the-shelf components. The challenge was in digging through the huge number of options for each possible piece of functionality, selecting appropriately, gluing things together into a working system, and designing an easy but powerful interface. I’m proud of how little code we wrote relative to how much functionality the system provides.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with the core functionality that the system provided:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Takes code from the user’s git branch.&lt;/li&gt;
+  &lt;li&gt;Runs the code on a cluster with a specifiable number of trials running in parallel, and with each trial using a specifiable number of GPUs.&lt;/li&gt;
+  &lt;li&gt;Executes a     search using a specifiable search space and algorithm, or multiple trials with different random seeds to get a distribution of results for a fixed set of hyperparameters.&lt;/li&gt;
+  &lt;li&gt;Persists the results and makes them viewable in a web UI, or via CSV files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now let’s go into how this is all implemented!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-components&quot;&gt;The components&lt;/h2&gt;
+
+&lt;h3 id=&quot;hardware&quot;&gt;Hardware&lt;/h3&gt;
+
+&lt;p&gt;We rented hardware from Votage Park, who at the time only offered exactly one thing: bare-metal servers running Ubuntu with 8 Nvidia GPUs. Because of pre-existing contracts, we didn’t have any choice in hardware or cloud providers. This constrained the design space for some of the other parts of the system.&lt;/p&gt;
+
+&lt;h3 id=&quot;kubernetes-on-talos-hardware-abstraction-and-workload-orchestration&quot;&gt;Kubernetes on Talos: Hardware abstraction and workload orchestration&lt;/h3&gt;
+
+&lt;p&gt;Just as an operating system abstracts over CPUs and RAM on a computer and manages the life cycles of processes, Kubernetes abstracts over all the hardware in a cluster and manages the life cycles of containers.&lt;/p&gt;
+
+&lt;p&gt;We ended up using &lt;a href=&quot;https://www.talos.dev&quot;&gt;Talos&lt;/a&gt;, a Linux distribution that includes Kubernetes. Overall we were really happy with that choice. It’s well-designed, well-documented, and well-supported.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-journey&quot;&gt;The journey&lt;/h4&gt;
+
+&lt;p&gt;While there are alternatives, Kubernetes is by far the most popular system in this category and that brings with it a huge ecosystem of tools, services, patterns and documentation, so for me it was an easy choice.&lt;/p&gt;
+
+&lt;p&gt;The difficult thing was figuring out how to run it. Big cloud providers like Azure or CoreWeave provide a managed Kubernetes service. Because we were tied to Voltage Park, managed Kubernetes services weren’t an option. There are many ways to run Kubernetes on your own. I initially picked Kubespray because it was mentioned in the official Kubernetes documentation and it was built on Ansible, which we were already using. While I did successfully run a cluster using Kubespray, I was not satisfied:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Creating or modifying a cluster is very slow. Like 30 minutes to apply a configuration change to a 6 node cluster.&lt;/li&gt;
+  &lt;li&gt;Doing normal things would often fail and leave the cluster in some unknown and probably invalid state that was very difficult to recover from. Because Kubespray makes changes to the underlying node OS, but it doesn’t take full responsibility for the OS the way Talos does, getting back into a good state would require reinstalling the OS and then re-running Kubespray, which would take over an hour.&lt;/li&gt;
+  &lt;li&gt;We had mysterious and hard to debug issues with the GPUs becoming inaccessible, which we worked around by rebooting the nodes.&lt;/li&gt;
+  &lt;li&gt;There is no paid support option and I couldn’t resolve the above issues using the free community-provided support (including the patchy documentation).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In contrast, Talos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Takes much less time to apply configuration (sorry I don’t remember the timing, but the fact that I don’t remember means it was not a big deal!).&lt;/li&gt;
+  &lt;li&gt;Installs the operating system in a pre-configured state such that it is ready to be part of the Kubernetes cluster, and the OS is immutable (read-only after installation), so it is much less likely to end up in weird states.&lt;/li&gt;
+  &lt;li&gt;Had no such flaky GPU issues.&lt;/li&gt;
+  &lt;li&gt;Has paid support options and excellent response times to community-reported bugs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The main challenge we had with Talos is that our cloud provider did not give us a way to install a custom OS. After first trying to run it inside a VM inside the Ubuntu host, we ended up finding a way to overwrite Ubuntu with Talos from within Ubuntu! This meant we could run Talos on bare metal.&lt;/p&gt;
+
+&lt;h3 id=&quot;distribution-registry-container-image-hosting&quot;&gt;Distribution Registry: Container image hosting&lt;/h3&gt;
+
+&lt;p&gt;Container images are the unit of distribution for code that runs on Kubernetes. A container registry is a service that stores and allows clients to upload and download container images. There are many options for cloud-hosted managed container registries, but we wanted our images to be stored on the same local network as our Kubernetes nodes in order to maximize bandwidth when downloading (AKA “pulling”) images. So we ran &lt;a href=&quot;https://distribution.github.io/distribution/about/&quot;&gt;Distribution Registry&lt;/a&gt; inside our cluster.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-journey-1&quot;&gt;The journey&lt;/h4&gt;
+
+&lt;p&gt;The main difficulties with self-hosting the registry was in configuring network access. Our requirements:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The registry is accesible via HTTPS to pods inside the cluster. This is needed because Katib (discussed below) &lt;a href=&quot;https://github.com/kubeflow/katib/blob/5723604d419c5ba5bf01240b7be5ebf55aaee0bc/pkg/webhook/v1beta1/pod/utils.go#L63&quot;&gt;fetches image metadata directly from the registry&lt;/a&gt; and there is no easy way to tell it to connect without HTTPS.&lt;/li&gt;
+  &lt;li&gt;Image pushes and pulls do not go through Tailscale, since that reduces bandwidth and our images are pretty large.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We ended up with the following solution:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A Tailscale name is used for the registry. We configured Tailscale to automatically generate an SSL certificate so connections over HTTPS work.&lt;/li&gt;
+  &lt;li&gt;We configured our cluster’s DNS to forward requests for .ts.net domains to an in-cluster Tailscale DNS. So connections from inside a pod inside the cluster also go through Tailscale.&lt;/li&gt;
+  &lt;li&gt;We configured our containerd, which is responsible for pulling images when starting containers, to treat the registry’s Tailscale domain name as an alias of the registry’s in-cluster .svc.cluster.local name, thus bypassing Tailscale encryption and maintaining fast image pulls.&lt;/li&gt;
+  &lt;li&gt;We configured Kaniko (discussed below) to push to the registry through its .svc.cluster.local name, thus bypassing Tailscale ant maintaining fast image pushes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kaniko-in-cluster-image-building&quot;&gt;Kaniko: In-cluster image building&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/GoogleContainerTools/kaniko&quot;&gt;Kaniko&lt;/a&gt; takes in a git repository URL and revision and a path to a Dockerfile within the repository, and it builds an image according to the Dockerfile and pushes it to our Distribution Registry. This is how a user’s code gets into a container image.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-journey-2&quot;&gt;The journey&lt;/h4&gt;
+
+&lt;p&gt;We started building images locally on the user’s computer and then pushing the image from there to the cluster. This worked, but due to some large dependencies (e.g. PyTorch alone is over 900 MB), any push of the image layer that contained the dependencies was very slow. Since the actual code being modified (i.e. the git repo) was much smaller, it made sense to upload only that from the user’s computer to the cluster, and then build the image in the cluster and then the push to the registry would happen over a fast local connection. This does require users to commit and push their code to git before starting an experiment, but that is a good practice anyways.&lt;/p&gt;
+
+&lt;h3 id=&quot;katib-multi-trial-experiment-orchestration&quot;&gt;Katib: Multi-trial experiment orchestration&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.kubeflow.org/docs/components/katib/&quot;&gt;Katib&lt;/a&gt; is a system for running distributed hyperparameter search on Kubernetes. A “search” over different random seeds can be used as a way to get a distribution of results for a fixed set of hyperpartmeters. Katib is very flexible but that flexibility means it requires a lot of configuration for each experiment. We were able to simplify the user experience dramatically through a mix of automation and convention. The main things that Katib needs to know are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The search space. We require the user to write this in a YAML file.&lt;/li&gt;
+  &lt;li&gt;The metrics to optimize. We require the user to write this in the same YAML file.&lt;/li&gt;
+  &lt;li&gt;How to run an individual trial. E.g., container image to use, how many GPUs it needs. The Launch tool (described below) handles this automatically.&lt;/li&gt;
+  &lt;li&gt;How to pass in hyperparameter values for a trial. The Launch tool handles this automatically, by assuming the user’s code follows the convention of using Draccus (described below) or something compatible for command line parsing.&lt;/li&gt;
+  &lt;li&gt;How to extract metrics from a trial. The Launch tool handles this automatically, by assuming the user’s code follows the convention of using writing its metrics in Tensorboard format to the path specified in the --tensorboard_dir command line arg.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;the-journey-3&quot;&gt;The journey&lt;/h4&gt;
+
+&lt;p&gt;Before Katib, we tried Ray Tune. The things we liked less about Ray Tune than Katib:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The APIs and documentation are a mess. In contrast, while Katib’s documentation is very incomplete, the repo contains lots of examples that are pretty instructive, and the APIs are much more intuitive.&lt;/li&gt;
+  &lt;li&gt;Ray Tune requires writing an imperative Python file using the aforementioned confusing APIs for every search. It’s much easier to check the validity of a static YAML file that configures Katib than to check for all the ways Python code might be wrong.&lt;/li&gt;
+  &lt;li&gt;Ray Tune seemed to require more restructuring of the researcher’s code.&lt;/li&gt;
+  &lt;li&gt;The only way to track progress is via terminal output (whereas Katib has a nice web UI), and even totally correct use of Ray Tune results in massive amounts of warnings and useless messages being printed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;draccus-training-code-configuration-specification&quot;&gt;Draccus: Training code configuration specification&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dlwh/draccus&quot;&gt;Draccus&lt;/a&gt; is a simple Python library for defining and parsing configuration using dataclasses. The key thing that our system requires of the training code used for a trial is that a hyperparamter named “foo” is accepted and parsed via the command line flag --foo. This lets the Launch tool translate mechanically between the search space the user wrote in YAML and the command line for a trial.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-journey-4&quot;&gt;The journey&lt;/h4&gt;
+
+&lt;p&gt;The main alternative I considered was Hydra. Hydra seems to have a superset of the functionality in Draccus but the added complexity of all of the options didn’t seem worth the benefits. Due to the modular system design, it would be easy to switch later if the team decides Hydra is needed.&lt;/p&gt;
+
+&lt;h3 id=&quot;mlflow-experiment-metric-tracking&quot;&gt;MLflow: Experiment metric tracking&lt;/h3&gt;
+
+&lt;p&gt;While Katib tracks the metrics being optimized in a search, there are many other metrics that can be useful to analyze, and having a UI to visualize metrics throughout a trial and compare them across experiments is really useful. Storing artifacts like videos of an agent interacting with an RL environment is also key for understanding training progress. For this we used &lt;a href=&quot;https://mlflow.org/docs/latest/tracking.html&quot;&gt;MLflow Tracking&lt;/a&gt;, a service to track metrics and store artifacts.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-journey-5&quot;&gt;The journey&lt;/h4&gt;
+
+&lt;p&gt;The main alternative I considered was Weights &amp;amp; Biases. While they have very similar sets of features, we ended up choosing MLflow because:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It has documented HTTP APIs, meaning one can interact with it from any language. I didn’t want to be forced to use Python for all the tooling that might want to interact with our experiment metrics.&lt;/li&gt;
+  &lt;li&gt;It can be much cheaper. Databricks doesn’t make this clear, but if you provide your own storage (e.g. S3 bucket), they will host MLflow tracking for free. Or you can self-host for free.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once we had settled on MLflow, the main challenge was finding and enforcing a convention on how to organize experiments and runs so people can find what they need. While I’m not confident this is the best solution, we ended up writing a small wrapper over the MLflow Python client that sets the experiment name and run name to match the Katib experiment and trial name. It gets this Katib metadata from environment variables set by the Launch tool. This at least makes it easy to go between the two systems.&lt;/p&gt;
+
+&lt;h3 id=&quot;tailscale-secure-remote-access&quot;&gt;Tailscale: Secure remote access&lt;/h3&gt;
+
+&lt;p&gt;In order to create and monitor experiments, users need to have access to Katib and other services running in our cluster. We used &lt;a href=&quot;https://tailscale.com&quot;&gt;Tailscale&lt;/a&gt; for this. It provides network encryption and DNS like a VPN but all the connections are peer-to-peer rather than forcing everything through a single VPN server. It works great and integrated seamlessly with our Google workspace accounts.&lt;/p&gt;
+
+&lt;h3 id=&quot;launch-user-cli-that-glues-it-all-together&quot;&gt;Launch: User CLI that glues it all together&lt;/h3&gt;
+
+&lt;p&gt;The only part of this that we wrote ourselves is a tool called Launch. It is &lt;a href=&quot;https://github.com/Astera-org/launch&quot;&gt;open source&lt;/a&gt; and written in Rust. Launch glues everything together. It takes in:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A YAML file specifying the search space and to-be-optimized metrics.&lt;/li&gt;
+  &lt;li&gt;A --gpus flag, which specifies the number of GPUs per trial.&lt;/li&gt;
+  &lt;li&gt;A command to run for each trial.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And it:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Triggers a build of a container image of the current git branch via Kaniko.&lt;/li&gt;
+  &lt;li&gt;Constructs a full Katib experiment spec. In addition to the info from the user’s YAML file, it tells Katib to pass hyperparameter values via command line args according to the conventions (described above in the Katib section), and it adds the --tensorboard_dir arg.&lt;/li&gt;
+  &lt;li&gt;Creates the Katib experiment.&lt;/li&gt;
+  &lt;li&gt;Prints URLs of Katib and MLflow UI pages for the experiment.&lt;/li&gt;
+  &lt;li&gt;Polls the cluster to check that the experiment starts and runs a trial succesfully.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;the-journey-6&quot;&gt;The journey&lt;/h4&gt;
+
+&lt;p&gt;The main question I struggled with was what language to use to implement the tool. Due to the available libraries for interacting with Kubernetes and Katib, Go was the obvious choice. The factors in favor of Rust were pre-existing expertise on the team and me thinking it would be more fun in Rust. The availability of libraries was almost decisive in Go’s favor until we discovered we could use the OpenAPI Generator to generate Rust client libraries for &lt;a href=&quot;https://github.com/Astera-org/kubernetes-client-rust&quot;&gt;Kubernetes&lt;/a&gt; and &lt;a href=&quot;https://github.com/Astera-org/katib-client-rust&quot;&gt;Katib&lt;/a&gt;. Compared to Go, some of the nicest things about Rust are the power of the Serde library for deserializing configuration files and the error handling syntax (writing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo()?&lt;/code&gt; is so much nicer than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if err := foo(); err != nil { return err }&lt;/code&gt; ).&lt;/p&gt;
+
+&lt;h2 id=&quot;system-diagram&quot;&gt;System diagram&lt;/h2&gt;
+
+&lt;p&gt;Notes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In reality all of this could be running on a single server, or distributed as shown, or something in between. Kubernetes handles the scheduling dynamically.&lt;/li&gt;
+  &lt;li&gt;Not shown, but in addition to the depicted MLflow upload, user code also writes metrics to a local directory in Tensorboard format, which is what Katib monitors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img class=&quot;wrap&quot; src=&quot;/generated/2025-01-27-obelisk-infra-diagram-800-51182cbce.png&quot; alt=&quot;cruising with my team&quot; srcset=&quot;/generated/2025-01-27-obelisk-infra-diagram-400-4868e216e.webp 400w, /generated/2025-01-27-obelisk-infra-diagram-600-4868e216e.webp 600w, /generated/2025-01-27-obelisk-infra-diagram-800-4868e216e.webp 800w, /generated/2025-01-27-obelisk-infra-diagram-1000-4868e216e.webp 1000w&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-could-be-improved&quot;&gt;What could be improved&lt;/h2&gt;
+
+&lt;p&gt;The biggest thing that I wish I could have improved before I left was the latency of building and pushing container images. While Kaniko is supposed to support caching, we weren’t able to get it working, so every time a user launches an experiment Kaniko would take a few minutes to rebuild the entire image (unless they didn’t change any code at all, in that case we would re-use a previously built image). The solution I wanted to try was to build and push the images using Bazel, which has many options for caching and would also allow us to have very fine-grained control over the image to optimize it for build speed. In particular, Bazel should make it possible to have one image layer per python package in our dependencies, so if a single dependency changes we wouldn’t need to rebuild and push a single huge layer that has all of our dependencies.&lt;/p&gt;
+
+&lt;p&gt;Another thing I wanted to do was to modify the Katib UI to allow adding a link from Katib to MLflow. This is hopefully a simple change.&lt;/p&gt;
+
+&lt;p&gt;Finally there are things which we didn’t implement only because we didn’t need them, but which I expected to need at some point. These include queuing experiment trials according to a priority (which I planned to implement via Kueue) and multi-machine trials (which I planned to implement via Kubeflow Training Operator).&lt;/p&gt;
+
+&lt;h2 id=&quot;credits&quot;&gt;Credits&lt;/h2&gt;
+
+&lt;p&gt;Matthew Behrens and Mick van Gelderen helped a lot with many aspects. Among other things, Matt actually got Talos running, including figuring out how to install it from inside Ubuntu and finding versions of Talos and the Nvidia system extensions that worked with our hardware, and Mick implemented most of the Launch tool, discovered Kaniko and proved it could work.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;This work was done in 2024. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>garymm</name></author><category term="machine learning" /><category term="programming" /><summary type="html">While working on machine learning research at the Astera Institute1, I led a team that assembled a system that enabled researchers to quickly and easily run experiments that used up to a full datacenter’s worth of GPUs. I intentionally wrote “assemble” rather than “build”, because the system mostly consists of off-the-shelf components. The challenge was in digging through the huge number of options for each possible piece of functionality, selecting appropriately, gluing things together into a working system, and designing an easy but powerful interface. I’m proud of how little code we wrote relative to how much functionality the system provides. This work was done in 2024. &amp;#8617;</summary></entry><entry><title type="html">JAX and Equinox: What are they and why should I bother?</title><link href="http://garymm.org/blog/2024/09/08/jaxwhat/" rel="alternate" type="text/html" title="JAX and Equinox: What are they and why should I bother?" /><published>2024-09-08T00:00:00-07:00</published><updated>2024-09-08T00:00:00-07:00</updated><id>http://garymm.org/blog/2024/09/08/jax-equinox-what-and-why</id><content type="html" xml:base="http://garymm.org/blog/2024/09/08/jaxwhat/">&lt;p&gt;This post is written as a Jupyter notebook which you can run and edit using the link below:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://githubtocolab.com/garymm-org/garymm-org.github.io/blob/master/assets/jax-equinox-what-and-why.ipynb&quot; target=&quot;_parent&quot;&gt;&lt;img src=&quot;https://colab.research.google.com/assets/colab-badge.svg&quot; alt=&quot;Open In Colab&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -1186,44 +1368,4 @@ I’m hiring! &lt;a href=&quot;https://careers.microsoft.com/us/en/job/1036775/S
 here&lt;/a&gt;
 or send me an email or LinkedIn message. The job listing says the job is only
 available in specific locations, but if those don’t work for you, I can be
-flexible for the right candidate.&lt;/p&gt;</content><author><name>garymm</name></author><category term="work" /><summary type="html">In March I started a new job at Microsoft and in May I started managing a team. I have been pleasantly surprised at how happy and productive I have been working entirely remotely for the past ~17 months, but I was eager to meet people in person. I live in the SF Bay Area, but my manager and almost all of the people I manage are in the Seattle area, so a few weeks ago I travelled to meet them.</summary></entry><entry><title type="html">Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering</title><link href="http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour/" rel="alternate" type="text/html" title="Machine Learning Diary 001: Swift detour, and Recreating FastAI’s Collaborative Filtering" /><published>2020-10-02T14:04:00-07:00</published><updated>2020-10-02T14:04:00-07:00</updated><id>http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour</id><content type="html" xml:base="http://garymm.org/blog/2020/10/02/machine-learning-diary-001-swift-detour/">&lt;p&gt;I&apos;ve been spending quite a bit of my free time studying machine learning over the past 3 months. After spending quite
-  a bit of time deciding what learning materials to start with, I decided on fast.ai&apos;s Practical Deep Learning for
-  Coders (I saw the&amp;nbsp;&lt;a href=&quot;https://course19.fast.ai/&quot;&gt;2019 version&lt;/a&gt;). Overall I highly recommend the course,
-  and I&apos;m planning to go back and do the 2020 version of it.&lt;/p&gt;
-&lt;p&gt;One reason I was excited about fast.ai&apos;s course is that they had some content on &lt;a
-    href=&quot;https://www.tensorflow.org/swift&quot;&gt;Swift for TensorFlow&lt;/a&gt;&amp;nbsp;(S4TF). I have written a lot of Python and
-  while it has its place, I was excited to try something new and hopefully better. I watched the two fast.ai videos on
-  S4TF and then decided to try it out. This ended up being a fairly costly mistake for me. Basically S4TF is just not
-  nearly as mature as PyTorch, and I wasted a bunch of time struggling with environment setup (no equivalent
-  to&amp;nbsp;&lt;span style=&quot;font-family: courier;&quot;&gt;conda install&lt;/span&gt;), bugs, very incomplete documentation, and cryptic
-  error messages. At this point (I tried in 2020-09), I suggest you steer clear of S4TF if your primary goal is just to
-  learn ML. Though it was fun to learn some Swift and I&apos;d definitely consider using Swift in future projects, ML or
-  otherwise.&lt;/p&gt;
-&lt;p&gt;With that multi-week detour out of the way, I decided to focus on PyTorch. For my first task I decided to try to
-  recreate the simplest model presented in the fast.ai course, but without using the fastai library at all, just pure
-  PyTorch. I found that almost all of the special stuff in fastai is included in PyTorch as of 1.6, so this was a lot
-  easier than I expected. Here&apos;s my final &lt;a
-    href=&quot;https://github.com/garymm/mlnbs/blob/master/collaborative-filtering.ipynb&quot;&gt;notebook for this collaborative
-    filtering task&lt;/a&gt;. Some of the issues I ran into and how I resolved them:&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ul style=&quot;text-align: left;&quot;&gt;
-  &lt;li&gt;For this task, using the GPU was much slower than just using the CPU. I suppose this is because the model is so
-    simple that the overhead of copying data to/from the GPU dominates any speedup in actual calculations. In retrospect
-    this was also probably why training my Swift version of the model was so slow, and &lt;a
-      href=&quot;https://github.com/tensorflow/swift/issues/524#issuecomment-680919423&quot;&gt;S4TF doesn&apos;t allow eager tensors to
-      use the CPU&lt;/a&gt;&amp;nbsp;if a GPU is present, so this would have been much harder to discover and work around in
-    Swift.&lt;/li&gt;
-  &lt;li&gt;Fastai wraps the &lt;span style=&quot;font-family: courier;&quot;&gt;torch.nn.Embedding&lt;/span&gt; type with a function that changes
-    the initial values. PyTorch initializes using random values drawn from a normal distribution with&amp;nbsp;𝜎^2 = 1.
-    Fastai changes this to a normal distribution with&amp;nbsp;𝜎^2 = .01, truncated so no value is farther than 2 standard
-    deviations from the mean. They reference &lt;a href=&quot;https://arxiv.org/abs/1711.09160&quot;&gt;An Exploration of Word Embedding
-      Initialization in Deep-Learning Tasks&lt;/a&gt;&amp;nbsp;as justification. I found this provided a small boost in
-    performance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;I forgot calls to &lt;span style=&quot;font-family: courier;&quot;&gt;squeeze()&lt;/span&gt;&lt;span style=&quot;font-family: inherit;&quot;&gt; in a
-      few places. I was quite surprised that &lt;/span&gt;&lt;span style=&quot;font-family: courier;&quot;&gt;torch.nn.MSELoss&lt;/span&gt;&lt;span
-      style=&quot;font-family: inherit;&quot;&gt;&amp;nbsp;didn&apos;t throw an error when I provided it two tensors of different shapes.
-      Instead it did some averaging over all the values, which led to poor training performance.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>garymm</name></author><category term="machine learning" /><category term="programming" /><summary type="html">I&apos;ve been spending quite a bit of my free time studying machine learning over the past 3 months. After spending quite a bit of time deciding what learning materials to start with, I decided on fast.ai&apos;s Practical Deep Learning for Coders (I saw the&amp;nbsp;2019 version). Overall I highly recommend the course, and I&apos;m planning to go back and do the 2020 version of it. One reason I was excited about fast.ai&apos;s course is that they had some content on Swift for TensorFlow&amp;nbsp;(S4TF). I have written a lot of Python and while it has its place, I was excited to try something new and hopefully better. I watched the two fast.ai videos on S4TF and then decided to try it out. This ended up being a fairly costly mistake for me. Basically S4TF is just not nearly as mature as PyTorch, and I wasted a bunch of time struggling with environment setup (no equivalent to&amp;nbsp;conda install), bugs, very incomplete documentation, and cryptic error messages. At this point (I tried in 2020-09), I suggest you steer clear of S4TF if your primary goal is just to learn ML. Though it was fun to learn some Swift and I&apos;d definitely consider using Swift in future projects, ML or otherwise. With that multi-week detour out of the way, I decided to focus on PyTorch. For my first task I decided to try to recreate the simplest model presented in the fast.ai course, but without using the fastai library at all, just pure PyTorch. I found that almost all of the special stuff in fastai is included in PyTorch as of 1.6, so this was a lot easier than I expected. Here&apos;s my final notebook for this collaborative filtering task. Some of the issues I ran into and how I resolved them: For this task, using the GPU was much slower than just using the CPU. I suppose this is because the model is so simple that the overhead of copying data to/from the GPU dominates any speedup in actual calculations. In retrospect this was also probably why training my Swift version of the model was so slow, and S4TF doesn&apos;t allow eager tensors to use the CPU&amp;nbsp;if a GPU is present, so this would have been much harder to discover and work around in Swift. Fastai wraps the torch.nn.Embedding type with a function that changes the initial values. PyTorch initializes using random values drawn from a normal distribution with&amp;nbsp;𝜎^2 = 1. Fastai changes this to a normal distribution with&amp;nbsp;𝜎^2 = .01, truncated so no value is farther than 2 standard deviations from the mean. They reference An Exploration of Word Embedding Initialization in Deep-Learning Tasks&amp;nbsp;as justification. I found this provided a small boost in performance. I forgot calls to squeeze() in a few places. I was quite surprised that torch.nn.MSELoss&amp;nbsp;didn&apos;t throw an error when I provided it two tensors of different shapes. Instead it did some averaging over all the values, which led to poor training performance.</summary></entry></feed>
+flexible for the right candidate.&lt;/p&gt;</content><author><name>garymm</name></author><category term="work" /><summary type="html">In March I started a new job at Microsoft and in May I started managing a team. I have been pleasantly surprised at how happy and productive I have been working entirely remotely for the past ~17 months, but I was eager to meet people in person. I live in the SF Bay Area, but my manager and almost all of the people I manage are in the Seattle area, so a few weeks ago I travelled to meet them.</summary></entry></feed>
