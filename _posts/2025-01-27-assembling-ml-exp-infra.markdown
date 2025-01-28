@@ -7,6 +7,8 @@ tags:
 - machine learning
 - programming
 permalink: /blog/2025/01/27/assembling-ml-exp-infra/
+hn_url: https://news.ycombinator.com/item?id=42853017
+tweet_url: https://x.com/garymigu/status/1884255368387387539
 ---
 
 While working on machine learning research at the Astera Institute[^1], I led a team that assembled a system that enabled researchers to quickly and easily run experiments that used up to a full datacenter's worth of GPUs. I intentionally wrote “assemble” rather than “build”, because the system mostly consists of off-the-shelf components. The challenge was in digging through the huge number of options for each possible piece of functionality, selecting appropriately, gluing things together into a working system, and designing an easy but powerful interface. I’m proud of how little code we wrote relative to how much functionality the system provides.
@@ -24,7 +26,7 @@ Now let’s go into how this is all implemented\!
 
 ### Hardware
 
-We rented hardware from Votage Park, who at the time only offered exactly one thing: bare-metal servers running Ubuntu with 8 Nvidia GPUs. Because of pre-existing contracts, we didn’t have any choice in hardware or cloud providers. This constrained the design space for some of the other parts of the system.
+We rented hardware from Voltage Park, who at the time only offered exactly one thing: bare-metal servers running Ubuntu with 8 Nvidia GPUs. Because of pre-existing contracts, we didn’t have any choice in hardware or cloud providers. This constrained the design space for some of the other parts of the system.
 
 ### Kubernetes on Talos: Hardware abstraction and workload orchestration
 
