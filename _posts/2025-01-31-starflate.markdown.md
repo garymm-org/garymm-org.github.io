@@ -7,6 +7,8 @@ tags:
 - programming
 - cpp
 permalink: /blog/2025/01/31/starflate/
+hn_url: https://news.ycombinator.com/item?id=42896000
+tweet_url: https://x.com/garymigu/status/1885564954864214118
 ---
 
 In this post I describe some things I learned while working on [Starflate](https://github.com/garymm/starflate), an implementation of Deflate decompression in C++23 that I wrote with my friend [Oliver Lee](https://github.com/oliverlee).
