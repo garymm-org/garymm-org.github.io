@@ -7,6 +7,8 @@ tags:
 - programming
 - machine learning
 permalink: /blog/2025/03/03/earl/
+tweet_url: https://x.com/garymigu/status/1896722898976682140
+hn_url: https://news.ycombinator.com/item?id=43248797
 ---
 
 In this post I will briefly describe [Earl](https://github.com/garymm/earl), a reinforcement learning (RL) framework I wrote that enables scalable distributed training across multiple devices, and discuss some of the things I learned along the way.
