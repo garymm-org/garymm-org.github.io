@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Earl: a framework for scalable reinforcement learning research</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta name="keywords" content="">
+    <meta name="author" content="Gary Mindlin Miguel">
+
+    <link href="/css/blog.css" rel="stylesheet" />
+    <link href="/css/trac.css" rel="stylesheet" />
+    <link href="/css/markdown.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon/favicon-256x256.png">
+
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HYFFNSQX76"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HYFFNSQX76');
+</script>
+
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function (w, d, e, u, f, l, n) {
+            w[f] = w[f] || function () {
+                (w[f].q = w[f].q || [])
+                    .push(arguments);
+            }, l = d.createElement(e), l.async = 1, l.src = u,
+                n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+        })
+            (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+        ml('account', '371042');
+    </script>
+    <!-- End MailerLite Universal -->
+    <!-- TODO: I can't get this to work in blog.css for some reason -->
+    <style>
+        .twitter svg {
+            height: 0.8em;
+        }
+    </style>
+    <!--KaTeX-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+        integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+        integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+        integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // ...options...
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class='nav'>
+    <ul class='wrap'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/feed.xml'>RSS</a></li>
+    </ul>
+</div>
+        <div class="front-matter">
+            <div class="wrap">
+                <h1>Earl: a framework for scalable reinforcement learning research</h1>
+                <h4></h4>
+                <div class="bylines">
+                    <div class="byline">
+                        <h3>Published</h3>
+                        <p>2025-03-03</p>
+                    </div>
+                    <div align="right">
+                        
+                        <button class="ml-onclick-form" onclick="ml('show', 'IUXI0E', true)">get new posts via
+                            email</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="wrap article">
+            <p>In this post I will briefly describe <a href="https://github.com/garymm/earl">Earl</a>, a reinforcement learning (RL) framework I wrote that enables scalable distributed training across multiple devices, and discuss some of the things I learned along the way.</p>
+
+<p>Earl implements the two architectures described in “<a href="https://arxiv.org/abs/2104.06272">Podracer architectures for scalable Reinforcement Learning</a>”, which were used at DeepMind to scale training to very large batch sizes across many chips. Note these are not neural network architectures, but distributed RL architectures that can be used to train models that internally may use any neural network architecture. To prove it is usable, I used Earl to <a href="https://github.com/garymm/earl/tree/master/earl/agents/r2d2">implement the R2D2</a> algorithm as described in another DeepMind paper “<a href="https://openreview.net/forum?id=r1lyTjAqYX">Recurrent Experience Replay In Distributed Reinforcement Learning</a>”.</p>
+
+<h2 id="background">Background</h2>
+
+<p>To provide context, I’ll briefly summarize the Podracer architectures paper. If you know it, feel free to skip this.</p>
+
+<p>In contrast to other machine learning paradigms, online RL involves an agent and an environment, and the training data is generated on the fly from their interactions. The paper describes two architectures: Anakin and Sebulba<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Anakin is used when an environment is compatible with jax.jit, and Sebulba is used otherwise. In both of the architectures, the agent is implemented in JAX and is compatible with jax.jit. If you’re not familiar with JAX, see <a href="https://www.garymm.org/blog/2024/09/08/jaxwhat/">my introduction</a>. Basically, code that is run under jax.jit is optimized by a compiler and run on any supported device (e.g. GPU) without further involving the Python interpreter.</p>
+
+<p>In Anakin, one can have the entire training loop (agent + environment interaction, loss function and optimization) happen under jax.jit and thus run on a device (e.g. GPU) without going back to the Python interpreter. In terms of writing a performant training loop, in some ways this is even easier to deal with than normal (supervised) machine learning since one does not need to copy any data from the host to the accelerator. Scaling this across multiple devices is trivial using JAX.</p>
+
+<p>Below is a figure I created that is analogous to the paper’s figure 3 (see below) that illustrates Anakin-style RL. Notice that there is nothing running on the CPU! This figure may be misleading because the arrows don’t necessarily signify data being copied. It’s just data that is produced by one function being an argument to another function.</p>
+
+<p><img class="wrap" src="/generated/2025-03-03-earl/anakin-800-16e671698.png" alt="anakin RL training architecture diagram" srcset="/generated/2025-03-03-earl/anakin-400-d1f7d320f.webp 400w, /generated/2025-03-03-earl/anakin-600-d1f7d320f.webp 600w, /generated/2025-03-03-earl/anakin-800-d1f7d320f.webp 800w, /generated/2025-03-03-earl/anakin-806-d1f7d320f.webp 806w" /></p>
+
+<p>Although jax.jit-compatible environments are gaining more adoption in research, there are still many environments that can’t run under jax.jit that researchers care about. The Podracer solution to training on these at scale is called Sebulba. Sebulba involves splitting agents into actor and learner as shown in Figure 3 from the paper. Note that in this figure the arrows <em>do</em> signify data copies.</p>
+
+<p><img class="wrap" src="/generated/2025-03-03-earl/sebulba-800-1b8f2b66e.png" alt="sebulba RL training architecture diagram" srcset="/generated/2025-03-03-earl/sebulba-400-edc91e3d3.webp 400w, /generated/2025-03-03-earl/sebulba-600-edc91e3d3.webp 600w, /generated/2025-03-03-earl/sebulba-800-edc91e3d3.webp 800w, /generated/2025-03-03-earl/sebulba-1000-edc91e3d3.webp 1000w" /></p>
+
+<p>One of my main goals with Earl was to have a single agent implementation that could easily be run in either architecture. This is in contrast to what the team behind the Podracers paper did; the paper suggests they implemented agents twice, once for Anakin and once for Sebulba.</p>
+
+<p>The “pod” in “Podracers” is an allusion to a collection of TPUs that are all connected with high bandwidth. Later in this post I will discuss what advantages TPUs actually provide.</p>
+
+<h2 id="gymnax-loop-earls-anakin">Gymnax Loop: Earl’s Anakin</h2>
+
+<p>Earl’s implementation of Anakin is GymnaxLoop. <a href="https://github.com/RobertTLange/gymnax">Gymnax</a> is a collection of RL environments implemented in JAX with a common interface, and Earl adopted that interface because it seemed more widely used than the alternatives. The GymnaxLoop implementation is mostly straight-forward, so here I only discuss some of the trickier things that I solved.</p>
+
+<h3 id="avoiding-recompilation">Avoiding recompilation</h3>
+
+<p>The first time a jax.jit function is run, it is compiled, which is slow. Unwanted recompilations are a performance foot-gun, so by default Earl will fail if the code is recompiled. When I enabled this failure, I learned that my Gymnax Loop was recompiling the main loop (act and learn) because the types of some part of the environment state where changing. After digging into it (made difficult due to a <a href="https://github.com/jax-ml/jax/issues/23302">JAX bug</a> that I reported) I discovered that the change was that the initial state (returned by env.reset()) had weak_type=True on some arrays, but calls to env.step() changed the weak_type to False. GymnaxLoop fixes this by setting weak_type=False on all arrays in the environment before running. This avoids recompilation and thus speeds up training significantly.</p>
+
+<h2 id="gymnasium-loop-earls-sebulba">Gymnasium Loop: Earl’s Sebulba</h2>
+
+<p>Earl’s implementation of Sebulba is GymnasiumLoop. <a href="https://gymnasium.farama.org/index.html">Gymnasium</a> is a widely-used interface for RL environments, which generally are not compatible with jax.jit. The GymnasiumLoop has a much more complex design, was much trickier to implement correctly and was also harder to optimize for performance.</p>
+
+<p>Here’s a diagram showing the system architecture. Sorry the text is a little small. You can open the image in a new window to zoom in.</p>
+
+<p><img class="wrap" src="/generated/2025-03-03-earl/gymnasium-loop-800-ced76e552.png" alt="Gymnasium Loop system diagram" srcset="/generated/2025-03-03-earl/gymnasium-loop-400-bb341e4c4.webp 400w, /generated/2025-03-03-earl/gymnasium-loop-600-bb341e4c4.webp 600w, /generated/2025-03-03-earl/gymnasium-loop-800-bb341e4c4.webp 800w, /generated/2025-03-03-earl/gymnasium-loop-1000-bb341e4c4.webp 1000w" /></p>
+
+<p>And here are results from a test showing linear scaling on up to 6 learner devices (TPU v2 cores):</p>
+
+<p><img class="wrap" src="/generated/2025-03-03-earl/gymnasium_loop_scaling-563-9129f04da.png" alt="Gymnasium Loop scaling graph" srcset="/generated/2025-03-03-earl/gymnasium_loop_scaling-400-d0264f2f1.webp 400w, /generated/2025-03-03-earl/gymnasium_loop_scaling-563-d0264f2f1.webp 563w" /></p>
+
+<p>Before going further into details, why is all this complexity needed in the first place? That is never explicitly addressed in the podracers paper. I think the key thing is that in a naive loop of env.step(), agent.act(), the device (GPU) will be idle during env.step() and the CPU will be idle during agent.act(). So we can get much better throughput by double buffering: have one batch of actions being computed by the agent at the same time that a batch of observations is being computed by the environment. But in order to take advantage of this double buffering, you need the learning to be able to learn from batches of trajectories from different sets of environments that are delivered out of order. And that basically implies an actor-learner split, and once you’ve split the agent thus, one can get further throughput gains by scaling the number of actors and learners independently. And that’s basically the architecture: separate sets of actors and learners, communicating asynchronously, scaled independently.</p>
+
+<p>OK, now some details.</p>
+
+<h3 id="agent-state-organization">Agent state organization</h3>
+
+<p>A key design challenge was creating a flexible agent architecture that could work efficiently in both Anakin and Sebulba paradigms. Earl has two main base classes: <a href="https://github.com/garymm/earl/blob/496737c4f3172caa151477d47280b3a172525138/earl/core.py#L57">AgentState</a> and <a href="https://github.com/garymm/earl/blob/496737c4f3172caa151477d47280b3a172525138/earl/core.py#L233">Agent</a>. These are structured to enable Sebulba-style training while attempting to leave the user lots of freedom (they’re also used for Anakin-style training but they’re way too complex if that’s the only thing you need).</p>
+
+<p>AgentState has the following fields:</p>
+
+<ul>
+  <li>Actor. This is read and written by the actor.  This is also read by the learner when calculating the loss.  In agents that use recurrent networks, this includes the recurrent hidden states.</li>
+  <li>Nets. This holds the neural networks  This is read by the actor. It is read and written by the learner. Anything that needs a gradient computed needs to be in the networks.</li>
+  <li>Opt. Anything other than nets that also needs to be updated when optimizing (i.e. updating the networks). This is where optimizer state belongs.</li>
+  <li>Experience. This is state that is based on the trajectories accumulated by actors and sent to the learners.  For agents that use experience replay, this contains replay buffers.</li>
+</ul>
+
+<p>And the key methods in Agent are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">act(self, actor_state: _ActorState, nets: _Networks, env_step: EnvStep) -&gt; ActionAndState[_ActorState]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">update_experience(self,  experience_state: _ExperienceState,  actor_state_pre: _ActorState,   actor_state_post: _ActorState,  trajectory: EnvStep) -&gt; _ExperienceState</code></li>
+  <li><code class="language-plaintext highlighter-rouge">partition_for_grad(self, nets: _Networks) -&gt; tuple[_Networks, _Networks]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">loss(self, nets: _Networks, opt_state: _OptState, experience_state: _ExperienceState) -&gt; tuple[Scalar, _ExperienceState]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">optimize_from_grads(self, nets: _Networks, opt_state: _OptState, nets_grads: PyTree) -&gt; tuple[_Networks, _OptState]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">shard_actor_state(self, actor_state: _ActorState, learner_devices: Sequence[jax.Device]) -&gt; _ActorState</code></li>
+</ul>
+
+<p>The method signatures and AgentState structure force algorithms to be implemented such that GymnasiumLoop can run any agent in a scalable manner.</p>
+
+<h3 id="implicit-double-buffering">Implicit double buffering</h3>
+
+<p>When I first thought about double buffering I thought I would write code that used two CUDA streams to overlap work. I was surprised to learn that JAX does not expose CUDA streams or any similar abstraction. Upon re-reading the Podracers paper, I noticed they wrote:</p>
+
+<p><em>To make efficient use of the actor cores, it is essential that while a Python thread is stepping a batch of environments, the corresponding TPU core is not idle. This is achieved by creating multiple Python threads per actor core, each with its own batched environment. They threads alternate in using the same actor core, without manual synchronization.</em></p>
+
+<p>So I tried just having multiple threads use the same device, and lo-and-behold I got a huge speedup! Looking at a profile in Nvidia Nsight Systems revealed that under the hood, JAX had analyzed the computations coming in from the different threads, determined they were independent, and scheduled them on separate CUDA streams (really separate CUDA graphs). This is in contrast to PyTorch which by default puts all work on a single stream and requires the user to specify another stream if desired.</p>
+
+<p>Below you can see the Nsight Systems UI showing the different CUDA graphs at the top and the agent.step() overlapping with the env.step() at the bottom.</p>
+
+<p><img class="wrap" src="/generated/2025-03-03-earl/nsight-two-threads-800-a6b5fc19f.png" alt="Nsight Systems profile of two actor threads" srcset="/generated/2025-03-03-earl/nsight-two-threads-400-e1ef4ba4c.webp 400w, /generated/2025-03-03-earl/nsight-two-threads-600-e1ef4ba4c.webp 600w, /generated/2025-03-03-earl/nsight-two-threads-800-e1ef4ba4c.webp 800w, /generated/2025-03-03-earl/nsight-two-threads-1000-e1ef4ba4c.webp 1000w" /></p>
+
+<h3 id="batching-and-sharding-data">Batching and sharding data</h3>
+
+<p>The paper suggests that experience data is copied from the actors to the learners one batch at a time. This seems quite inefficient. I instead break up acting into cycles of configurable length, and copy one cycle’s worth of batches at a time from the actor to the learners (i.e. num_envs * steps_per_cycle units of observations, actions, rewards, etc).</p>
+
+<p>The paper does not address the details of how the data is stored and retrieved for replay. In Earl, the user specifies num_envs, which for GymnasiumLoop is the number of environments per actor thread. There are two actor threads per actor device. Each actor thread shards the trajectory and actor state evenly across the learner devices. Thus when the framework calls Agent.update_experience() on the learner device, the experience data has batch size = num_envs / len(learner_devices), which must be an integer (i.e. must divide evenly). The Agent is free to store and replay that experience in whatever way it chooses. For my R2D2 implementation, to keep things simple, I store the experience using that same batch size (num_envs / len(learner_devices)) and then replay some batch size that is an integer multiple of that batch size.</p>
+
+<p>One thing not mentioned in the paper but which is obviously necessary for many algorithms is copying of actor state to the learners. For example, in R2D2 the LSTM hidden states at the beginning of a trajectory are needed by the learners. The framework can take care of properly distributing the observations, actions and rewards, but the details of the actor state depend on the particular agent implementation, so users of GymnasiumLoop have to implement Agent.shard_actor_state(actor_state, learner_devices). Depending on the algorithm, some elements of the state will be sharded evenly to go along with the trajectory data, while other elements will be replicated across all learner devices or not copied at all.</p>
+
+<h3 id="performance-tuning">Performance tuning</h3>
+
+<p>In GymnasiumLoop, ideally all accelerator devices are being fully utilized. Getting there requires a lot of tuning. Some of the knobs available for tuning and what they do:</p>
+
+<ul>
+  <li>Num_envs: the number or environments per actor thread (there are 2 actor threads per actor device). Increasing this will increase CPU usage during env.step() and increase actor device (e.g. GPU) usage during agent.act(). It will increase CPU memory usage (for the environment state). It will also increase memory usage on the actor device, moreso if the actor maintains per-environment state (e.g. recurrent hidden state).</li>
+  <li>Num_off_policy_optims_per_cycle: the number of times Agent.loss and Agent.optimize_from_grads is called between waiting for new experience data from the actors. Increasing this will increase learner device usage. It may cause the actor threads to block (and thus make the actor devices and CPUs idle) if the queue for experience data is full (currenty the queue has a max length of 2). Increasing it will also make the algorithm more off-policy, since it does more updates on experience that was produced by older policies.</li>
+  <li>The number of actor devices and learner devices. More learner devices effectively increases batch sizes and thus can help training be faster or more stable. More actor devices increases the rate at which new experience trajectories are made available to the learners. If the number of environments on a machine is limited by CPU cores or CPU memory, increasing the number of actor devices effectively reduces the actor batch size (num_envs).</li>
+</ul>
+
+<p>The metrics that are currently exposed on every run are the cycle time for the learners (which includes getting new experience and then some number of loss + optimization steps), and the time the learners spend waiting for an actor to enqueue experience. Because JAX arrays are materialized asynchronously, the actor thread’s call to jax.device_put_sharded() will return before the data has actually been copied to the learner devices. Thus the learner device will be able to successfully retrieve experience from the queue, but computation may block waiting for the data to be copied. I don’t think there’s a good way to expose the exact amount of time spent waiting for copies during normal execution (doing so would require putting in barriers that could hurt performance). So the process I used for tuning performance was:</p>
+
+<ol>
+  <li>If learner device utilization is not high, try tweaking the above knobs to get it up.</li>
+  <li>When / if that didn’t succeed, use a profiler (I used NVidia Nsight Systems). This made it fairly easy to see when computation was waiting on copies.</li>
+</ol>
+
+<h3 id="performance-footgun-implicit-vs-explicit-host-device-copies">Performance footgun: implicit vs explicit host-&gt;device copies</h3>
+
+<p>Using the profiler I was able to spot a blocking host-&gt;device copy in the inner loop of the actor cycle that was caused by something like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">steps_per_cycle</span><span class="p">:</span>
+  <span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+  <span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">observation</span><span class="p">),</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">done</span><span class="p">),</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+  <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="n">act</span><span class="p">(</span><span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>It turned out that the explicit conversion from Numpy to JAX arrays was much much slower than just passing the Numpy arrays directly into Agent.act. I confirmed the issue with this simplified example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">jax</span>
+
+<span class="o">@</span><span class="n">jax</span><span class="p">.</span><span class="n">jit</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+ <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">lazy</span><span class="p">():</span>
+ <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span>
+ <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
+ <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">eager</span><span class="p">():</span>
+ <span class="n">a</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)))</span>
+ <span class="n">b</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+ <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The lazy function takes 0.3 milliseconds and the eager takes 1.1 (3.7x slowdown) on a Google Colab instance with a T4 GPU.</p>
+
+<p>Under the hood, the eager function launches 3 CUDA kernels, one for each array copy and one for the addition, returning to the Python interpreter between each. The lazy function goes into CUDA only once.</p>
+
+<h3 id="batching-gymnasium-environments">Batching Gymnasium environments</h3>
+
+<p>In the podracers paper section in Sebulba they write:
+<em>To minimise the effect of Python’s GIL, when stepping a batch of environments in parallel, each Python actor-thread interacts with a special batched environment; this is exposed to Python as a single environment that takes a batch of actions and returns a batch of observations; behind the scenes it steps each environment in the batch in parallel using a shared pool of C++ threads.</em></p>
+
+<p>The functionality described in the paper is provided for some environments by <a href="https://envpool.readthedocs.io/en/latest/">EnvPool</a>. For Gymnasium environments not supported by EnvPool, Earl will apply Gymnasium’s built-in vectorization which uses Python multiprocessing to run multiple copies of the environment in parallel. This is much much slower than EnvPool, and one fun thing I had to work around was that each subprocess would try to pre-allocate most of the GPU memory on startup (this happens whenever you import jax). I worked around this by setting an environment variable telling JAX to only use the CPU in those environment subprocesses.</p>
+
+<h2 id="potential-improvements">Potential improvements</h2>
+
+<h3 id="pmap---automatic-parallelism">Pmap -&gt; automatic parallelism</h3>
+
+<p>When the Podracers paper was written, jax.pmap was the recommended way of parallelizing computation across multiple devices. Since then, the JAX team has developed “<a href="https://docs.jax.dev/en/latest/notebooks/Distributed_arrays_and_automatic_parallelization.html">automatic parallelism</a>” and encourages its use over pmap. The basic idea is that the programmer shards (or replicates, which in JAX is called a type of sharding) arrays across devices, and the compiler and runtime automatically figure out where computation should happen and where function outputs should go.</p>
+
+<p>I prototyped an implementation of GymnaxLoop that used automatic parallelism before throwing it away and settling on the explicit Pmap approach. The reason is that I couldn’t convince myself that sampling randomly from a replay buffer wouldn’t result in extra cross-device copies and uneven workloads. Earl is currently entirely agnostic to how an agent manages its experience state (which will include the replay buffers). Experience replay could be implemented in a way that is compatible with automatic parallelism (I believe the main constraint is that buffer has to be sized such that it can be sharded evenly across devices, and reads and writes are balanced across all devices), but guaranteeing this would require the framework to be more opinionated about how replay buffers are managed.</p>
+
+<p>If I were to do this, I would look to <a href="https://dm-acme.readthedocs.io/en/latest/">DeepMind’s Acme</a> for inspiration. It is extremely prescriptive about how experience state is managed, and I think a similar design could result in something that’s guaranteed to be performant with JAX’s automatic parallelism.</p>
+
+<h3 id="multiple-losses">Multiple losses</h3>
+
+<p>Some algorithms compute different loss terms for different subsystems. Earl doesn’t currently support this, but it wouldn’t be too hard to add.</p>
+
+<h2 id="scaling-to-multiple-machines-or-how-special-are-the-pods-really">Scaling to multiple machines, or how special are the “pods” really?</h2>
+
+<p>Earl currently only supports single-machine training. Supporting multi-machine would be as straightforward as adding a call to jax.distributed.initialize() in the training script. However, when scaling to multiple machines, network bandwidth becomes a critical factor. Let’s analyze how bandwidth affects training throughput and compare TPU pods with modern GPU clusters.</p>
+
+<p>The “pod” in the “Podracers” article is a reference to a Google Cloud TPU pod, which is a group of TPU chips that have high bandwidth interconnections. Let’s analyze how bandwidth affects training throughput. Both Anakin and Sebulba have to send gradients between all learner devices before every optimizer step, and this latency cannot easily be hidden by overlapping that work with other work (unlike the transfers from actors to learners, which can be overlapped with both acting and learning). The amount of data that needs to be meaned is: (bits per gradient) x (num parameters).</p>
+
+<p>Let’s say each device has bandwidth of R bits / sec and the gradients take S bits. Assuming the mean is calculated and sent back using a tree topology with N leaves, and we have L learner devices the time spend transmitting data around will be:</p>
+
+<p>(receive L / N gradients at leaves) + (recieve N gradients at depth D-1 of tree) + … (send mean gradient back to devices at depth 1) + …</p>
+
+<p>This ignores the actual computation time which will be insignificant, but I think that’s pretty true. If we have N = 8 leaves, this will be:</p>
+
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>R</mi></mfrac><mo stretchy="false">(</mo><mfrac><mi>L</mi><mn>8</mn></mfrac><mi>S</mi><mo>+</mo><mn>8</mn><mi>S</mi><mo>+</mo><mn>4</mn><mi>S</mi><mo>+</mo><mn>2</mn><mi>S</mi><mo>+</mo><mn>2</mn><mi>S</mi><mo>+</mo><mn>4</mn><mi>S</mi><mo>+</mo><mn>8</mn><mi>S</mi><mo>+</mo><mfrac><mi>L</mi><mn>8</mn></mfrac><mi>S</mi><mo stretchy="false">)</mo><mo>=</mo></mrow><annotation encoding="application/x-tex">\frac{1}{R} ( \frac{L}{8}S + 8S + 4S + 2S + 2S + 4S + 8S + \frac{L}{8}S) =</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span></span></span></span>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>S</mi><mi>R</mi></mfrac><mo stretchy="false">(</mo><mfrac><mi>L</mi><mn>4</mn></mfrac><mo>+</mo><mn>28</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\frac{S}{R} ( \frac{L}{4} + 28)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">28</span><span class="mclose">)</span></span></span></span></p>
+
+<p>Now let’s try to get some sensible values of L, R, and S.
+Most online RL research uses relatively small numbers of parameters compared to modern LLMs (e.g. Dreamer v3 XL has 300 million parameters, the unusually large Gato has 1.2 billion).
+To work an example, let’s say we use 16 bits per gradient x 1 billion parameters = 16 Gbits. In the Podracers paper, they show measurements up to 128 devices (TPU cores), so L = 128. The TPU v6e has R = 3584 Gbps of inter-chip interconnect bandwidth, which gets us:</p>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>16</mn><mn>3584</mn></mfrac><mo stretchy="false">(</mo><mfrac><mn>128</mn><mn>4</mn></mfrac><mo>+</mo><mn>28</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0.27</mn><mi>s</mi></mrow><annotation encoding="application/x-tex">\frac{16}{3584} ( \frac{128}{4} + 28) = 0.27s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3584</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">16</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">128</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">28</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.27</span><span class="mord mathnormal">s</span></span></span></span></span>
+
+<p>To answer how special TPU pods are, let’s compare this to NVidia GPUs. NVidia’s GB200 can connect up to 72 GPUs at 1800 Gbps, but (at least according to official peak numbers from <a href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/">Nvidia</a> and <a href="https://cloud.google.com/tpu/docs/v6e">Google</a>) it has 5x the compute and memory than a TPU v6e, so 128 TPU v6e are roughly equivalent to 26 GB200s. The same reduction would take</p>
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>16</mn><mn>1800</mn></mfrac><mo stretchy="false">(</mo><mfrac><mn>26</mn><mn>4</mn></mfrac><mo>+</mo><mn>28</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0.31</mn><mi>s</mi></mrow><annotation encoding="application/x-tex">\frac{16}{1800} ( \frac{26}{4} + 28) = 0.31s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1800</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">16</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">26</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">28</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.31</span><span class="mord mathnormal">s</span></span></span></span></span>
+
+<p>Pretty close! When Google published the Podracers paper, they may have had a huge lead in distributed ML due to their TPU networking, but it seems that NVidia has mostly caught up, at least if the equivalence of 5 TPU v6e cores = 1 GB200 GPU is roughly correct.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Years ago only DeepMind and OpenAI could do distributed RL at scale. Today, thanks to the libraries, APIs, on-demand cloud computing, and knowledge that is available, it’s within reach of a very small team (like me!).</p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>I started Earl while working at the Astera Institute, though I didn’t implement distributed training until after I left.
+I thank Jed McCaleb for agreeing to let me open-source it.
+My coworkers at Astera contributed to Earl early on: Andrew Grebenisan, Mick van Gelderen and Eric Alt.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>I use these terms for consistency with the paper, which in no way should be read as my endorsement of The Phantom Menace. Though I did enjoy the <a href="https://en.wikipedia.org/wiki/Star_Wars_Episode_I:_Racer">Racer</a> game. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        </div>
+        <div id="bibliography">
+            <div class="wrap">
+                <ol class="bibliography"></ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
