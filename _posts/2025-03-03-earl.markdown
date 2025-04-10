@@ -203,28 +203,21 @@ Earl currently only supports single-machine training. Supporting multi-machine w
 
 The "pod" in the "Podracers" article is a reference to a Google Cloud TPU pod, which is a group of TPU chips that have high bandwidth interconnections. Let's analyze how bandwidth affects training throughput. Both Anakin and Sebulba have to send gradients between all learner devices before every optimizer step, and this latency cannot easily be hidden by overlapping that work with other work (unlike the transfers from actors to learners, which can be overlapped with both acting and learning). The amount of data that needs to be meaned is: (bits per gradient) x (num parameters).
 
-Let's say each device has bandwidth of R bits / sec and the gradients take S bits. Assuming the mean is calculated and sent back using a tree topology with N leaves, and we have L learner devices the time spend transmitting data around will be:
+Let's say each device has bandwidth of R bits / sec and the gradients take S bits. Assuming the mean is calculated and sent back using a reduce-scatter and then all-gather, the time taken is:
 
-(receive L / N gradients at leaves) + (receive N gradients at depth D-1 of tree) + ... (send mean gradient back to devices at depth 1) + ...
+$$\frac{2S}{R}$$
 
-This ignores the actual computation time which will be insignificant, but I think that's pretty true. If we have N = 8 leaves, this will be:
-
-$$\frac{1}{R} ( \frac{L}{8}S + 8S + 4S + 2S + 2S + 4S + 8S + \frac{L}{8}S) = $$
-$$\frac{S}{R} ( \frac{L}{4} + 28) $$
-
-Now let's try to get some sensible values of L, R, and S.
+Now let's try to get some sensible values of R and S.
 Most online RL research uses relatively few parameters compared to modern LLMs (e.g. Dreamer v3 XL has 300 million parameters, the unusually large Gato has 1.2 billion).
-To work an example, let's say we use 16 bits per gradient x 1 billion parameters \= 16 Gbits. In the Podracers paper, they show measurements up to 128 devices (TPU cores), so L \= 128. The TPU v6e has R = 3584 Gbps of inter-chip interconnect bandwidth, which gets us:
+To work an example, let's say we use 16 bits per gradient x 1 billion parameters \= 16 Gbits. The TPU v6e has R = 3584 Gbps of inter-chip interconnect bandwidth, which gets us:
 
-$$\frac{16}{3584} ( \frac{128}{4} + 28) = 0.27s $$
+$$\frac{2 \times 16}{3584} = 0.009s $$
 
-To answer how special TPU pods are, let's compare this to NVidia GPUs. NVidia's GB200 can connect up to 72 GPUs at 1800 Gbps, but (at least according to official peak numbers from [Nvidia](https://www.nvidia.com/en-us/data-center/gb200-nvl72/) and [Google](https://cloud.google.com/tpu/docs/v6e)) it has ~2.5x the compute (and more than that multiplier of memory) when compared to a TPU v6e, so 128 TPU v6e are roughly equivalent to 51 GB200s. The same reduction would take
+To answer how special TPU pods are, let's compare this to NVidia GPUs. NVidia's GB200 can connect up to 72 GPUs at 1800 Gbps. The same reduction would take
 
-$$\frac{16}{1800} ( \frac{51}{4} + 28) = 0.36s $$
+$$\frac{2 \times 16}{1800} = 0.018s $$
 
-Pretty close\! In order to determine how much of an impact this makes on training throughput we'd need to look at a particular example which depends heavily on hyperparameters. It seems the TPU networking is still higher bandwidth, but for workloads that fit within an NVLink Switch (72 GPUs), Nvidia is not far behind.
-
-Note: this section was updated when I realized Nvidia's peak FLOP numbers assume sparsity and thus need to be divided by 2 to evaluate them for non-sparse workloads.
+Roughly twice as long, but in order to determine how much of an impact this makes on training throughput we'd need to look at a particular example which depends heavily on hyperparameters. It seems the TPU networking is still higher bandwidth, but for workloads that fit within an NVLink switch, the impact on training throughput may be quite small.
 
 ## Conclusion
 
