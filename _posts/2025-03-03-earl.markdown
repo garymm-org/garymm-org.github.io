@@ -51,7 +51,7 @@ Earl's implementation of Anakin is GymnaxLoop. [Gymnax](https://github.com/Rober
 
 ### Avoiding recompilation
 
-The first time a jax.jit function is run, it is compiled, which is slow. Unwanted recompilations are a performance foot-gun, so by default Earl will fail if the code is recompiled. When I enabled this failure, I learned that my Gymnax Loop was recompiling the main loop (act and learn) because the types of some part of the environment state where changing. After digging into it (made difficult due to a [JAX bug](https://github.com/jax-ml/jax/issues/23302) that I reported) I discovered that the change was that the initial state (returned by env.reset()) had weak_type=True on some arrays, but calls to env.step() changed the weak_type to False. GymnaxLoop fixes this by setting weak_type=False on all arrays in the environment before running. This avoids recompilation and thus speeds up training significantly.
+The first time a jax.jit function is run, it is compiled, which is slow. Unwanted recompilations are a performance foot-gun, so by default Earl will fail if the code is recompiled. When I enabled this failure, I learned that my Gymnax Loop was recompiling the main loop (act and learn) because the types of some part of the environment state were changing. After digging into it (made difficult due to a [JAX bug](https://github.com/jax-ml/jax/issues/23302) that I reported) I discovered that the change was that the initial state (returned by env.reset()) had weak_type=True on some arrays, but calls to env.step() changed the weak_type to False. GymnaxLoop fixes this by setting weak_type=False on all arrays in the environment state before running. This avoids recompilation and thus speeds up training significantly.
 
 ## Gymnasium Loop: Earl's Sebulba
 
@@ -105,11 +105,12 @@ The method signatures and AgentState structure force algorithms to be implemente
 
 When I first thought about double buffering I thought I would write code that used two CUDA streams to overlap work. I was surprised to learn that JAX does not expose CUDA streams or any similar abstraction. Upon re-reading the Podracers paper, I noticed they wrote:
 
-*To make efficient use of the actor cores, it is essential that while a Python thread is stepping a batch of environments, the corresponding TPU core is not idle. This is achieved by creating multiple Python threads per actor core, each with its own batched environment. They threads alternate in using the same actor core, without manual synchronization.*
+*To make efficient use of the actor cores, it is essential that while a Python thread is stepping a batch of environments, the corresponding TPU core is not idle. This is achieved by creating multiple Python threads per actor core, each with its own batched environment. The threads alternate in using the same actor core, without manual synchronization.*
 
 So I tried just having multiple threads use the same device, and lo-and-behold I got a huge speedup\! Looking at a profile in Nvidia Nsight Systems revealed that under the hood, JAX had analyzed the computations coming in from the different threads, determined they were independent, and scheduled them on separate CUDA streams (really separate CUDA graphs). This is in contrast to PyTorch which by default puts all work on a single stream and requires the user to specify another stream if desired.
 
 Below you can see the Nsight Systems UI showing the different CUDA graphs at the top and the agent.step() overlapping with the env.step() at the bottom.
+The two graphs of interest are 12 and 15. The profile records which thread launched each graph which confirmed that the two threads were launching separate graphs.
 
 {%
    picture
@@ -131,7 +132,7 @@ One thing not mentioned in the paper but which is obviously necessary for many a
 In GymnasiumLoop, ideally all accelerator devices are being fully utilized. Getting there requires a lot of tuning. Some of the knobs available for tuning and what they do:
 
 * Num_envs: the number or environments per actor thread (there are 2 actor threads per actor device). Increasing this will increase CPU usage during env.step() and increase actor device (e.g. GPU) usage during agent.act(). It will increase CPU memory usage (for the environment state). It will also increase memory usage on the actor device, moreso if the actor maintains per-environment state (e.g. recurrent hidden state).
-* Num_off_policy_optims_per_cycle: the number of times Agent.loss and Agent.optimize_from_grads is called between waiting for new experience data from the actors. Increasing this will increase learner device usage. It may cause the actor threads to block (and thus make the actor devices and CPUs idle) if the queue for experience data is full (currenty the queue has a max length of 2). Increasing it will also make the algorithm more off-policy, since it does more updates on experience that was produced by older policies.
+* Num_off_policy_optims_per_cycle: the number of times Agent.loss and Agent.optimize_from_grads is called between waiting for new experience data from the actors. Increasing this will increase learner device usage. It may cause the actor threads to block (and thus make the actor devices and CPUs idle) if the queue for experience data is full (currently the queue has a max length of 2). Increasing it will also make the algorithm more off-policy, since it does more updates on experience that was produced by older policies.
 * The number of actor devices and learner devices. More learner devices effectively increases batch sizes and thus can help training be faster or more stable. More actor devices increases the rate at which new experience trajectories are made available to the learners. If the number of environments on a machine is limited by CPU cores or CPU memory, increasing the number of actor devices effectively reduces the actor batch size (num_envs).
 
 The metrics that are currently exposed on every run are the cycle time for the learners (which includes getting new experience and then some number of loss \+ optimization steps), and the time the learners spend waiting for an actor to enqueue experience. Because JAX arrays are materialized asynchronously, the actor thread's call to jax.device_put_sharded() will return before the data has actually been copied to the learner devices. Thus the learner device will be able to successfully retrieve experience from the queue, but computation may block waiting for the data to be copied. I don't think there's a good way to expose the exact amount of time spent waiting for copies during normal execution (doing so would require putting in barriers that could hurt performance). So the process I used for tuning performance was:
@@ -204,7 +205,7 @@ The "pod" in the "Podracers" article is a reference to a Google Cloud TPU pod, w
 
 Let's say each device has bandwidth of R bits / sec and the gradients take S bits. Assuming the mean is calculated and sent back using a tree topology with N leaves, and we have L learner devices the time spend transmitting data around will be:
 
-(receive L / N gradients at leaves) + (recieve N gradients at depth D-1 of tree) + ... (send mean gradient back to devices at depth 1) + ...
+(receive L / N gradients at leaves) + (receive N gradients at depth D-1 of tree) + ... (send mean gradient back to devices at depth 1) + ...
 
 This ignores the actual computation time which will be insignificant, but I think that's pretty true. If we have N = 8 leaves, this will be:
 
@@ -212,16 +213,18 @@ $$\frac{1}{R} ( \frac{L}{8}S + 8S + 4S + 2S + 2S + 4S + 8S + \frac{L}{8}S) = $$
 $$\frac{S}{R} ( \frac{L}{4} + 28) $$
 
 Now let's try to get some sensible values of L, R, and S.
-Most online RL research uses relatively small numbers of parameters compared to modern LLMs (e.g. Dreamer v3 XL has 300 million parameters, the unusually large Gato has 1.2 billion).
+Most online RL research uses relatively few parameters compared to modern LLMs (e.g. Dreamer v3 XL has 300 million parameters, the unusually large Gato has 1.2 billion).
 To work an example, let's say we use 16 bits per gradient x 1 billion parameters \= 16 Gbits. In the Podracers paper, they show measurements up to 128 devices (TPU cores), so L \= 128. The TPU v6e has R = 3584 Gbps of inter-chip interconnect bandwidth, which gets us:
 
 $$\frac{16}{3584} ( \frac{128}{4} + 28) = 0.27s $$
 
-To answer how special TPU pods are, let's compare this to NVidia GPUs. NVidia's GB200 can connect up to 72 GPUs at 1800 Gbps, but (at least according to official peak numbers from [Nvidia](https://www.nvidia.com/en-us/data-center/gb200-nvl72/) and [Google](https://cloud.google.com/tpu/docs/v6e)) it has 5x the compute and memory than a TPU v6e, so 128 TPU v6e are roughly equivalent to 26 GB200s. The same reduction would take
+To answer how special TPU pods are, let's compare this to NVidia GPUs. NVidia's GB200 can connect up to 72 GPUs at 1800 Gbps, but (at least according to official peak numbers from [Nvidia](https://www.nvidia.com/en-us/data-center/gb200-nvl72/) and [Google](https://cloud.google.com/tpu/docs/v6e)) it has ~2.5x the compute (and more than that multiplier of memory) when compared to a TPU v6e, so 128 TPU v6e are roughly equivalent to 51 GB200s. The same reduction would take
 
-$$\frac{16}{1800} ( \frac{26}{4} + 28) = 0.31s$$
+$$\frac{16}{1800} ( \frac{51}{4} + 28) = 0.36s $$
 
-Pretty close\! When Google published the Podracers paper, they may have had a huge lead in distributed ML due to their TPU networking, but it seems that NVidia has mostly caught up, at least if the equivalence of 5 TPU v6e cores = 1 GB200 GPU is roughly correct.
+Pretty close\! In order to determine how much of an impact this makes on training throughput we'd need to look at a particular example which depends heavily on hyperparameters. It seems the TPU networking is still higher bandwidth, but for workloads that fit within an NVLink Switch (72 GPUs), Nvidia is not far behind.
+
+Note: this section was updated when I realized Nvidia's peak FLOP numbers assume sparsity and thus need to be divided by 2 to evaluate them for non-sparse workloads.
 
 ## Conclusion
 
