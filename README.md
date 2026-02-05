@@ -3,9 +3,30 @@
 Personal web site. Built on [Jekyll](https://jekyllrb.com/), with theme based on
 [gwgundersen's](http://gregorygundersen.com/blog/2020/06/21/blog-theme).
 
-```
+## Setup
+
+### Prerequisites
+
+- [pixi](https://pixi.sh/) (package manager)
+- [direnv](https://direnv.net/)
+- Ruby 3.x:
+  - Linux: `sudo apt-get install ruby3.3`
+  - macOS: `brew install ruby@3.3`
+- libvips:
+  - Linux: `sudo apt-get install libvips-tools`
+  - macOS: `brew install vips`
+
+### Install dependencies
+
+```sh
+# Install pixi environment (provides jupyter dependencies)
+pixi install
+
+# Allow direnv to activate the environment
 direnv allow
-sudo apt-get install libvips-tools
+
+# Install Ruby gems
+bundle install
 ```
 
 To see local changes, run:

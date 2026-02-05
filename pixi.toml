@@ -1,0 +1,14 @@
+[project]
+authors = ["Gary Miguel <garymm@garymm.org>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "garymm.org"
+platforms = ["osx-arm64", "linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+libvips = "*"
+ipykernel = "*"
+nbconvert = "*"

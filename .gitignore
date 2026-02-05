@@ -9,3 +9,7 @@ vendor
 assets/node_modules/
 assets/package-lock.json
 assets/package.json
+
+# pixi environments
+.pixi
+*.egg-info
