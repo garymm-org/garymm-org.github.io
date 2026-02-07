@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Testing software in the era of coding agents</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta name="keywords" content="">
+    <meta name="author" content="Gary Mindlin Miguel">
+
+    <link href="/css/blog.css" rel="stylesheet" />
+    <link href="/css/trac.css" rel="stylesheet" />
+    <link href="/css/markdown.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon/favicon-256x256.png">
+
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HYFFNSQX76"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HYFFNSQX76');
+</script>
+
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function (w, d, e, u, f, l, n) {
+            w[f] = w[f] || function () {
+                (w[f].q = w[f].q || [])
+                    .push(arguments);
+            }, l = d.createElement(e), l.async = 1, l.src = u,
+                n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+        })
+            (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+        ml('account', '371042');
+    </script>
+    <!-- End MailerLite Universal -->
+    <!-- TODO: I can't get this to work in blog.css for some reason -->
+    <style>
+        .twitter svg {
+            height: 0.8em;
+        }
+    </style>
+    <!--KaTeX-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+        integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+        integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+        integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // ...options...
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class='nav'>
+    <ul class='wrap'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/feed.xml'>RSS</a></li>
+    </ul>
+</div>
+        <div class="front-matter">
+            <div class="wrap">
+                <h1>Testing software in the era of coding agents</h1>
+                <h4></h4>
+                <div class="bylines">
+                    <div class="byline">
+                        <h3>Published</h3>
+                        <p>2026-02-06</p>
+                    </div>
+                    <div align="right">
+                        
+                        <button class="ml-onclick-form" onclick="ml('show', 'IUXI0E', true)">get new posts via
+                            email</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="wrap article">
+            <p>What parts of my software should be tested? And how? And how do coding agents (e.g. Claude Code) change things? This is my attempt to succinctly explain how I think about these questions at the beginning of 2026 (software development is changing so quickly I feel compelled to note the date. This may all be obsolete soon).</p>
+
+<h2 id="static-analysis--testing">Static analysis ⊂ testing</h2>
+
+<p>For the purposes of this discussion, I’m going to include static analysis in the term “testing” for brevity rather than writing “testing and static analysis”. Static analysis includes any checks that don’t have to execute the code, including the checks performed by compilers and linters.</p>
+
+<h2 id="why-test-software">Why test software</h2>
+
+<p>If it’s not tested, you have much less evidence that it works, where “it” is any particular combination of code, inputs, runtime environment, and assertions. So to the extent you care about the software working, you should test it.</p>
+
+<p>Most software is tested manually when it’s first created. What’s wrong with manual testing?
+First, it’s slow! While the time cost of all testing grows with the number of changes being tested and the number of checks, the slope of the curve matters. Automated tests have a higher up-front cost of writing the test, but then a drastically lower marginal cost each time they’re run. The cheaper and faster the tests are, the faster one can make changes (while maintaining the same confidence in correctness).</p>
+
+<p>The above was true before coding agents, but with coding agents, there are a few additional important considerations. First, the human time needed to actually write code is falling quickly (because you can have coding agents do it), but if checking correctness is slow (e.g. requires manual testing), that will become the bottleneck. Second, coding agents have a much higher chance of success if they can get quick feedback while they work. Third, manual tests often require more interpretation to determine if the system is working as intended, which is error-prone. This is especially true for coding agents that lack broader context and are somewhat prone to <a href="https://en.wikipedia.org/wiki/Reward_hacking">reward hacking</a>. Agents are much less likely to misinterpret an assertion failure than something less well defined, and reward hacking is much more visible if it shows up as disabling an assertion in code rather than an optimistic interpretation of a manual test result.</p>
+
+<h2 id="how-much-to-invest-in-testing">How much to invest in testing</h2>
+
+<p>There are two main things that determine how much it makes sense to invest in testing. First, how much does it matter that the system is correct (or performant)? At one extreme we have code that only needs to work well enough to explore an idea (e.g., for learning about an algorithm). Investing a lot in automated testing for this type of thing is wasteful. At the other extreme is code that is doing critical work everywhere for everyone (e.g., OpenSSL).</p>
+
+<p>Second, how often is the code or inputs or environment changing? If the rate of change is low, the total cost of manual testing is low. If the code is changed frequently (including changes to its dependencies), manual testing is wasteful. As software systems get larger, they typically accrue more interdependencies between modules, which greatly amplifies the effective change rate.</p>
+
+<h2 id="how-to-invest-your-testing-budget">How to invest your testing budget</h2>
+
+<p>Build a test pyramid! Note the names of the layers probably don’t make sense, but in general you should have more isolated, fast tests, and fewer slow, integrated tests.</p>
+
+<p><img class="wrap" src="/generated/2026-02-06-testing-software-coding-agents/test-pyramid-466-945f290ca.png" alt="Test pyramid diagram showing more unit tests at the bottom, fewer integration tests in the middle, and even fewer end-to-end tests at the top" srcset="/generated/2026-02-06-testing-software-coding-agents/test-pyramid-400-89c7e4ef1.webp 400w, /generated/2026-02-06-testing-software-coding-agents/test-pyramid-466-89c7e4ef1.webp 466w" /></p>
+
+<p>Quoting “<a href="https://martinfowler.com/articles/practical-test-pyramid.html">The Practical Test Pyramid</a>”:
+“Your best bet is to remember two things from Cohn’s original test pyramid:</p>
+
+<ol>
+  <li>Write tests with different granularity</li>
+  <li>The more high-level you get the fewer tests you should have</li>
+</ol>
+
+<p>Stick to the pyramid shape to come up with a healthy, fast and maintainable test suite: Write lots of small and fast unit tests. Write some more coarse-grained tests and very few high-level tests that test your application from end to end.”</p>
+
+<p>Again I think this becomes even more important with coding agents. They may have less of an understanding about which properties of the system are important and they will be much more productive if they can get feedback from static analysis tools or unit tests that are fast, specific, and not flaky.</p>
+
+<h2 id="how-to-integrate-testing-into-the-development-process">How to integrate testing into the development process</h2>
+
+<h3 id="when-fixing-bugs">When fixing bugs</h3>
+
+<p>A bug or performance problem is very strong evidence existing testing is insufficient! If you’re fixing a bug or performance regression, this is a great time to practice test-driven development by following these 3 steps:</p>
+
+<ol>
+  <li>Write test. Verify it fails.</li>
+  <li>Fix bug.</li>
+  <li>Run test. Verify it passes.</li>
+</ol>
+
+<p>This guarantees that you’ve actually understood and fixed the problem, and can help avoid regressions.</p>
+
+<p>However, people frequently find it’s quite difficult to write tests that reproduce bugs or performance regressions. The code often needs to be refactored to make it easier to test. This brings us to…</p>
+
+<h3 id="when-writing-new-code">When writing new code</h3>
+
+<p>If you’re writing new code that you expect to warrant testing (i.e. you care enough about the correctness or it’s going to be changed a lot), add tests from the beginning. This will naturally encourage you (or your AI agent) to design it in a way that makes it easy to test! You might find the “<a href="https://testing.googleblog.com/2025/10/simplify-your-code-functional-core.html">functional core, imperative shell</a>” pattern useful here.</p>
+
+<h3 id="when-refactoring">When refactoring</h3>
+
+<p>If you’re making a big change to the system that <em>shouldn’t</em> affect its output but you’re nervous and you feel like you should probably do a lot of manual testing to make sure, that’s a good sign that more automated tests may be needed.</p>
+
+        </div>
+        <div id="bibliography">
+            <div class="wrap">
+                <ol class="bibliography"></ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

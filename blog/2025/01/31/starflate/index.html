@@ -164,18 +164,18 @@
 <p><a href="https://github.com/garymm/starflate/blob/289b78afa5aa93f0971fcee9f5d17d3bf0a93dd2/huffman/src/table.hpp">huffman::table</a> is a Huffman code table. For ease of testing it has a bunch of different constructors, but the only one used in decompression is the one that takes a range of pairs of (symbol range, bitsize). Huffman coding uses prefix-free codes, meaning that we decode the input one bit at a time and we’re done as soon as we find the bit pattern in the table. Internally the table stores things sorted lexicographically, which allows for efficient decoding by keeping track of where we are in the table in between attempts to decode the bits. In an attempt to be idiomatic C++, the table exposes iterators with the standard begin() and end() methods. The main use of the table class is in <a href="https://github.com/garymm/starflate/blob/289b78afa5aa93f0971fcee9f5d17d3bf0a93dd2/huffman/src/decode.hpp#L74">decode_one</a>, the pseudo-code for which is:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decode_one</span><span class="p">(</span><span class="n">huffman_table</span><span class="p">,</span> <span class="n">bits</span><span class="p">):</span>
-   <span class="n">table_pos</span> <span class="o">=</span> <span class="n">huffman_table</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="c1"># iterator
+   <span class="n">table_pos</span> <span class="o">=</span> <span class="n">huffman_table</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span> <span class="c1"># iterator
 </span>   <span class="n">current_code</span> <span class="o">=</span> <span class="mi">0</span>
    <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">bits</span><span class="p">:</span>
       <span class="n">current_code</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_code</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="n">bit</span>
-      <span class="n">std</span><span class="p">::</span><span class="n">expected</span><span class="o">&lt;</span><span class="n">table</span><span class="p">::</span><span class="n">iterator</span><span class="p">,</span> <span class="n">table</span><span class="p">::</span><span class="n">iterator</span><span class="o">&gt;</span> <span class="n">found</span> <span class="o">=</span> <span class="n">huffman_table</span><span class="p">.</span><span class="n">find</span><span class="p">(</span>
+      <span class="n">std</span><span class="p">::</span><span class="n">expected</span><span class="o">&lt;</span><span class="n">table</span><span class="p">::</span><span class="n">iterator</span><span class="p">,</span> <span class="n">table</span><span class="p">::</span><span class="n">iterator</span><span class="o">&gt;</span> <span class="n">found</span> <span class="o">=</span> <span class="n">huffman_table</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span>
         <span class="n">current_code</span><span class="p">,</span> <span class="n">table_pos</span><span class="p">)</span>
       <span class="k">if</span> <span class="n">found</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">found</span><span class="o">-&gt;</span><span class="n">symbol</span>
-      <span class="n">table_pos</span> <span class="o">=</span> <span class="n">found</span><span class="p">.</span><span class="n">error</span><span class="p">()</span> <span class="c1"># uses expected::error to hold the next iterator position
-</span>      <span class="k">if</span> <span class="n">table_pos</span> <span class="o">==</span> <span class="n">huffman_table</span><span class="p">.</span><span class="n">end</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">error</span><span class="p">()</span>
-  <span class="k">return</span> <span class="n">error</span><span class="p">()</span>
+      <span class="n">table_pos</span> <span class="o">=</span> <span class="n">found</span><span class="p">.</span><span class="nf">error</span><span class="p">()</span> <span class="c1"># uses expected::error to hold the next iterator position
+</span>      <span class="k">if</span> <span class="n">table_pos</span> <span class="o">==</span> <span class="n">huffman_table</span><span class="p">.</span><span class="nf">end</span><span class="p">():</span>
+        <span class="k">return</span> <span class="nf">error</span><span class="p">()</span>
+  <span class="k">return</span> <span class="nf">error</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="c-features--patterns">C++ features / patterns</h2>

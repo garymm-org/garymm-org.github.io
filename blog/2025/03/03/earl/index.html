@@ -128,7 +128,7 @@
 
 <p>To provide context, I’ll briefly summarize the Podracer architectures paper. If you know it, feel free to skip this.</p>
 
-<p>In contrast to other machine learning paradigms, online RL involves an agent and an environment, and the training data is generated on the fly from their interactions. The paper describes two architectures: Anakin and Sebulba<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Anakin is used when an environment is compatible with jax.jit, and Sebulba is used otherwise. In both of the architectures, the agent is implemented in JAX and is compatible with jax.jit. If you’re not familiar with JAX, see <a href="https://www.garymm.org/blog/2024/09/08/jaxwhat/">my introduction</a>. Basically, code that is run under jax.jit is optimized by a compiler and run on any supported device (e.g. GPU) without further involving the Python interpreter.</p>
+<p>In contrast to other machine learning paradigms, online RL involves an agent and an environment, and the training data is generated on the fly from their interactions. The paper describes two architectures: Anakin and Sebulba<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. Anakin is used when an environment is compatible with jax.jit, and Sebulba is used otherwise. In both of the architectures, the agent is implemented in JAX and is compatible with jax.jit. If you’re not familiar with JAX, see <a href="https://www.garymm.org/blog/2024/09/08/jaxwhat/">my introduction</a>. Basically, code that is run under jax.jit is optimized by a compiler and run on any supported device (e.g. GPU) without further involving the Python interpreter.</p>
 
 <p>In Anakin, one can have the entire training loop (agent + environment interaction, loss function and optimization) happen under jax.jit and thus run on a device (e.g. GPU) without going back to the Python interpreter. In terms of writing a performant training loop, in some ways this is even easier to deal with than normal (supervised) machine learning since one does not need to copy any data from the host to the accelerator. Scaling this across multiple devices is trivial using JAX.</p>
 
@@ -237,29 +237,29 @@ The two graphs of interest are 12 and 15. The profile records which thread launc
 <p>Using the profiler I was able to spot a blocking host-&gt;device copy in the inner loop of the actor cycle that was caused by something like:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">steps_per_cycle</span><span class="p">:</span>
-  <span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
-  <span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">observation</span><span class="p">),</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">done</span><span class="p">),</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
-  <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="n">act</span><span class="p">(</span><span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span>
+  <span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+  <span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">observation</span><span class="p">),</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">done</span><span class="p">),</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+  <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="nf">act</span><span class="p">(</span><span class="n">observation</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>It turned out that the explicit conversion from Numpy to JAX arrays was much much slower than just passing the Numpy arrays directly into Agent.act. I confirmed the issue with this simplified example:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">jax</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">jax</span>
 
-<span class="o">@</span><span class="n">jax</span><span class="p">.</span><span class="n">jit</span>
+<span class="nd">@jax.jit</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
  <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span>
 
 <span class="k">def</span> <span class="nf">lazy</span><span class="p">():</span>
- <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span>
- <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
- <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+ <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span>
+ <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
+ <span class="k">return</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">eager</span><span class="p">():</span>
- <span class="n">a</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)))</span>
- <span class="n">b</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
- <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+ <span class="n">a</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)))</span>
+ <span class="n">b</span> <span class="o">=</span> <span class="n">jax</span><span class="p">.</span><span class="n">numpy</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+ <span class="k">return</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The lazy function takes 0.3 milliseconds and the eager takes 1.1 (3.7x slowdown) on a Google Colab instance with a T4 GPU.</p>
@@ -321,7 +321,7 @@ My coworkers at Astera contributed to Earl early on: Andrew Grebenisan, Mick van
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1" role="doc-endnote">
+    <li id="fn:1">
       <p>I use these terms for consistency with the paper, which in no way should be read as my endorsement of The Phantom Menace. Though I did enjoy the <a href="https://en.wikipedia.org/wiki/Star_Wars_Episode_I:_Racer">Racer</a> game. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
