@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Goshuincho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="carousel" class="carousel"></div>
+
+  <div class="page-indicators" id="page-indicators"></div>
+
+  <button class="nav-arrow nav-arrow-left" id="nav-left" aria-label="Previous page">&#8249;</button>
+  <button class="nav-arrow nav-arrow-right" id="nav-right" aria-label="Next page">&#8250;</button>
+
+  <button class="info-button" id="info-button">Info</button>
+
+  <div class="card" id="card">
+    <button class="card-close" id="card-close" aria-label="Close">&times;</button>
+    <div class="card-content" id="card-content"></div>
+  </div>
+  <div class="card-backdrop" id="card-backdrop"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

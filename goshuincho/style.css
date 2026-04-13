@@ -1,0 +1,374 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f0;
+}
+
+/* --- Page Carousel --- */
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.page {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 16px;
+}
+
+.page-inner {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 2 / 3;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Container for cqw units used by .text-element font sizes */
+  container-type: inline-size;
+}
+
+/* --- Cover page --- */
+
+.page-inner--cover {
+  background-image: url("assets/cover-background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Title slip: a light, aged-paper rectangle that sits behind the
+   cover's vertical kanji (御朱印帳 阮). Positioned to enclose the text
+   element at x:10%, y:7% (see data.json). */
+.page-inner--cover::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  top: 4%;
+  width: 17%;
+  height: 66.66%;
+  background: #ece0bf;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  border: 1px solid rgba(90, 60, 25, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+/* Keep text elements above the slip */
+.page-inner--cover .text-element {
+  z-index: 1;
+}
+
+/* --- Text Elements --- */
+
+.text-element {
+  position: absolute;
+  font-family: "Noto Serif JP", serif;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.text-element.vertical {
+  writing-mode: vertical-rl;
+  white-space: normal;
+}
+
+/* Semantic font sizes (in cqw — % of the page-inner width). Kept as named
+   presets for backwards compatibility; for finer control set fontSize to a
+   number in data.json (e.g. fontSize: 12 → 12cqw). */
+.text-element.size-small {
+  font-size: 4cqw;
+}
+
+.text-element.size-medium {
+  font-size: 6cqw;
+  font-weight: 700;
+}
+
+.text-element.size-large {
+  font-size: 9cqw;
+  font-weight: 700;
+}
+
+.text-element.size-xlarge {
+  font-size: 14cqw;
+  font-weight: 900;
+}
+
+.text-element.color-red {
+  color: #c41e1e;
+}
+
+.text-element.color-black {
+  color: #1a1a1a;
+}
+
+/* --- Page Indicators --- */
+
+.page-indicators {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.page-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.2s;
+}
+
+.page-dot.active {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* --- Navigation Arrows (laptop) --- */
+
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 16px 12px;
+  border-radius: 8px;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-arrow:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-arrow-left {
+  left: 12px;
+}
+
+.nav-arrow-right {
+  right: 12px;
+}
+
+/* Show arrows on hover (non-touch devices) */
+@media (hover: hover) {
+  body:hover .nav-arrow {
+    opacity: 1;
+  }
+}
+
+/* Hide arrows on small touch screens */
+@media (max-width: 600px) {
+  .nav-arrow {
+    display: none;
+  }
+}
+
+/* --- Info Button --- */
+
+.info-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s;
+}
+
+.info-button:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.info-button.hidden {
+  display: none;
+}
+
+/* --- Overlay Card --- */
+
+.card-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.card-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+  max-height: 100vh;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.card.open {
+  transform: translateY(0);
+}
+
+.card-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-close:hover {
+  color: #333;
+}
+
+.card-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 20px 24px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* --- Card Content Styling --- */
+
+.card-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.card-commentary {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.card-links {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #4a7c9e;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f0f4f7;
+}
+
+.card-links a:hover {
+  background: #e0eaf0;
+}
+
+.card-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 0 0 16px;
+}
+
+.phrase-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.phrase-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.phrase-kanji {
+  font-family: "Noto Serif JP", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.phrase-romaji {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+.phrase-english {
+  font-size: 15px;
+  color: #444;
+}
+
+.phrase-commentary {
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+}
