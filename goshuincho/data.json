@@ -1,0 +1,952 @@
+{
+  "pages": [
+    {
+      "title": "Goshuinchō (Cover)",
+      "mapsUrl": null,
+      "wikiUrl": null,
+      "imageFile": "IMG_4069.jpg",
+      "pageStyle": "cover",
+      "commentary": "A <a href=\"https://en.wikipedia.org/wiki/Shuin\">Goshuinchō</a> is a book that contains a collection of seal stamps from Japanese temples. Linh and Gary collected some of these stamps in 2011, and Linh collected the rest in 2017. At each temple, a monk stamped the book and then painted calligraphy. The pages of this companion app provide clear fonts in a similar layout to the calligraphy. Tap \"info\" at the bottom of each page to see translations. The text is read top-to-bottom, right-to-left.",
+      "textElements": [
+        {
+          "text": "御朱印帳　阮",
+          "x": 5,
+          "y": 7,
+          "fontSize": 14,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "御朱印帳",
+          "romaji": "Go shuin-chō",
+          "english": "Honorable red-seal book"
+        },
+        {
+          "kanji": "阮",
+          "romaji": "Gon",
+          "english": "Nguyen",
+          "commentary": "This is the Chinese character for Linh's surname <a href=\"https://en.wiktionary.org/wiki/Nguy%E1%BB%85n#Vietnamese\">Nguyễn</a>"
+        }
+      ]
+    },
+    {
+      "title": "Kiyomizu-dera",
+      "mapsUrl": "http://maps.google.com/maps/place?cid=5504320489974987879",
+      "wikiUrl": "http://en.wikipedia.org/wiki/Kiyomizu-dera",
+      "imageFile": "IMG_4070.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 79,
+          "y": 6,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十三年四月五日",
+          "x": 82,
+          "y": 44,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "大悲閣",
+          "x": 26,
+          "y": 10,
+          "fontSize": 40,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "清 水 寺",
+          "x": 2,
+          "y": 25,
+          "fontSize": 26,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十三年四月五日",
+          "romaji": "Heisei nijūsan-nen shigatsu itsuka",
+          "english": "2011-04-05"
+        },
+        {
+          "kanji": "大悲閣",
+          "romaji": "Daihikaku",
+          "english": "Great Benevolent Pavilion"
+        },
+        {
+          "kanji": "清水寺",
+          "romaji": "Kiyomizudera",
+          "english": "Clear-water Temple"
+        }
+      ]
+    },
+    {
+      "title": "Kōdai-ji",
+      "mapsUrl": "http://maps.google.com/maps/place?cid=5504320489974987879",
+      "wikiUrl": "http://en.wikipedia.org/wiki/K%C5%8Ddai-ji",
+      "imageFile": "IMG_4071.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 80,
+          "y": 5,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十三年",
+          "x": 80,
+          "y": 30,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月五日",
+          "x": 70,
+          "y": 60,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "佛心",
+          "x": 15,
+          "y": 10,
+          "fontSize": 50,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "高台寺",
+          "x": 6,
+          "y": 65,
+          "fontSize": 13,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十三年",
+          "romaji": "Heisei nijūsan-nen",
+          "english": "2011"
+        },
+        {
+          "kanji": "四月五日",
+          "romaji": "Heisei nijūsan-nen shigatsu itsuka",
+          "english": "April 5"
+        },
+        {
+          "kanji": "佛心",
+          "romaji": "Busshin",
+          "english": "Buddha-mind"
+        },
+        {
+          "kanji": "高台寺",
+          "romaji": "Kōdai-ji",
+          "english": "Temple of [Lady] Kōdai"
+        }
+      ]
+    },
+    {
+      "title": "Chion-in",
+      "mapsUrl": "http://maps.google.com/maps/place?cid=11349370746473228335",
+      "wikiUrl": "http://en.wikipedia.org/wiki/Chion-in",
+      "imageFile": "IMG_4072.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 80,
+          "y": 8,
+          "fontSize": 13,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十三年",
+          "x": 80,
+          "y": 33,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月五日",
+          "x": 69,
+          "y": 60,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "法然上人",
+          "x": 25,
+          "y": 10,
+          "fontSize": 30,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "知恩院",
+          "x": 5,
+          "y": 50,
+          "fontSize": 20,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十三年",
+          "romaji": "Heisei nijūsan-nen",
+          "english": "2011"
+        },
+        {
+          "kanji": "四月五日",
+          "romaji": "Heisei nijūsan-nen shigatsu itsuka",
+          "english": "April 5"
+        },
+        {
+          "kanji": "法然上人",
+          "romaji": "Hōnen Shōnin",
+          "english": "Saint <a href=\"https://en.wikipedia.org/wiki/H%C5%8Dnen\">Honen</a>"
+        },
+        {
+          "kanji": "知恩院",
+          "romaji": "Chion-in",
+          "english": "Compound of Gratitude"
+        }
+      ]
+    },
+    {
+      "title": "Ginkaku-ji",
+      "mapsUrl": "http://maps.google.com/maps/place?cid=1935831195180950561",
+      "wikiUrl": "http://en.wikipedia.org/wiki/Ginkaku-ji",
+      "imageFile": "IMG_4073.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 80,
+          "y": 8,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十三年",
+          "x": 80,
+          "y": 28,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月八日",
+          "x": 69,
+          "y": 39,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "観音殿",
+          "x": 26,
+          "y": 10,
+          "fontSize": 38,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "銀閣",
+          "x": 5,
+          "y": 5,
+          "fontSize": 20,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "慈照寺",
+          "x": 5,
+          "y": 50,
+          "fontSize": 20,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十三年",
+          "romaji": "Heisei nijūsan-nen",
+          "english": "2011"
+        },
+        {
+          "kanji": "四月八日",
+          "romaji": "shigatsu yōka",
+          "english": "April 8"
+        },
+        {
+          "kanji": "観音殿",
+          "romaji": "Kan'non-dono",
+          "english": "Hall of <a href=\"https://en.wikipedia.org/wiki/Guanyin\">Guanyin</a>"
+        },
+        {
+          "kanji": "銀閣",
+          "romaji": "Ginkaku",
+          "english": "Silver Pavilion"
+        },
+        {
+          "kanji": "慈照寺",
+          "romaji": "Jishō-ji",
+          "english": "Temple of Shining Mercy"
+        }
+      ]
+    },
+    {
+      "title": "Reikan-ji",
+      "mapsUrl": "http://maps.google.com/maps/place?cid=6921618885868872293",
+      "wikiUrl": "https://hidden-gems-of-kyoto.find-japan.com/reikanji-temple-%E9%9C%8A%E9%91%91%E5%AF%BA/",
+      "imageFile": "IMG_4074.jpg",
+      "commentary": "This temple is only open 4 weeks every year, and we were very lucky to visit it. The photo that is in our hallway of the cherry blossoms was taken there.",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 80,
+          "y": 5,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十三年",
+          "x": 80,
+          "y": 30,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月八日",
+          "x": 68,
+          "y": 50,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "如意輪観世音",
+          "x": 30,
+          "y": 1,
+          "fontSize": 24,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "霊鑑寺門跡",
+          "x": 5,
+          "y": 40,
+          "fontSize": 17,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十三年四月八日",
+          "romaji": "Heisei nijūsan-nen shigatsu yōka",
+          "english": "2011-04-08"
+        },
+        {
+          "kanji": "如意輪観世音",
+          "romaji": "Nyoi wa kanzeon",
+          "english": "<a href=\"https://en.wikipedia.org/wiki/Cint%C4%81ma%E1%B9%87icakra\">Cintamanicakra</a>"
+        },
+        {
+          "kanji": "霊鑑寺門跡",
+          "romaji": "Reikanji Monzeki",
+          "english": "Temple of Spiritual Reflection Nunnery"
+        }
+      ]
+    },
+    {
+      "title": "Eikan-dō Zenrin-ji",
+      "mapsUrl": "http://maps.google.com/maps/place?hl=en&cid=2060121541776026964",
+      "wikiUrl": "http://en.wikipedia.org/wiki/Eikan-d%C5%8D_Zenrin-ji",
+      "imageFile": "IMG_4075.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 80,
+          "y": 5,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十三年四月八日",
+          "x": 83,
+          "y": 40,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "阿彌陀如来",
+          "x": 26,
+          "y": 2,
+          "fontSize": 28,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "洛東",
+          "x": 10,
+          "y": 10,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "永観堂",
+          "x": 5,
+          "y": 40,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十三年四月八日",
+          "romaji": "Heisei nijūsan-nen shigatsu yōka",
+          "english": "2011-04-08"
+        },
+        {
+          "kanji": "阿彌陀如来",
+          "romaji": "Amidanyorai",
+          "english": "<a href=\"https://en.wikipedia.org/wiki/Amit%C4%81bha\">Amitabha</a> <a href=\"https://en.wikipedia.org/wiki/Tath%C4%81gata\">Tathagata</a>"
+        },
+        {
+          "kanji": "洛東",
+          "romaji": "Raku Tō",
+          "english": "East of Kyoto (Rakuyo is an old name for Kyoto)"
+        },
+        {
+          "kanji": "永観堂",
+          "romaji": "Eikan-dō Zenrin-ji",
+          "english": "View of Eternity Hall"
+        }
+      ]
+    },
+    {
+      "title": "Fushimi Inari Taisha",
+      "mapsUrl": "https://maps.app.goo.gl/gKzyUMwF7kYxtHQ38",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
+      "imageFile": "IMG_4081.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 75,
+          "y": 5,
+          "fontSize": 17,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "伏見稲荷大社",
+          "x": 30,
+          "y": 1,
+          "fontSize": 24,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十九年",
+          "x": 14,
+          "y": 18,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月七日",
+          "x": 3,
+          "y": 50,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十九年",
+          "romaji": "Heisei nijūkyū-nen",
+          "english": "2017"
+        },
+        {
+          "kanji": "四月七日",
+          "romaji": "shigatsu nanoka",
+          "english": "April 7"
+        },
+        {
+          "kanji": "伏見稲荷大社",
+          "romaji": "Fushimi Inari Taisha",
+          "english": "Fushimi <a href=\"https://en.wikipedia.org/wiki/Inari_%C5%8Ckami\">Inari</a> Grand Shrine"
+        }
+      ]
+    },
+    {
+      "title": "Imakumano Kannon-ji",
+      "mapsUrl": "https://maps.app.goo.gl/U8Pe3x3VAJPjje468",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Imakumano_Kannon-ji",
+      "imageFile": "IMG_4077.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 75,
+          "y": 5,
+          "fontSize": 20,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十九年四月七日",
+          "x": 84,
+          "y": 40,
+          "fontSize": 6,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "恵比須神",
+          "x": 26,
+          "y": 1,
+          "fontSize": 34,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "観音寺",
+          "x": 5,
+          "y": 50,
+          "fontSize": 20,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十九年四月七日",
+          "romaji": "Heisei nijūkyū-nen shigatsu nanoka",
+          "english": "2017-04-07"
+        },
+        {
+          "kanji": "恵比須神",
+          "romaji": "Ebisu-shin",
+          "english": "The deity <a href=\"https://en.wikipedia.org/wiki/Ebisu_(mythology)\">Ebisu</a>"
+        },
+        {
+          "kanji": "観音寺",
+          "romaji": "Kannon-ji",
+          "english": "<a href=\"https://en.wikipedia.org/wiki/Guanyin\">Guanyin</a> Temple"
+        }
+      ]
+    },
+    {
+      "title": "Sennyū-ji",
+      "mapsUrl": "https://maps.app.goo.gl/QiQnDxYruc4GrGTs8",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Senny%C5%AB-ji",
+      "imageFile": "IMG_4078.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 80,
+          "y": 5,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十九年",
+          "x": 80,
+          "y": 30,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月七日",
+          "x": 70,
+          "y": 60,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "霊明殿",
+          "x": 26,
+          "y": 10,
+          "fontSize": 38,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "みてら",
+          "x": 10,
+          "y": 20,
+          "fontSize": 10,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "泉涌寺",
+          "x": 5,
+          "y": 50,
+          "fontSize": 20,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十九年",
+          "romaji": "Heisei nijūkyū-nen",
+          "english": "2017"
+        },
+        {
+          "kanji": "四月七日",
+          "romaji": "shigatsu nanoka",
+          "english": "April 7"
+        },
+        {
+          "kanji": "霊明殿",
+          "romaji": "Reimei-den",
+          "english": "Hall of Spiritual Brightness"
+        },
+        {
+          "kanji": "みてら",
+          "romaji": "Mitera",
+          "english": "The Honorable Temple"
+        },
+        {
+          "kanji": "泉涌寺",
+          "romaji": "Sennyū-ji",
+          "english": "Temple of the Gushing Spring"
+        }
+      ]
+    },
+    {
+      "title": "Ōbai-in (Daitoku-ji)",
+      "mapsUrl": "https://maps.app.goo.gl/7phSBJpQnrcEDWibA",
+      "wikiUrl": "https://en.wikipedia.org/wiki/%C5%8Cbai-in",
+      "imageFile": "IMG_4079.jpg",
+      "textElements": [
+        {
+          "text": "2017.4.8",
+          "x": 15,
+          "y": 5,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "一期一会",
+          "x": 2,
+          "y": 30,
+          "fontSize": 25,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "ichi",
+          "x": 8,
+          "y": 50,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "go",
+          "x": 30,
+          "y": 50,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "ichi",
+          "x": 58,
+          "y": 50,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "e",
+          "x": 82,
+          "y": 50,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "Once Only",
+          "x": 20,
+          "y": 60,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "Only Once",
+          "x": 30,
+          "y": 70,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "Kyoto",
+          "x": 28,
+          "y": 80,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": false
+        },
+        {
+          "text": "Ōbaiin",
+          "x": 55,
+          "y": 88,
+          "fontSize": 8,
+          "color": "black",
+          "vertical": false
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "一期一会",
+          "romaji": "Ichi-go ichi-e",
+          "english": "<a href=\"https://en.wikipedia.org/wiki/Ichi-go_ichi-e\">one time, one meeting</a>"
+        }
+      ]
+    },
+    {
+      "title": "Kōdai-ji (2nd visit)",
+      "mapsUrl": "http://maps.google.com/maps/place?cid=5504320489974987879",
+      "wikiUrl": "http://en.wikipedia.org/wiki/K%C5%8Ddai-ji",
+      "imageFile": "IMG_4076.jpg",
+      "commentary": "We visited this temple once in 2011 (2nd page from the right) and again in 2017 (this page). The stamps and calligraphy are very different, and I find the calligraphy very hard to read, but the latest AIs assure me this is the correct transcription based on the context from the stamps, which are unique to the temple.",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 80,
+          "y": 5,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成二十九年",
+          "x": 80,
+          "y": 30,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月十日",
+          "x": 70,
+          "y": 60,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "佛\u3000心",
+          "x": 26,
+          "y": 10,
+          "fontSize": 38,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "鷲峰山",
+          "x": 5,
+          "y": 10,
+          "fontSize": 18,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "高台寺",
+          "x": 5,
+          "y": 54,
+          "fontSize": 18,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "respectfully worshipped"
+        },
+        {
+          "kanji": "平成二十九年",
+          "romaji": "Heisei nijūkyū-nen",
+          "english": "2017"
+        },
+        {
+          "kanji": "四月十日",
+          "romaji": "shigatsu tōka",
+          "english": "April 10"
+        },
+        {
+          "kanji": "佛心",
+          "romaji": "Busshin",
+          "english": "<a href=\"https://en.wikipedia.org/wiki/Buddha-nature\">Buddha</a>-mind"
+        },
+        {
+          "kanji": "鷲峰山",
+          "romaji": "Jubuzan",
+          "english": "<a href=\"https://en.wikipedia.org/wiki/Griddhraj_Parvat\">Vulture Peak</a> Mountain"
+        },
+        {
+          "kanji": "高台寺",
+          "romaji": "Kōdai-ji",
+          "english": "Temple of [Lady] Kōdai"
+        }
+      ]
+    },
+    {
+      "title": "Tōfuku-ji",
+      "mapsUrl": "https://maps.app.goo.gl/P4ZB8LVbivmAq2cp7",
+      "wikiUrl": "https://en.wikipedia.org/wiki/T%C5%8Dfuku-ji",
+      "imageFile": "IMG_4080.jpg",
+      "textElements": [
+        {
+          "text": "奉拝",
+          "x": 78,
+          "y": 5,
+          "fontSize": 14,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "平成廿九年",
+          "x": 80,
+          "y": 40,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "四月十三日",
+          "x": 68,
+          "y": 60,
+          "fontSize": 12,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "大佛寶殿",
+          "x": 26,
+          "y": 3,
+          "fontSize": 35,
+          "color": "black",
+          "vertical": true
+        },
+        {
+          "text": "東福寺",
+          "x": 2,
+          "y": 55,
+          "fontSize": 20,
+          "color": "black",
+          "vertical": true
+        }
+      ],
+      "phrases": [
+        {
+          "kanji": "奉拝",
+          "romaji": "Hōhai",
+          "english": "Respectfully worshipped"
+        },
+        {
+          "kanji": "平成廿九年",
+          "romaji": "Heisei nijūkyū-nen",
+          "english": "2017"
+        },
+        {
+          "kanji": "四月十三日",
+          "romaji": "shigatsu jūsan-nichi",
+          "english": "April 13"
+        },
+        {
+          "kanji": "大佛寶殿",
+          "romaji": "Daibutsu-hōden",
+          "english": "Great <a href=\"https://en.wikipedia.org/wiki/Buddhar%C5%ABpa\">Buddha</a> Treasure Hall"
+        },
+        {
+          "kanji": "東福寺",
+          "romaji": "Tōfuku-ji",
+          "english": "Eastern Happiness Temple"
+        }
+      ]
+    }
+  ]
+}
